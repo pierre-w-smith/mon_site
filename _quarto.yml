@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Pierre Smith (CV)"
+  title: "Mon site académique"
   navbar:
     left:
       - text: "Accueil"
@@ -12,6 +13,8 @@ website:
       - text: "Projets"
         href: projets.qmd
 
+  page-footer:
+    right: "Dernière mise à jour : 08/10/2025"
 format:
   html:
     theme: cosmo
