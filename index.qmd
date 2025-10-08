@@ -1,0 +1,10 @@
+---
+title: "Acceuil"
+format: html
+editor: visual
+---
+
+# Bienvenue
+
+Je suis **Ton Nom**, chercheur(e) en santé publique.\
+Voici mon site académique construit avec Quarto 🚀

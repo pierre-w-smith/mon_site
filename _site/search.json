@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Publications\n\nAuteur A., Auteur B. (2025). Titre de l’article. Journal of Health.\nAuteur C., Auteur D. (2024). Autre article. Revue Européenne de Santé Publique."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Acceuil",
+    "section": "",
+    "text": "Bienvenue\nJe suis Ton Nom, chercheur(e) en santé publique.\nVoici mon site académique construit avec Quarto 🚀"
+  },
+  {
+    "objectID": "projets.html",
+    "href": "projets.html",
+    "title": "Projets",
+    "section": "",
+    "text": "Voici quelques démonstrations et visualisations interactives.\n\n\n\n\n\n\n\n```{r} library(plotly) plot_ly(x = ~rnorm(100), type = “histogram”)"
+  },
+  {
+    "objectID": "projets.html#exemple-2-graphique-interactif",
+    "href": "projets.html#exemple-2-graphique-interactif",
+    "title": "Projets",
+    "section": "",
+    "text": "```{r} library(plotly) plot_ly(x = ~rnorm(100), type = “histogram”)"
+  }
+]

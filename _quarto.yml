@@ -1,0 +1,17 @@
+project:
+  type: website
+
+website:
+  title: "Pierre Smith (CV)"
+  navbar:
+    left:
+      - text: "Accueil"
+        href: index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "Projets"
+        href: projets.qmd
+
+format:
+  html:
+    theme: cosmo

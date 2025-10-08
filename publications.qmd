@@ -1,0 +1,10 @@
+---
+title: "Publications"
+format: html
+editor: visual
+---
+
+# Publications
+
+-   Auteur A., Auteur B. (2025). *Titre de l’article.* Journal of Health.
+-   Auteur C., Auteur D. (2024). *Autre article.* Revue Européenne de Santé Publique.
