@@ -12,9 +12,15 @@ website:
         href: publications.qmd
       - text: "Projets"
         href: projets.qmd
+    right:
+      - text: "📄 Télécharger mon CV"
+        href: file/CV.pdf
+        target: _blank
 
   page-footer:
     right: "Dernière mise à jour : 08/10/2025"
+
 format:
   html:
     theme: cosmo
+
