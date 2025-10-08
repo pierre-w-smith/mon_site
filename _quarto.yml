@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Mon site académique"
+  title: "Pierre Smith - CV"
   navbar:
     left:
       - text: "Accueil"
