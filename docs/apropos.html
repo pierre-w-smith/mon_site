@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projets – Pierre Smith — Recherche</title>
+<title>À propos de moi – Pierre Smith — Recherche</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,11 +97,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projets.html" aria-current="page"> 
+    <a class="nav-link" href="./projets.html"> 
 <span class="menu-text">Projets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./apropos.html"> 
+    <a class="nav-link active" href="./apropos.html" aria-current="page"> 
 <span class="menu-text">À propos de moi</span></a>
   </li>  
 </ul>
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projets</h1>
+<h1 class="title">À propos de moi</h1>
 </div>
 
 
@@ -144,20 +144,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="projets-interactifs" class="level1">
-<h1>Projets interactifs</h1>
-<p>Voici quelques démonstrations et visualisations interactives.</p>
-<section id="exemple-1-application-shiny" class="level2">
-<h2 class="anchored" data-anchor-id="exemple-1-application-shiny">Exemple 1 : Application Shiny</h2>
-<iframe src="https://pierre-smith.shinyapps.io/sante_mentale_wallonie/" width="100%" height="500" frameborder="0">
-</iframe>
-</section>
-<section id="exemple-2-graphique-interactif" class="level2">
-<h2 class="anchored" data-anchor-id="exemple-2-graphique-interactif">Exemple 2 : Graphique interactif</h2>
-<p>```{r} library(plotly) plot_ly(x = ~rnorm(100), type = “histogram”)</p>
+<p>Docteur en sciences de la santé publique de l’Université catholique de Louvain (UCLouvain), Pierre Smith a travaillé plusieurs années comme chercheur senior à Sciensano, l’Institut belge de santé publique. Depuis 2025, il est attaché scientifique principal à l’IWEPS (Institut wallon de l’évaluation, de la prospective et de la statistique), où il contribue à l’analyse des politiques et des systèmes de santé.</p>
+<p>Parallèlement, il est collaborateur scientifique à l’UCLouvain (Institut de recherche Santé et Société) et chargé de cours invité à la VUB et à la Haute École Vinci.</p>
+<p>Ses activités de recherche et d’enseignement portent sur : - l’épidémiologie et les déterminants sociaux de la santé ; - l’approche « One Health » ; - l’évaluation des politiques et des systèmes de santé, avec une expertise particulière en santé mentale.</p>
+<p>Il est également membre du conseil d’administration de l’Association belge de santé publique (BAPH),et expert auprès du Conseil supérieur de la santé ainsi que du comité d’appui thématique “Surveillance, information et communication en santé mentale” de Santé publique France.</p>
+<p>📎 Vous pouvez aussi en savoir plus ou suivre ses travaux sur :</p>
+<p>🔗 LinkedIn</p>
+<p>🔗 ResearchGate</p>
+<p>🔗 Google Scholar</p>
+<section id="me-contacter" class="level3">
+<h3 class="anchored" data-anchor-id="me-contacter">📬 Me contacter</h3>
+<p>Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :</p>
+<div style="margin-top:10px;">
+<button id="showEmail" class="btn btn-outline-primary">Afficher mon adresse e-mail</button>
+<p id="emailField" style="margin-top:10px; display:none; font-weight:bold;">
+</p>
+</div>
+<script>
+document.getElementById("showEmail").addEventListener("click", function() {
+  // on reconstruit l'adresse pour éviter les robots
+  var name = "pierre.smith";
+  var domain = "iweps.be";
+  var email = name + "@" + domain;
+  var emailField = document.getElementById("emailField");
+  emailField.textContent = email;
+  emailField.style.display = "block";
+  this.style.display = "none";
+});
+</script>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

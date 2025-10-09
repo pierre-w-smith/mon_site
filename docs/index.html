@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Acceuil – Pierre Smith - CV</title>
+<title>Acceuil – Pierre Smith — Recherche</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Pierre Smith - CV</span>
+    <span class="navbar-title">Pierre Smith — Recherche</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -99,6 +99,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./projets.html"> 
 <span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./apropos.html"> 
+<span class="menu-text">À propos de moi</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -140,26 +144,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="bienvenue" class="level1">
-<h1>Bienvenue</h1>
-<p>Docteur en <strong>sciences de la santé publique</strong> de l’Université catholique de Louvain (UCLouvain), Pierre Smith a travaillé plusieurs années comme <strong>chercheur senior à Sciensano</strong>, l’Institut belge de santé publique. Depuis <strong>2025</strong>, il est <strong>attaché scientifique principal à l’IWEPS</strong> (Institut wallon de l’évaluation, de la prospective et de la statistique), où il contribue à l’analyse des politiques et des systèmes de santé.</p>
-<p>Parallèlement, il est <strong>collaborateur scientifique à l’UCLouvain</strong> (Institut de recherche Santé et Société) et <strong>chargé de cours invité</strong> à la <strong>VUB</strong> et à la <strong>Haute École Vinci</strong>.</p>
-<p>Ses activités de recherche et d’enseignement portent sur : - l’<strong>épidémiologie</strong> et les <strong>déterminants sociaux de la santé</strong> ; - l’approche <strong>« One Health »</strong> ; - l’<strong>évaluation des politiques et des systèmes de santé</strong>, avec une expertise particulière en <strong>santé mentale</strong>.</p>
-<p>Il est également <strong>membre du conseil d’administration</strong> de l’Association belge de santé publique (<strong>BAPH</strong>),<br>
-et <strong>expert</strong> auprès du <strong>Conseil supérieur de la santé</strong> ainsi que du <strong>comité d’appui thématique “Surveillance, information et communication en santé mentale”</strong> de <strong>Santé publique France</strong>.</p>
-<hr>
-<p>📎 Vous pouvez aussi en savoir plus ou suivre ses travaux sur :</p>
-<ul>
-<li><a href="https://www.linkedin.com/in/pierre-smith-48855aa9/" target="_blank">🔗 LinkedIn</a><br>
-</li>
-<li><a href="https://www.researchgate.net/profile/Smith-Pierre?ev=hdr_xprf" target="_blank">🔗 ResearchGate</a><br>
-</li>
-<li><a href="https://scholar.google.com/citations?user=YW8zSfkAAAAJ&amp;hl=fr" target="_blank">🔗 Google Scholar</a></li>
-</ul>
-<hr>
+<p>Bienvenue sur ce site dédié à nos activités de <strong>recherche en santé publique</strong>.</p>
+<p>Son objectif est de <strong>partager les résultats des travaux menés avec mes collègues</strong>, en les rendant plus accessibles à un public large — chercheurs, décideurs, professionnels de la santé ou toute personne intéressée par les enjeux de santé et de politiques publiques.</p>
+<p>Vous trouverez ici : - mes publications scientifiques et rapports de recherche ; - une présentation de projets en cours ou récemment achevés ; - et quelques informations à propos de mon parcours et de mes collaborations.</p>
 <blockquote class="blockquote">
-<p><em>Ce site présente ses activités de recherche, ses publications et différents projets en lien avec la santé publique</em></p>
+<p>Ce site se veut un espace de diffusion, de transparence et de dialogue autour de la recherche en santé publique en Belgique et au-delà.</p>
 </blockquote>
+<section id="me-contacter" class="level3">
+<h3 class="anchored" data-anchor-id="me-contacter">📬 Me contacter</h3>
+<p>Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :</p>
+<div style="margin-top:10px;">
+<button id="showEmail" class="btn btn-outline-primary">
+Afficher mon adresse e-mail
+</button>
+<p id="emailField" style="margin-top:10px; display:none; font-weight:bold;">
+</p>
+</div>
+<script>
+document.getElementById("showEmail").addEventListener("click", function() {
+  // on reconstruit l'adresse pour éviter les robots
+  var name = "p.smith";
+  var domain = "iweps.be";
+  var email = name + "@" + domain;
+  var emailField = document.getElementById("emailField");
+  emailField.textContent = email;
+  emailField.style.display = "block";
+  this.style.display = "none";
+});
+</script>
 
 
 </section>
@@ -574,7 +586,7 @@ et <strong>expert</strong> auprès du <strong>Conseil supérieur de la santé</s
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Dernière mise à jour : 08/10/2025</p>
+<p>Dernière mise à jour : 09/10/2025</p>
 </div>
   </div>
 </footer>

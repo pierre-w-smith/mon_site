@@ -4,25 +4,37 @@ format: html
 editor: visual
 ---
 
-# Bienvenue
+Bienvenue sur ce site dédié à nos activités de **recherche en santé publique**.
 
-Docteur en **sciences de la santé publique** de l’Université catholique de Louvain (UCLouvain), Pierre Smith a travaillé plusieurs années comme **chercheur senior à Sciensano**, l’Institut belge de santé publique. Depuis **2025**, il est **attaché scientifique principal à l’IWEPS** (Institut wallon de l’évaluation, de la prospective et de la statistique), où il contribue à l’analyse des politiques et des systèmes de santé.
+Son objectif est de **partager les résultats des travaux menés avec mes collègues**, en les rendant plus accessibles à un public large — chercheurs, décideurs, professionnels de la santé ou toute personne intéressée par les enjeux de santé et de politiques publiques.
 
-Parallèlement, il est **collaborateur scientifique à l’UCLouvain** (Institut de recherche Santé et Société) et **chargé de cours invité** à la **VUB** et à la **Haute École Vinci**.
+Vous trouverez ici : - mes publications scientifiques et rapports de recherche ; - une présentation de projets en cours ou récemment achevés ; - et quelques informations à propos de mon parcours et de mes collaborations.
 
-Ses activités de recherche et d’enseignement portent sur : - l’**épidémiologie** et les **déterminants sociaux de la santé** ; - l’approche **« One Health »** ; - l’**évaluation des politiques et des systèmes de santé**, avec une expertise particulière en **santé mentale**.
+> Ce site se veut un espace de diffusion, de transparence et de dialogue autour de la recherche en santé publique en Belgique et au-delà.
 
-Il est également **membre du conseil d’administration** de l’Association belge de santé publique (**BAPH**),\
-et **expert** auprès du **Conseil supérieur de la santé** ainsi que du **comité d’appui thématique “Surveillance, information et communication en santé mentale”** de **Santé publique France**.
+### 📬 Me contacter
 
-------------------------------------------------------------------------
+Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :
 
-📎 Vous pouvez aussi en savoir plus ou suivre ses travaux sur :
+::: {style="margin-top:10px;"}
+<button id="showEmail" class="btn btn-outline-primary">Afficher mon adresse e-mail</button>
 
--   [🔗 LinkedIn](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}\
--   [🔗 ResearchGate](https://www.researchgate.net/profile/Smith-Pierre?ev=hdr_xprf){target="_blank"}\
--   [🔗 Google Scholar](https://scholar.google.com/citations?user=YW8zSfkAAAAJ&hl=fr){target="_blank"}
+<p id="emailField" style="margin-top:10px; display:none; font-weight:bold;">
 
-------------------------------------------------------------------------
+</p>
+:::
 
-> *Ce site présente ses activités de recherche, ses publications et différents projets en lien avec la santé publique*
+```{=html}
+<script>
+document.getElementById("showEmail").addEventListener("click", function() {
+  // on reconstruit l'adresse pour éviter les robots
+  var name = "p.smith";
+  var domain = "iweps.be";
+  var email = name + "@" + domain;
+  var emailField = document.getElementById("emailField");
+  emailField.textContent = email;
+  emailField.style.display = "block";
+  this.style.display = "none";
+});
+</script>
+```
