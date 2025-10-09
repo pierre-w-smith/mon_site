@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -67,7 +69,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-authors','listing-year','listing-venue','listing-url','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-authors","listing-year","listing-venue","listing-url","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -144,254 +205,1328 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>40. Petri-Romão P., Stoffers-Winterling J., Doerschner C., <strong>Smith P</strong>., … Lieb, K. (2025). Co-RESPOND: a federated network of cohorts on mental health and adversity during the COVID-19 pandemic. Challenges, solutions and recommendations for retrospective data harmonization<em>. European Journal of Psychotraumatology.</em> <a href="https://doi.org/10.1080/20008066.2025.2517920"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>39. Pinucci, I., Tedeschi, F., Serra, R. <strong>Smith P</strong>., et al.&nbsp;(2025) Resilient outcomes in people with a history of mental disorder during the COVID-19 pandemic: an international 2-years longitudinal prospective study. Soc Psychiatry Psychiatr Epidemiol. <a href="https://doi.org/10.1007/s00127-025-02944-x"><strong><em>Lien</em></strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>38. Van Goethem, N., Van der Heyden J., <strong>Smith, P.,</strong> Van Hoof, W., De Schutter H., Van Bossuyt, M., De Ridder, K., Van Den Bulcke, M., Cauët, E. (2025). From concept to approval: human genomic data integration with population observational data – insights from a Belgian pilot stud. <em>Archives of Public Health. <a href="https://archpublichealth.biomedcentral.com/articles/10.1186/s13690-025-01581-9"><strong>Lien</strong></a></em></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>37. Atarodi, V., Mittendorfer-Rutz, E., Morillo-Cuadrado, D. <strong>Smith P</strong>., et al (2025) Specialized mental healthcare use for common mental disorders and prescription of antidepressants before and during the COVID-19 pandemic among working-age refugees and Swedish-born individuals – a nationwide register-based study. <em>BMC Public Health. <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-025-22028-4"><strong>Lien</strong></a></em></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>36. Van Droogenbroeck, F., Spruyt B., Gérain P., Van den Borre L., <strong>Smith P</strong>., De Pauw R., Dury S. (2025). Informal caregiving and mental health: results from the Belgian health interview survey 2013 and 2018. <em>BMC Public Health.</em> <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-024-20957-0"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>35. Monistrol-Mula, A., Giné-Vázquez, I., Caggiu, G., Conflitti, C., Gemes, K., Hecker, I., Mediavilla, R., Compagnoni, M., Pinucci, I., Winterling, J., <strong>Smith, P.</strong> et al.&nbsp;(2025). SARS-CoV-2 infection and COVID-19 outcomes across mental disorders and the role of sex: A register-based study from Catalonia. <em>Psychiatry Research.</em> <a href="https://www.sciencedirect.com/science/article/pii/S0165178124006103?via%3Dihub"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>34. Muysewinkel, E., Vesentini, L., Van Deynse, H., Gisle, L., <strong>Smith, P.</strong>, Bruggeman, H., Bilsen, J., Van Overmeire, R. (2024) Trauma Exposure, Social Support and Mental Health in the General Population in Belgium. <em>European Journal of Investigation in Health, Psychology and Education.</em> <a href="https://www.mdpi.com/2254-9625/14/7/136"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>33. D’Hondt, S., Gisle, L., D., De Pauw, R., Van Cauteren, D., Demarest, S., Drieskens, S., Cornelissen, L., De Ridder, K., Charafeddine, R., <strong>Smith, P.</strong> Anxiety and depression in people with post-COVID condition: a Belgian population-based cohort study three months after SARS-CoV-2 infection. <em>Social Psychiatry and Psychiatric Epidemiology</em>. <a href="https://link.springer.com/article/10.1007/s00127-024-02655-9"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>32. Holte Stea, T., Bonsaksen, T., <strong>Smith P.</strong>, Steigen, AM., Løvheim Kleppang, A., Leonhardt, M., Lien, L., Vettore, M. (2024). Does pressure, bullying and low social support predict depressive symptoms, self-harm and self-directed violence? <em>BMC Psychiatry</em>. <a href="https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-024-05696-1"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>31. Nguyen Thi Khanh, H., De Troeyer, K., <strong>Smith, P</strong>., Demoury, C., Casas, L. (2023) The impact of ambient temperature and air pollution on SARS-CoV2 infection and Post COVID-19 condition in Belgium (2021–2022). <em>Environmental Research.</em> <a href="https://www.sciencedirect.com/science/article/pii/S0013935123028700?via%3Dihub"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>30.Nayani, S. Castanares-Zapatero, D., De Pauw, R., Van Cauteren, D., Demarest, S., Drieskens, S., Cornelissen, L., Devleesschauwer, B., De Ridder, K., Charafeddine, R., <strong>Smith, P</strong>. (2023) Classification of symptoms and associated factors of post COVID-19 condition: a longitudinal study in the Belgian population. <em>BMJ Open.</em> <a href="https://bmjopen.bmj.com/content/13/10/e072726"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>29. <strong>Smith, P.</strong>, Kristiaan, P., Van Cauteren, D., Demarest, S., Drieskens, S., De Pauw, R., Cornelissen, L.,&nbsp; Devleesschauwer, G., De Ridder, K., Charafeddine, R. (2023) Post COVID-19 condition and health-related quality of life: a longitudinal cohort study in the Belgian adult population. <em>BMC Public Health.</em> <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-023-16336-w"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>28.Nguyen Thi Khanh, H., Castanares-Zapatero, D., De Pauw, R., Van Cauteren, D., Demarest, S., Drieskens, S., Cornelissen, L., Devleesschauwer, B., De Ridder, K., Charafeddine, R., <strong>Smith, P</strong>. (2023) Association between SARS-CoV-2 variants and post COVID-19 condition: findings from a longitudinal cohort study in the Belgian adult population. <em>BMC Infectious Diseases</em>. <a href="https://pesquisa.bvsalud.org/global-literature-on-novel-coronavirus-2019-ncov/resource/fr/ppzbmed-10.21203.rs.3.rs-2765170.v1"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>27. Wyper, G., McDonald, S., Haagsma, J., Devleesschauwer, B., Charalampous, P., Maini, R., <strong>Smith, P</strong>., Pires, S. (2023) A proposal for further developing fatigue-related post COVID-19 health states for burden of disease studies. <em>Archives of Public Health.</em> <a href="https://archpublichealth.biomedcentral.com/articles/10.1186/s13690-023-01212-1"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>26. Devleesschauwer, B., Willem, L., Jurčević, J., <strong>Smith, P</strong>.,&nbsp; Scohy, A., Wyper, G., Monteiro Pires, S., Van Goethem, N., Beutels, P., Franco, N., Abrams, S., Van Cauteren, D., Speybroeck, N., Hens, N., De Pauw, R. (2023) The direct disease burden of COVID-19 in Belgium in 2020 and 2021. <em>BMC Public Health.</em> <a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-023-16572-0"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>25. Duveau, C., <strong>Smith, P</strong>., Lorant, V. (2023) Migration and mental health over the past 20 years: how has the situation evolved? <em>Archives of Public Health</em>. <a href="https://link.springer.com/article/10.1186/s13690-023-01187-z"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>24. Lorant, V., <strong>Smith, P.</strong>, Duveau, C. Seeber, K., Bryant, RA., Mittendorfer-Rutz, E. Melchior, M., Haró, JM., Monzio Compagnoni, M., Corrao, G., Ayuso-Mateos JL., Sijbrandij M., Nicaise, P. (2023) Psychological distress and online advice-seeking in times of COVID-19: vertical and horizontal equity of an e-mental health strategy. <em>Current Psychology</em>. <a href="https://link.springer.com/article/10.1007/s12144-023-04907-4"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>23. Baudewyns, V., Bruyneel, A., <strong>Smith, P</strong>., Servotte, JC., Dancot, J. (2022) Prevalence and factors associated with academic burnout risk among nursing and midwifery students during the COVID-19 pandemic: A cross-sectional study. <em>Nursing Open</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1002/nop2.1575"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>22. Hecker, I., El-Aarbaoui, T., Vallez, S., Andersen, A., Ayuso-Mateos, J., Bryant, R., Corrao, G., McDaid,D., Mediavilla, R., Mittendorfer-Rutz, E., Compagnoni, M., Park, A., Riepenhausen, A., Rigotti, T., Seeber, K., Sijbrandij, M., <strong>Smith, P.,</strong> Tüscher, O., Walter, H., Witteveen, A., Mary-Krause, M., Melchior, M. (2022) Impact of work arrangements during the COVID-19 pandemic on mental health in France. <em>SSM - Population Health.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/36415675/"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>21. Al, Jabouri, O., Pierre L., and <strong>Smith P.</strong> (2022) The stigma of people with mental health problems and the role of health care professionals: An international scoping review. <em>Revue Francophone Internationale de Recherche Infirmière.</em> <a href="https://www.sciencedirect.com/science/article/pii/S2352802822000151?via%3Dihub"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>20. <strong>Smith, P.</strong>, Kristiaan, P., Van Cauteren, D., Demarest, S., Drieskens, S., De Pauw, R., Cornelissen, L., De Ridder, K., Charafeddine, R. (2022) Post COVID-19 condition and its physical, mental and social implications: protocol of a 2-year longitudinal cohort study in the Belgian adult population. <em>Archives of Public Health</em>. <a href="https://archpublichealth.biomedcentral.com/articles/10.1186/s13690-022-00906-2"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>19. Bruggeman, H., <strong>Smith, P</strong>., Berete, F., Demarest, S., Hermans, L., Braekman, E., Charafeddine, E., Drieskens, S., De Ridder, K., Gisle, L. (2022) Anxiety and Depression in Belgium during the First 15 Months of the COVID-19 Pandemic: A Longitudinal Study <em>Behavioral Sciences</em>. <a href="https://www.mdpi.com/2076-328X/12/5/141"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>18. <strong>Smith, P.</strong>, Nicaise, P., Lorant, V. (2022) Social integration of people with non-psychotic mental illness over the last two decades: The widening gap in the adult population in Belgium. <em>Social Psychiatry and Psychiatric Epidemiology.</em> <a href="https://pubmed.ncbi.nlm.nih.gov/35606460/"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>17.&nbsp; Khan, Y., Bruyneel, A., <strong>Smith, P.</strong> (2022). Determinants of the risk of burnout among nurses during the first wave of the COVID‐19 pandemic in Belgium: A cross‐sectional study.&nbsp; <em>Journal of Nursing Management</em>. <a href="https://onlinelibrary.wiley.com/doi/10.1111/jonm.13624"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>16. Riepenhausen A., Veer I., Wackerhagen C., Reppmann Z., Köber G., Ayuso-Mateos J., Bögeman S., Corrao G., Felez-Nobrega M., Haro Abad J.,&nbsp; Hermans E., van Leeuwen J., Lieb K., Lorant V., Mary-Krause M., Mediavilla R., Melchior M., Mittendorfer-Rutz E., Monzio Compagnoni M., Pan K., Puhlmann L., Roelofs K., Sijbrandij M., <strong>Smith P.,</strong> Tüscher O., Witteveen A., Zerban M., Kalisch R., KrögerWalter H. (2022). Coping with COVID: Risk and resilience factors for mental health in a German representative panel study. <em>Psychological Medicine</em>, 1-11. <a href="https://www.cambridge.org/core/journals/psychological-medicine/article/coping-with-covid-risk-and-resilience-factors-for-mental-health-in-a-german-representative-panel-study/47B4BDFEB41E566F9FBA1B364F396F51"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>15. Haegdorens F., Franck E., <strong>Smith P.,</strong> Bruyneel A., Monsieurs K.G., Van Bogaert P. (2021). Sufficient personal protective equipment training can reduce COVID-19 related symptoms in healthcare workers: a prospective cohort study. <em>International Journal of Nursing Studies.</em> <a href="https://www.sciencedirect.com/science/article/pii/S0020748921002777?via%3Dihub"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>14. Nicaise P., Garin H., <strong>Smith P.,</strong> d’Oreye de Lantremange S., Leleux, L., Wyngaerden, F., Lorant V. (2021). Implementation of a computer-assisted face-to-face intervention for mapping the social support networks of patients with severe mental illness in routine clinical practice: Analysis of the appropriateness and acceptability of the intervention. <em>International Journal of Social Psychiatry.</em> <a href="https://journals.sagepub.com/doi/10.1177/00207640211058977"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>13. Butera S., Brasseur N., Filion N., Bruyneel A., <strong>Smith P.</strong> (2021) Prevalence and Associated Factors of Burnout Risk Among Intensive Care and Emergency Nurses Before and During the Coronavirus Disease 2019 Pandemic: A Cross-Sectional Study in Belgium. <em>Journal of Emergency Nursing.</em> <a href="https://www.sciencedirect.com/science/article/pii/S0099176721002452?via%3Dihub#keys0001"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>12. Saidi I., Schils G., <strong>Smith P</strong>. (2021). La sexualité des personnes hospitalisées en services psychiatriques hospitaliers et le rôle des professionnels de la santé : une scoping review internationale. <em>Revue Francophone Internationale de Recherche Infirmière.</em> <a href="https://www.sciencedirect.com/science/article/pii/S2352802821000260"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>11. Grard A., Nicaise P., <strong>Smith P.,</strong> Lorant V. (2021) Use of generic social services and social integration of patients with a severe mental illness in Belgium: Individual and services network determinants. <em>International Journal of Social Psychiatry.</em> <a href="https://journals.sagepub.com/doi/full/10.1177/00207640211017947"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>10. Lorant V., <strong>Smith P</strong>., Van den Broeck K., &amp; Nicaise P. (2021). Psychological distress associated with the COVID-19 pandemic and suppression measures during the first wave in Belgium. <em>BMC Psychiatry</em>. <a href="https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-021-03109-1"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>9. <strong>Smith P.,</strong> Nicaise P, Thunus S, Neyens I, Walker C, Lorant V. (2021). Stakeholder coalitions and priorities around the policy goals of a nation-wide mental health care reform. <em>Administration and Policy in Mental Health and Mental Health Services Research.</em> <a href="https://link.springer.com/article/10.1007/s10488-020-01100-8"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>8. Bruyneel A., <strong>Smith P</strong>. (2021) Comparison of the prevalence of burnout risk between ICU and non-ICU nurses during the COVID-19 outbreak in French-speaking Belgium, <em>Intensive and Critical Care Nursing</em>, Jan-06-2021, <a href="https://www.sciencedirect.com/science/article/pii/S0964339721000756?dgcid=coauthor#bi005"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>7. Bruyneel A., <strong>Smith P.,</strong> Tack, J., Pirson, M. (2021). Prevalence of burnout risk and factors associated with burnout risk among ICU nurses during the COVID-19 outbreak in French speaking Belgium. <em>Intensive &amp; Critical Care Nursing.</em> <a href="https://www.sciencedirect.com/science/article/pii/S0964339721000483?dgcid=author"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>6. Rens, E., <strong>Smith P.,</strong> Nicaise P., Lorant V., Van den Broeck K. (2021). Explaining factors of mental distress among Belgian 16 to 25 year olds during the covid-19 pandemic. <em>Frontiers in public health</em>. <a href="https://www.frontiersin.org/articles/10.3389/fpsyt.2021.575553/full"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>5. <strong>Smith P.,</strong> Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V. (2020). Use of psychiatric hospitals and social integration of patients with psychiatric disorders: a prospective cohort study in five European countries. <em>Social Psychiatry and Psychiatric Epidemiology</em>. <a href="https://link.springer.com/article/10.1007/s00127-020-01881-1"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>4. Moore A., van Loenhout J., Moitinho de Almeida M., <strong>Smith P.</strong> &amp; Guha-Sapir D. (2020) Measuring mental health burden in humanitarian settings: a critical review of assessment tools. <em>Global Health Action</em>, 13:1. <a href="https://www.tandfonline.com/doi/citedby/10.1080/16549716.2020.1783957?scroll=top&amp;needAccess=true"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>3. Banse E., Bigot A., De Valkeneer C., Lorant V., Luminet O., Nicaise P., <strong>Smith P.,</strong> Tubeuf S., Wuillaume A. (2020). Quelques enseignements sur les impacts sociaux et économiques de la stratégie de réponse à la pandémie du coronavirus en Belgique. <em>Louvain Medical.</em> 139 (05-06): 375-382. <a href="https://www.louvainmedical.be/fr/article/quelques-enseignements-sur-les-impacts-sociaux-et-economiques-de-la-strategie-de-reponse-la"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>2. <strong>Smith P</strong>., Favril L., Delhauteur D., Vander Laenen F., Nicaise P. (2019) How to overcome political and legal barriers to the implementation of a drug consumption room: an application of the policy agenda framework to the Belgian situation. <em>Addiction Science &amp; Clinical Practice</em>. 14, 40. <a href="https://ascpjournal.biomedcentral.com/articles/10.1186/s13722-019-0169-x"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-<tr class="odd">
-<td>1. <strong>Smith P</strong>., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V. (2019). Predictors of personal continuity of care of patients with severe mental illness: A comparison across five European countries. <em>European Psychiatry</em>, Vol 56, 69-74. <a href="https://www.sciencedirect.com/science/article/pii/S0924933818302050?via%3Dihub"><strong>Lien</strong></a></td>
-</tr>
-<tr class="even">
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Cette page présente mes principales publications scientifiques, issues de collaborations nationales et internationales, dans les domaines de la santé publique, de l’épidémiologie et de la santé mentale.</p>
+<blockquote class="blockquote">
+<p>Utilisez les filtres par <strong>mots-clés</strong> ci-dessous pour explorer les publications. Cliquez sur <strong>Réinitialiser</strong> pour tout afficher.</p>
+</blockquote>
+<style>
+/* Style léger pour les tags/catégories */
+.quarto-listing-category {
+  background-color: #f0f4f7;
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 0.85em;
+  color: #2c3e50;
+}
+</style>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="c2FudCVDMyVBOSUyMG1lbnRhbGUlMkNDT1ZJRC0xOSUyQ2hhcm1vbmlzYXRpb24lMjBkZXMlMjBkb25uJUMzJUE5ZXM=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Co-RESPOND: a federated network of cohorts on mental health and adversity during the COVID-19 pandemic. Challenges, solutions and recommendations for retrospective data harmonization</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFybW9uaXNhdGlvbiUyMGRlcyUyMGRvbm4lQzMlQTllcw=='); return false;">harmonisation des données</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Petri-Romão P., Stoffers-Winterling J., Doerschner C., Smith P., … Lieb K.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+European Journal of Psychotraumatology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="c2FudCVDMyVBOSUyMG1lbnRhbGUlMkNyJUMzJUE5c2lsaWVuY2UlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Resilient outcomes in people with a history of mental disorder during the COVID-19 pandemic: an international 2-years longitudinal prospective study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ciVDMyVBOXNpbGllbmNl'); return false;">résilience</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Pinucci I., Tedeschi F., Serra R., Smith P., et al.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+Social Psychiatry and Psychiatric Epidemiology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="ZyVDMyVBOW5vbWlxdWUlMkNkb25uJUMzJUE5ZXMlMjBkZSUyMHBvcHVsYXRpb24lMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">From concept to approval: human genomic data integration with population observational data – insights from a Belgian pilot study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZyVDMyVBOW5vbWlxdWU='); return false;">génomique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZG9ubiVDMyVBOWVzJTIwZGUlMjBwb3B1bGF0aW9u'); return false;">données de population</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Van Goethem N., Van der Heyden J., Smith P., Van Hoof W., De Schutter H., Van Bossuyt M., De Ridder K., Van Den Bulcke M., Cauët E.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+Archives of Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="c2FudCVDMyVBOSUyMG1lbnRhbGUlMkNtaWdyYW50cyUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Specialized mental healthcare use for common mental disorders and prescription of antidepressants before and during the COVID-19 pandemic among working-age refugees and Swedish-born individuals – a nationwide register-based study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWlncmFudHM='); return false;">migrants</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Atarodi V., Mittendorfer-Rutz E., Morillo-Cuadrado D., Smith P., et al.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+BMC Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="YWlkYW50cyUyMHByb2NoZXMlMkNzYW50JUMzJUE5JTIwbWVudGFsZSUyQ0JlbGdpcXVl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Informal caregiving and mental health: results from the Belgian health interview survey 2013 and 2018</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YWlkYW50cyUyMHByb2NoZXM='); return false;">aidants proches</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Van Droogenbroeck F., Spruyt B., Gérain P., Van den Borre L., Smith P., De Pauw R., Dury S.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+BMC Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="Q09WSUQtMTklMkN0cm91YmxlcyUyMG1lbnRhdXglMkNzZXhlJTJGZ2VucmU=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">SARS-CoV-2 infection and COVID-19 outcomes across mental disorders and the role of sex: A register-based study from Catalonia</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJvdWJsZXMlMjBtZW50YXV4'); return false;">troubles mentaux</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2V4ZSUyRmdlbnJl'); return false;">sexe/genre</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Monistrol-Mula A., Giné-Vázquez I., Caggiu G., Conflitti C., Gemes K., Hecker I., Mediavilla R., Compagnoni M., Pinucci I., Winterling J., Smith P., et al.
+</div>
+<div class="metadata-value listing-year">
+2025
+</div>
+<div class="metadata-value listing-venue">
+Psychiatry Research
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="dHJhdW1hJTJDc291dGllbiUyMHNvY2lhbCUyQ0JlbGdpcXVl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Trauma Exposure, Social Support and Mental Health in the General Population in Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhdW1h'); return false;">trauma</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c291dGllbiUyMHNvY2lhbA=='); return false;">soutien social</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Muysewinkel E., Vesentini L., Van Deynse H., Gisle L., Smith P., Bruggeman H., Bilsen J., Van Overmeire R.
+</div>
+<div class="metadata-value listing-year">
+2024
+</div>
+<div class="metadata-value listing-venue">
+European Journal of Investigation in Health, Psychology and Education
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="Q09WSUQlMjBsb25nJTJDYW54aSVDMyVBOXQlQzMlQTklMkNkJUMzJUE5cHJlc3Npb24lMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Anxiety and depression in people with post-COVID condition: a Belgian population-based cohort study three months after SARS-CoV-2 infection</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW54aSVDMyVBOXQlQzMlQTk='); return false;">anxiété</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZCVDMyVBOXByZXNzaW9u'); return false;">dépression</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+D’Hondt S., Gisle L., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., De Ridder K., Charafeddine R., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2024
+</div>
+<div class="metadata-value listing-venue">
+Social Psychiatry and Psychiatric Epidemiology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="c2FudCVDMyVBOSUyMG1lbnRhbGUlMkNoYXJjJUMzJUE4bGVtZW50JTJDc291dGllbiUyMHNvY2lhbA==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Does pressure, bullying and low social support predict depressive symptoms, self-harm and self-directed violence?</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyYyVDMyVBOGxlbWVudA=='); return false;">harcèlement</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c291dGllbiUyMHNvY2lhbA=='); return false;">soutien social</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Holte Stea T., Bonsaksen T., Smith P., Steigen A.M., Løvheim Kleppang A., Leonhardt M., Lien L., Vettore M.
+</div>
+<div class="metadata-value listing-year">
+2024
+</div>
+<div class="metadata-value listing-venue">
+BMC Psychiatry
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="ZW52aXJvbm5lbWVudCUyQ0NPVklEJTIwbG9uZyUyQ0JlbGdpcXVl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">The impact of ambient temperature and air pollution on SARS-CoV2 infection and Post COVID-19 condition in Belgium (2021–2022)</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZW52aXJvbm5lbWVudA=='); return false;">environnement</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Nguyen Thi Khanh H., De Troeyer K., Smith P., Demoury C., Casas L.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+Environmental Research
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="Q09WSUQlMjBsb25nJTJDc3ltcHQlQzMlQjRtZXMlMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Classification of symptoms and associated factors of post COVID-19 condition: a longitudinal study in the Belgian population</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3ltcHQlQzMlQjRtZXM='); return false;">symptômes</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Nayani S., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+BMJ Open
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="Q09WSUQlMjBsb25nJTJDcXVhbGl0JUMzJUE5JTIwZGUlMjB2aWUlMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Post COVID-19 condition and health-related quality of life: a longitudinal cohort study in the Belgian adult population</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cXVhbGl0JUMzJUE5JTIwZGUlMjB2aWU='); return false;">qualité de vie</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., Devleesschauwer G., De Ridder K., Charafeddine R.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+BMC Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="Q09WSUQlMjBsb25nJTJDdmFyaWFudHMlMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Association between SARS-CoV-2 variants and post COVID-19 condition: findings from a longitudinal cohort study in the Belgian adult population</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmFyaWFudHM='); return false;">variants</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Nguyen Thi Khanh H., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+BMC Infectious Diseases
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="Q09WSUQlMjBsb25nJTJDZmF0aWd1ZSUyQ2J1cmRlbiUyMG9mJTIwZGlzZWFzZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">A proposal for further developing fatigue-related post COVID-19 health states for burden of disease studies</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZmF0aWd1ZQ=='); return false;">fatigue</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVyZGVuJTIwb2YlMjBkaXNlYXNl'); return false;">burden of disease</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Wyper G., McDonald S., Haagsma J., Devleesschauwer B., Charalampous P., Maini R., Smith P., Pires S.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+Archives of Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="YnVyZGVuJTIwb2YlMjBkaXNlYXNlJTJDQ09WSUQtMTklMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">The direct disease burden of COVID-19 in Belgium in 2020 and 2021</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVyZGVuJTIwb2YlMjBkaXNlYXNl'); return false;">burden of disease</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Devleesschauwer B., Willem L., Jurčević J., Smith P., Scohy A., Wyper G., Monteiro Pires S., Van Goethem N., Beutels P., Franco N., Abrams S., Van Cauteren D., Speybroeck N., Hens N., De Pauw R.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+BMC Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="bWlncmF0aW9uJTJDc2FudCVDMyVBOSUyMG1lbnRhbGU=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Migration and mental health over the past 20 years: how has the situation evolved?</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWlncmF0aW9u'); return false;">migration</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Duveau C., Smith P., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+Archives of Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="ZS1tZW50YWwlMjBoZWFsdGglMkMlQzMlQTlxdWl0JUMzJUE5JTJDQ09WSUQtMTk=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Psychological distress and online advice-seeking in times of COVID-19: vertical and horizontal equity of an e-mental health strategy</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZS1tZW50YWwlMjBoZWFsdGg='); return false;">e-mental health</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUMzJUE5cXVpdCVDMyVBOQ=='); return false;">équité</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Lorant V., Smith P., Duveau C., Seeber K., Bryant R.A., Mittendorfer-Rutz E., Melchior M., Haró J.M., Monzio Compagnoni M., Corrao G., Ayuso-Mateos J.L., Sijbrandij M., Nicaise P.
+</div>
+<div class="metadata-value listing-year">
+2023
+</div>
+<div class="metadata-value listing-venue">
+Current Psychology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="YnVybm91dCUyQyVDMyVBOXR1ZGlhbnRzJTJDQ09WSUQtMTk=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Prevalence and factors associated with academic burnout risk among nursing and midwifery students during the COVID-19 pandemic: A cross-sectional study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVybm91dA=='); return false;">burnout</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUMzJUE5dHVkaWFudHM='); return false;">étudiants</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Baudewyns V., Bruyneel A., Smith P., Servotte J.C., Dancot J.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Nursing Open
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="c2FudCVDMyVBOSUyMGF1JTIwdHJhdmFpbCUyQ0NPVklELTE5JTJDRnJhbmNl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Impact of work arrangements during the COVID-19 pandemic on mental health in France</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMGF1JTIwdHJhdmFpbA=='); return false;">santé au travail</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RnJhbmNl'); return false;">France</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Hecker I., El-Aarbaoui T., Vallez S., Andersen A., Ayuso-Mateos J., Bryant R., Corrao G., McDaid D., Mediavilla R., Mittendorfer-Rutz E., Compagnoni M., Park A., Riepenhausen A., Rigotti T., Seeber K., Sijbrandij M., Smith P., Tüscher O., Walter H., Witteveen A., Mary-Krause M., Melchior M.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+SSM - Population Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="c3RpZ21hdGlzYXRpb24lMkNzYW50JUMzJUE5JTIwbWVudGFsZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">The stigma of people with mental health problems and the role of health care professionals: An international scoping review</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RpZ21hdGlzYXRpb24='); return false;">stigmatisation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Al Jabouri O., Pierre L., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Revue Francophone Internationale de Recherche Infirmière
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="Q09WSUQlMjBsb25nJTJDcHJvdG9jb2xlJTJDQmVsZ2lxdWU=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Post COVID-19 condition and its physical, mental and social implications: protocol of a 2-year longitudinal cohort study in the Belgian adult population</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQlMjBsb25n'); return false;">COVID long</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvdG9jb2xl'); return false;">protocole</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., De Ridder K., Charafeddine R.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Archives of Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="YW54aSVDMyVBOXQlQzMlQTklMkNkJUMzJUE5cHJlc3Npb24lMkNCZWxnaXF1ZSUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Anxiety and Depression in Belgium during the First 15 Months of the COVID-19 Pandemic: A Longitudinal Study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YW54aSVDMyVBOXQlQzMlQTk='); return false;">anxiété</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZCVDMyVBOXByZXNzaW9u'); return false;">dépression</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Bruggeman H., Smith P., Berete F., Demarest S., Hermans L., Braekman E., Charafeddine E., Drieskens S., De Ridder K., Gisle L.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Behavioral Sciences
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="aW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGUlMkNzYW50JUMzJUE5JTIwbWVudGFsZSUyQ0JlbGdpcXVl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Social integration of people with non-psychotic mental illness over the last two decades: The widening gap in the adult population in Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGU='); return false;">intégration sociale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Nicaise P., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Social Psychiatry and Psychiatric Epidemiology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="YnVybm91dCUyQ2luZmlybWllcnMlMkNCZWxnaXF1ZSUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Determinants of the risk of burnout among nurses during the first wave of the COVID-19 pandemic in Belgium: A cross-sectional study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVybm91dA=='); return false;">burnout</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW5maXJtaWVycw=='); return false;">infirmiers</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Khan Y., Bruyneel A., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Journal of Nursing Management
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="ciVDMyVBOXNpbGllbmNlJTJDc2FudCVDMyVBOSUyMG1lbnRhbGUlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Coping with COVID: Risk and resilience factors for mental health in a German representative panel study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ciVDMyVBOXNpbGllbmNl'); return false;">résilience</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Riepenhausen A., Veer I., Wackerhagen C., Reppmann Z., Köber G., Ayuso-Mateos J., Bögeman S., Corrao G., Felez-Nobrega M., Haro Abad J., Hermans E., van Leeuwen J., Lieb K., Lorant V., Mary-Krause M., Mediavilla R., Melchior M., Mittendorfer-Rutz E., Monzio Compagnoni M., Pan K., Puhlmann L., Roelofs K., Sijbrandij M., Smith P., Tüscher O., Witteveen A., Zerban M., Kalisch R., Kröger, Walter H.
+</div>
+<div class="metadata-value listing-year">
+2022
+</div>
+<div class="metadata-value listing-venue">
+Psychological Medicine
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-categories="RVBJJTJDcGVyc29ubmVsJTIwc29pZ25hbnQlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Sufficient personal protective equipment training can reduce COVID-19 related symptoms in healthcare workers: a prospective cohort study</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RVBJ'); return false;">EPI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cGVyc29ubmVsJTIwc29pZ25hbnQ='); return false;">personnel soignant</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Haegdorens F., Franck E., Smith P., Bruyneel A., Monsieurs K.G., Van Bogaert P.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+International Journal of Nursing Studies
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-categories="ciVDMyVBOXNlYXV4JTIwZGUlMjBzb3V0aWVuJTJDc2FudCVDMyVBOSUyMG1lbnRhbGUlMkNwcmF0aXF1ZSUyMGNsaW5pcXVl">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Implementation of a computer-assisted face-to-face intervention for mapping the social support networks of patients with severe mental illness in routine clinical practice: Analysis of the appropriateness and acceptability of the intervention</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ciVDMyVBOXNlYXV4JTIwZGUlMjBzb3V0aWVu'); return false;">réseaux de soutien</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJhdGlxdWUlMjBjbGluaXF1ZQ=='); return false;">pratique clinique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Nicaise P., Garin H., Smith P., d’Oreye de Lantremange S., Leleux L., Wyngaerden F., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+International Journal of Social Psychiatry
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-categories="YnVybm91dCUyQ3NvaW5zJTIwaW50ZW5zaWZzJTJDQmVsZ2lxdWUlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Prevalence and Associated Factors of Burnout Risk Among Intensive Care and Emergency Nurses Before and During the Coronavirus Disease 2019 Pandemic: A Cross-Sectional Study in Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVybm91dA=='); return false;">burnout</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29pbnMlMjBpbnRlbnNpZnM='); return false;">soins intensifs</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Butera S., Brasseur N., Filion N., Bruyneel A., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Journal of Emergency Nursing
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-categories="cHN5Y2hpYXRyaWUlMkNzZXh1YWxpdCVDMyVBOSUyQ3JldnVlJTIwZGUlMjBwb3J0JUMzJUE5ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">La sexualité des personnes hospitalisées en services psychiatriques hospitaliers et le rôle des professionnels de la santé : une scoping review internationale</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hpYXRyaWU='); return false;">psychiatrie</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2V4dWFsaXQlQzMlQTk='); return false;">sexualité</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmV2dWUlMjBkZSUyMHBvcnQlQzMlQTll'); return false;">revue de portée</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Saidi I., Schils G., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Revue Francophone Internationale de Recherche Infirmière
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-categories="aW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGUlMkNzZXJ2aWNlcyUyMHNvY2lhdXglMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Use of generic social services and social integration of patients with a severe mental illness in Belgium: Individual and services network determinants</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGU='); return false;">intégration sociale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2VydmljZXMlMjBzb2NpYXV4'); return false;">services sociaux</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Grard A., Nicaise P., Smith P., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+International Journal of Social Psychiatry
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-categories="ZCVDMyVBOXRyZXNzZSUyMHBzeWNob2xvZ2lxdWUlMkNCZWxnaXF1ZSUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Psychological distress associated with the COVID-19 pandemic and suppression measures during the first wave in Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZCVDMyVBOXRyZXNzZSUyMHBzeWNob2xvZ2lxdWU='); return false;">détresse psychologique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Lorant V., Smith P., Van den Broeck K., Nicaise P.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+BMC Psychiatry
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="31" data-categories="cG9saXRpcXVlcyUyMGRlJTIwc2FudCVDMyVBOSUyMG1lbnRhbGUlMkNCZWxnaXF1ZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Stakeholder coalitions and priorities around the policy goals of a nation-wide mental health care reform</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cG9saXRpcXVlcyUyMGRlJTIwc2FudCVDMyVBOSUyMG1lbnRhbGU='); return false;">politiques de santé mentale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Nicaise P., Thunus S., Neyens I., Walker C., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Administration and Policy in Mental Health and Mental Health Services Research
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="32" data-categories="YnVybm91dCUyQ2luZmlybWllcnMlMkNCZWxnaXF1ZSUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Comparison of the prevalence of burnout risk between ICU and non-ICU nurses during the COVID-19 outbreak in French-speaking Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVybm91dA=='); return false;">burnout</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW5maXJtaWVycw=='); return false;">infirmiers</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Bruyneel A., Smith P.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Intensive and Critical Care Nursing
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="33" data-categories="YnVybm91dCUyQ3NvaW5zJTIwaW50ZW5zaWZzJTJDQmVsZ2lxdWUlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Prevalence of burnout risk and factors associated with burnout risk among ICU nurses during the COVID-19 outbreak in French speaking Belgium</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('YnVybm91dA=='); return false;">burnout</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29pbnMlMjBpbnRlbnNpZnM='); return false;">soins intensifs</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Bruyneel A., Smith P., Tack J., Pirson M.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Intensive &amp; Critical Care Nursing
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="34" data-categories="amV1bmVzJTJDZCVDMyVBOXRyZXNzZSUyMHBzeWNob2xvZ2lxdWUlMkNCZWxnaXF1ZSUyQ0NPVklELTE5">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Explaining factors of mental distress among Belgian 16 to 25 year olds during the COVID-19 pandemic</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('amV1bmVz'); return false;">jeunes</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZCVDMyVBOXRyZXNzZSUyMHBzeWNob2xvZ2lxdWU='); return false;">détresse psychologique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Rens E., Smith P., Nicaise P., Lorant V., Van den Broeck K.
+</div>
+<div class="metadata-value listing-year">
+2021
+</div>
+<div class="metadata-value listing-venue">
+Frontiers in Public Health
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="35" data-categories="aCVDMyVCNHBpdGF1eCUyMHBzeWNoaWF0cmlxdWVzJTJDaW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGUlMkNFdXJvcGU=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Use of psychiatric hospitals and social integration of patients with psychiatric disorders: a prospective cohort study in five European countries</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aCVDMyVCNHBpdGF1eCUyMHBzeWNoaWF0cmlxdWVz'); return false;">hôpitaux psychiatriques</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW50JUMzJUE5Z3JhdGlvbiUyMHNvY2lhbGU='); return false;">intégration sociale</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RXVyb3Bl'); return false;">Europe</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2020
+</div>
+<div class="metadata-value listing-venue">
+Social Psychiatry and Psychiatric Epidemiology
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="36" data-categories="aHVtYW5pdGFpcmUlMkNtZXN1cmUlMjBkdSUyMGZhcmRlYXUlMkNvdXRpbHM=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Measuring mental health burden in humanitarian settings: a critical review of assessment tools</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aHVtYW5pdGFpcmU='); return false;">humanitaire</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWVzdXJlJTIwZHUlMjBmYXJkZWF1'); return false;">mesure du fardeau</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('b3V0aWxz'); return false;">outils</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Moore A., van Loenhout J., Moitinho de Almeida M., Smith P., Guha-Sapir D.
+</div>
+<div class="metadata-value listing-year">
+2020
+</div>
+<div class="metadata-value listing-venue">
+Global Health Action
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="37" data-categories="aW1wYWN0cyUyMHNvY2lhdXglMkMlQzMlQTljb25vbWllJTJDQmVsZ2lxdWUlMkNDT1ZJRC0xOQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Quelques enseignements sur les impacts sociaux et économiques de la stratégie de réponse à la pandémie du coronavirus en Belgique</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW1wYWN0cyUyMHNvY2lhdXg='); return false;">impacts sociaux</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('JUMzJUE5Y29ub21pZQ=='); return false;">économie</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q09WSUQtMTk='); return false;">COVID-19</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Banse E., Bigot A., De Valkeneer C., Lorant V., Luminet O., Nicaise P., Smith P., Tubeuf S., Wuillaume A.
+</div>
+<div class="metadata-value listing-year">
+2020
+</div>
+<div class="metadata-value listing-venue">
+Louvain Medical
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="38" data-categories="c2FsbGVzJTIwZGUlMjBjb25zb21tYXRpb24lMkNwb2xpdGlxdWVzJTIwcHVibGlxdWVzJTJDQmVsZ2lxdWU=">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">How to overcome political and legal barriers to the implementation of a drug consumption room: an application of the policy agenda framework to the Belgian situation</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c2FsbGVzJTIwZGUlMjBjb25zb21tYXRpb24='); return false;">salles de consommation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cG9saXRpcXVlcyUyMHB1YmxpcXVlcw=='); return false;">politiques publiques</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QmVsZ2lxdWU='); return false;">Belgique</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Favril L., Delhauteur D., Vander Laenen F., Nicaise P.
+</div>
+<div class="metadata-value listing-year">
+2019
+</div>
+<div class="metadata-value listing-venue">
+Addiction Science &amp; Clinical Practice
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="39" data-categories="Y29udGludWl0JUMzJUE5JTIwZGVzJTIwc29pbnMlMkN0cm91YmxlcyUyMG1lbnRhdXglMjBzJUMzJUE5diVDMyVBOHJlcyUyQ0V1cm9wZQ==">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="" class="no-external">Predictors of personal continuity of care of patients with severe mental illness: A comparison across five European countries</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29udGludWl0JUMzJUE5JTIwZGVzJTIwc29pbnM='); return false;">continuité des soins</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJvdWJsZXMlMjBtZW50YXV4JTIwcyVDMyVBOXYlQzMlQThyZXM='); return false;">troubles mentaux sévères</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RXVyb3Bl'); return false;">Europe</div>
+
+</div>
+</div>
+<div class="metadata">
+<a href="" class="no-external">
+<div class="metadata-value listing-authors">
+Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V.
+</div>
+<div class="metadata-value listing-year">
+2019
+</div>
+<div class="metadata-value listing-venue">
+European Psychiatry
+</div>
+<div class="metadata-value listing-url">
+&nbsp;
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

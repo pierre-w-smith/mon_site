@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-Bienvenue sur ce site dédié à nos activités de **recherche en santé publique**.
+Bienvenue sur ce site dédié à mes activités de **recherche en santé publique**.
 
 Son objectif est de **partager les résultats des travaux menés avec mes collègues**, en les rendant plus accessibles à un public large — chercheurs, décideurs, professionnels de la santé ou toute personne intéressée par les enjeux de santé et de politiques publiques.
 
