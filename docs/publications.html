@@ -205,12 +205,19 @@ window.Quarto = {
 </header>
 
 
-<p>Cette page présente mes principales publications scientifiques, issues de collaborations nationales et internationales, dans les domaines de la santé publique, de l’épidémiologie et de la santé mentale.</p>
-<blockquote class="blockquote">
-<p>Utilisez les filtres par <strong>mots-clés</strong> ci-dessous pour explorer les publications. Cliquez sur <strong>Réinitialiser</strong> pour tout afficher.</p>
-</blockquote>
+<p>Cette page présente mes principales publications scientifiques.<br>
+Utilisez le menu déroulant pour filtrer par <strong>mots-clés</strong>. Cliquez sur <strong>Voir toutes les publications</strong> pour réinitialiser.</p>
+<div id="filters" style="display:flex; gap:10px; align-items:center; margin: 0 0 14px 0;">
+<p><label for="kwSelect" style="margin:0;">Mots-clés :</label> <select id="kwSelect" multiple="" size="1" style="min-width:260px;"></select> <button id="resetBtn" class="btn btn-outline-secondary">Voir toutes les publications</button></p>
+</div>
 <style>
-/* Style léger pour les tags/catégories */
+/* 1) Réduire la taille des titres des cartes */
+[data-listing] .listing-title { 
+  font-size: 1.05rem; 
+  line-height: 1.25; 
+  margin-bottom: 0.25rem;
+}
+/* 2) Style doux pour les tags */
 .quarto-listing-category {
   background-color: #f0f4f7;
   border-radius: 8px;
@@ -218,18 +225,67 @@ window.Quarto = {
   font-size: 0.85em;
   color: #2c3e50;
 }
+/* 3) Ajuster l’espace au-dessus des cartes (après le bloc de filtres) */
+#filters + div { margin-top: 0.5rem; }
 </style>
+<script>
+// --- Construire la liste des mots-clés depuis les cartes ---
+function getAllKeywords() {
+  const set = new Set();
+  document.querySelectorAll('.quarto-listing-category').forEach(el => {
+    const txt = el.textContent.trim();
+    if (txt) set.add(txt);
+  });
+  return Array.from(set).sort((a,b)=> a.localeCompare(b, 'fr'));
+}
+
+function cardKeywords(card) {
+  // récupère les tags d'une carte
+  const tags = Array.from(card.querySelectorAll('.quarto-listing-category'))
+                    .map(el => el.textContent.trim());
+  return tags;
+}
+
+function applyFilter(selected) {
+  const cards = document.querySelectorAll('[data-listing] [data-listing-item]');
+  cards.forEach(card => {
+    const tags = cardKeywords(card);
+    // si aucune sélection -> on montre tout
+    const show = (selected.length === 0) || selected.some(s => tags.includes(s));
+    card.style.display = show ? '' : 'none';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const select = document.getElementById('kwSelect');
+  const resetBtn = document.getElementById('resetBtn');
+
+  // peupler le select avec tous les mots-clés trouvés
+  getAllKeywords().forEach(k => {
+    const opt = document.createElement('option');
+    opt.value = k; opt.textContent = k;
+    select.appendChild(opt);
+  });
+
+  // transformer en "menu déroulant" simple : single par défaut,
+  // ou garde 'multiple' si tu veux sélection multiple. Ici on garde multiple.
+  select.addEventListener('change', function(){
+    const selected = Array.from(this.selectedOptions).map(o => o.value);
+    applyFilter(selected);
+  });
+
+  resetBtn.addEventListener('click', function(){
+    // clear sélection
+    Array.from(select.options).forEach(o => o.selected = false);
+    applyFilter([]);
+  });
+});
+</script>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-categories="c2FudCVDMyVBOSUyMG1lbnRhbGUlMkNDT1ZJRC0xOSUyQ2hhcm1vbmlzYXRpb24lMjBkZXMlMjBkb25uJUMzJUE5ZXM=">
 <div class="body">
