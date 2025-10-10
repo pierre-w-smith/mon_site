@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Cette page présente mes principales publications scientifiques.\n\n\nCatégorie : — Toutes — Réinitialiser\n\n\n\n\n\n\n\n\n\n {{#title}}\n\n{{title}}\n\n{{/title}}\n {{#authors}}\n\n{{authors}}\n\n{{/authors}}\n\n\n{{#venue}}&lt;em&gt;{{venue}}&lt;/em&gt;{{/venue}}\n{{#year}}, {{year}}{{/year}}\n{{#type}} — &lt;span class=\"pub-type\"&gt;{{type}}&lt;/span&gt;{{/type}}\n\n {{#url}}\n\n&lt;a href=\"{{.}}\" target=\"_blank\" rel=\"noopener\"&gt;Lien vers la publication&lt;/a&gt;\n\n{{/url}}\n {{#categories}}\n\n{{#.}}&lt;span class=\"badge\"&gt;{{.}}&lt;/span&gt;{{/.}}\n\n{{/categories}}\n\n\n{{#topcat}}{{.}}||{{/topcat}}\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Acceuil",

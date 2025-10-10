@@ -1,13 +1,35 @@
 <div class="pub-card">
+  <!-- Titre -->
+  {{#title}}
   <div class="pub-title">{{title}}</div>
+  {{/title}}
+
+  <!-- Auteurs -->
+  {{#authors}}
   <div class="pub-authors">{{authors}}</div>
-  <div class="pub-venue"><em>{{venue}}</em>{{#year}}, {{year}}{{/year}} — <span class="pub-type">{{type}}</span></div>
-  {{#url}}<div class="pub-link"><a href="{{.}}" target="_blank">Lien vers la publication</a></div>{{/url}}
+  {{/authors}}
+
+  <!-- Revue / Année / Type -->
+  <div class="pub-venue">
+    {{#venue}}<em>{{venue}}</em>{{/venue}}
+    {{#year}}, {{year}}{{/year}}
+    {{#type}} — <span class="pub-type">{{type}}</span>{{/type}}
+  </div>
+
+  <!-- Lien -->
+  {{#url}}
+  <div class="pub-link">
+    <a href="{{.}}" target="_blank" rel="noopener">Lien vers la publication</a>
+  </div>
+  {{/url}}
+
+  <!-- Mots-clés (categories) -->
   {{#categories}}
   <div class="pub-tags">
     {{#.}}<span class="badge">{{.}}</span>{{/.}}
   </div>
   {{/categories}}
-  <!-- topcat rendu en texte caché, séparé par || -->
+
+  <!-- Topcat caché pour le filtrage JS (séparateur ||) -->
   <div class="pub-topcat" style="display:none;">{{#topcat}}{{.}}||{{/topcat}}</div>
 </div>

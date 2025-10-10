@@ -1,108 +1,65 @@
 ---
 title: "Publications"
+listing:
+  contents: file/publications.yml
+  type: default
+  sort: ["year: desc", "title: asc"]
+  template: file/pub-template.html   # ← on garde les cartes custom
 ---
 
-```{r}
-#| message: false
-#| warning: false
-#| echo: false
+Cette page présente mes principales publications scientifiques.
 
-library(yaml)
-library(dplyr)
-library(DT)
-library(htmlwidgets)
+<!-- Barre d'action : filtre UNIQUEMENT par topcat -->
 
-# ---- Lire & normaliser le YAML AVANT bind_rows() ----
-raw <- yaml::read_yaml("file/publications.yml")
+::: {.listing-actions style="margin:10px 0 14px;"}
+<label for="selTopcat" style="margin-right:8px;">Catégorie :</label> <select id="selTopcat"><option value="">— Toutes —</option></select> <button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;">Réinitialiser</button>
+:::
 
-`%||%` <- function(a,b) if (is.null(a)) b else a
-to_str <- function(v) {
-  if (is.null(v)) return("")
-  paste(unique(unlist(v)), collapse = ", ")
-}
+```{=html}
+<style>
+/* Lisibilité des titres et style des tags */
+.quarto-listing .listing .card .card-title,
+.quarto-listing .listing-title { font-size: 1.0rem; line-height: 1.25; }
+.badge { background:#f0f4f7; border-radius:8px; padding:3px 8px; font-size:.85em; color:#2c3e50; }
+</style>
+```
 
-normalize_rec <- function(x) {
-  x$title      <- x$title      %||% ""
-  x$authors    <- x$authors    %||% ""
-  x$year       <- x$year       %||% NA_integer_
-  x$venue      <- x$venue      %||% ""
-  x$url        <- x$url        %||% ""
-  x$type       <- x$type       %||% "Publication scientifique"
-  x$categories <- to_str(x$categories)
-  x$topcat     <- { tc <- x$topcat; if (is.null(tc)) "Autre" else to_str(tc) }
-  x
-}
+```{=html}
+<script>
+// Remplit le menu à partir des topcat présents puis filtre les cartes
+window.addEventListener('DOMContentLoaded', function() {
+  const select = document.getElementById('selTopcat');
+  const reset  = document.getElementById('resetFilters');
 
-pubs <- lapply(raw, normalize_rec) |> bind_rows()
-
-# ---- Lien cliquable ----
-pubs <- pubs |>
-  mutate(`Lien vers la publication` = ifelse(
-    nzchar(url),
-    paste0('<a href="', url, '" target="_blank">Lien vers la publication</a>'),
-    ""
-  ))
-
-# ---- Tableau DataTables ----
-dt <- datatable(
-  pubs |> select(title, authors, year, venue, type, `Lien vers la publication`, categories, topcat),
-  colnames = c("Titre","Auteurs","Année","Revue","Type","Lien vers la publication","Mots-clés","topcat"),
-  escape   = FALSE,
-  filter   = "none",
-  options  = list(
-    pageLength = 50,
-    dom        = "tip",
-    order      = list(list(2, "desc"), list(0, "asc")),
-    columnDefs = list(list(visible = FALSE, targets = 7)),  # cache 'topcat'
-    language   = list(url = "https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")
-  ),
-  rownames = FALSE
-)
-
-# ---- Boutons de filtre par topcat ----
-htmlwidgets::onRender(
-  dt,
-  '
-  function(el, x) {
-    var api = this.api();
-    var selectedCat = null;
-
-    var bar = $("<div class=\\"psm-toolbar\\" style=\\"margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;\\"></div>");
-    var buttons = [
-      {id:"btnAll", label:"Voir toutes les publications", primary:true},
-      {id:"btnSM",  label:"Santé mentale"},
-      {id:"btnDS",  label:"Déterminants de la santé"},
-      {id:"btnPS",  label:"Politiques de santé"},
-      {id:"btnEV",  label:"Évaluation des systèmes et services de santé"},
-      {id:"btnMV",  label:"Méthodes de valorisation des données de santé"}
-    ];
-    buttons.forEach(function(b){
-      var cls = "btn btn-sm " + (b.primary ? "btn-primary" : "btn-outline-secondary");
-      bar.append("<button id=\\"" + b.id + "\\"" + " class=\\"" + cls + "\\">" + b.label + "</button>");
-    });
-    $(el).closest(".datatables").prepend(bar);
-
-    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-      if (selectedCat === null) return true;
-      var txt = $("<div>").html(api.cell(dataIndex, 7).data()).text().trim();
-      var arr = txt.length ? txt.split(/,\\s*/) : [];
-      return arr.includes(selectedCat);
-    });
-
-    function setActive(btnId) {
-      $(".psm-toolbar button").removeClass("btn-primary").addClass("btn-outline-secondary");
-      $("#"+btnId).removeClass("btn-outline-secondary").addClass("btn-primary");
-    }
-
-    $("#btnAll").on("click", function(){ selectedCat = null; setActive("btnAll"); api.draw(); });
-    $("#btnSM").on("click",  function(){ selectedCat = "Santé mentale"; setActive("btnSM"); api.draw(); });
-    $("#btnDS").on("click",  function(){ selectedCat = "Déterminants de la santé"; setActive("btnDS"); api.draw(); });
-    $("#btnPS").on("click",  function(){ selectedCat = "Politiques de santé"; setActive("btnPS"); api.draw(); });
-    $("#btnEV").on("click",  function(){ selectedCat = "Évaluation des systèmes et services de santé"; setActive("btnEV"); api.draw(); });
-    $("#btnMV").on("click",  function(){ selectedCat = "Méthodes de valorisation des données de santé"; setActive("btnMV"); api.draw(); });
-
-    setActive("btnAll");
+  // Récupère le texte caché des topcat (fourni par pub-template.html)
+  function getTopcatsFromCard(card) {
+    const raw = (card.querySelector('.pub-topcat')?.textContent || '').trim();
+    return raw.split('||').map(s => s.trim()).filter(Boolean);
   }
-  '
-)
+
+  // 1) Collecte des topcat uniques puis population du <select>
+  const set = new Set();
+  document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+    getTopcatsFromCard(card).forEach(v => set.add(v));
+  });
+  [...set].sort().forEach(v => {
+    const opt = document.createElement('option'); opt.value = v; opt.textContent = v;
+    select.appendChild(opt);
+  });
+
+  // 2) Filtrage
+  function applyFilter() {
+    const wanted = (select?.value || '').trim();
+    document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+      const show = !wanted || getTopcatsFromCard(card).includes(wanted);
+      card.style.display = show ? '' : 'none';
+    });
+  }
+  if (select) select.addEventListener('change', applyFilter);
+  if (reset)  reset.addEventListener('click', () => { if (select) select.value = ''; applyFilter(); });
+
+  // État initial : tout
+  applyFilter();
+});
+</script>
 ```

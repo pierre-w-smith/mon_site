@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -67,27 +69,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script>
 
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+    const options = {
+      valueNames: ['listing-title','listing-authors','listing-year','listing-venue','listing-url','listing-categories','listing-topcat','listing-type',{ data: ['index'] },{ data: ['categories'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-authors","listing-year","listing-venue","listing-url","listing-categories","listing-topcat","listing-type"],
+    };
 
-<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
 
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-
-<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-
-<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-
-
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -164,16 +205,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-01c1894b34187a43ee11" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-01c1894b34187a43ee11">{"x":{"filter":"none","vertical":false,"data":[["Co-RESPOND: a federated network of cohorts on mental health and adversity during the COVID-19 pandemic. Challenges, solutions and recommendations for retrospective data harmonization","Resilient outcomes in people with a history of mental disorder during the COVID-19 pandemic: an international 2-years longitudinal prospective study","From concept to approval: human genomic data integration with population observational data – insights from a Belgian pilot study","Specialized mental healthcare use for common mental disorders and prescription of antidepressants before and during the COVID-19 pandemic among working-age refugees and Swedish-born individuals – a nationwide register-based study","Informal caregiving and mental health: results from the Belgian health interview survey 2013 and 2018","SARS-CoV-2 infection and COVID-19 outcomes across mental disorders and the role of sex: A register-based study from Catalonia","Trauma Exposure, Social Support and Mental Health in the General Population in Belgium","Anxiety and depression in people with post-COVID condition: a Belgian population-based cohort study three months after SARS-CoV-2 infection","Does pressure, bullying and low social support predict depressive symptoms, self-harm and self-directed violence?","The impact of ambient temperature and air pollution on SARS-CoV2 infection and Post COVID-19 condition in Belgium (2021–2022)","Classification of symptoms and associated factors of post COVID-19 condition: a longitudinal study in the Belgian population","Post COVID-19 condition and health-related quality of life: a longitudinal cohort study in the Belgian adult population","Association between SARS-CoV-2 variants and post COVID-19 condition: findings from a longitudinal cohort study in the Belgian adult population","A proposal for further developing fatigue-related post COVID-19 health states for burden of disease studies","The direct disease burden of COVID-19 in Belgium in 2020 and 2021","Migration and mental health over the past 20 years: how has the situation evolved?","Psychological distress and online advice-seeking in times of COVID-19: vertical and horizontal equity of an e-mental health strategy","Prevalence and factors associated with academic burnout risk among nursing and midwifery students during the COVID-19 pandemic: A cross-sectional study","Impact of work arrangements during the COVID-19 pandemic on mental health in France","The stigma of people with mental health problems and the role of health care professionals: An international scoping review","Post COVID-19 condition and its physical, mental and social implications: protocol of a 2-year longitudinal cohort study in the Belgian adult population","Anxiety and Depression in Belgium during the First 15 Months of the COVID-19 Pandemic: A Longitudinal Study","Social integration of people with non-psychotic mental illness over the last two decades: The widening gap in the adult population in Belgium","Determinants of the risk of burnout among nurses during the first wave of the COVID-19 pandemic in Belgium: A cross-sectional study","Coping with COVID: Risk and resilience factors for mental health in a German representative panel study","Sufficient personal protective equipment training can reduce COVID-19 related symptoms in healthcare workers: a prospective cohort study","Implementation of a computer-assisted face-to-face intervention for mapping the social support networks of patients with severe mental illness in routine clinical practice: Analysis of the appropriateness and acceptability of the intervention","Prevalence and Associated Factors of Burnout Risk Among Intensive Care and Emergency Nurses Before and During the Coronavirus Disease 2019 Pandemic: A Cross-Sectional Study in Belgium","La sexualité des personnes hospitalisées en services psychiatriques hospitaliers et le rôle des professionnels de la santé : une scoping review internationale","Use of generic social services and social integration of patients with a severe mental illness in Belgium: Individual and services network determinants","Psychological distress associated with the COVID-19 pandemic and suppression measures during the first wave in Belgium","Stakeholder coalitions and priorities around the policy goals of a nation-wide mental health care reform","Comparison of the prevalence of burnout risk between ICU and non-ICU nurses during the COVID-19 outbreak in French-speaking Belgium","Prevalence of burnout risk and factors associated with burnout risk among ICU nurses during the COVID-19 outbreak in French speaking Belgium","Explaining factors of mental distress among Belgian 16 to 25 year olds during the COVID-19 pandemic","Use of psychiatric hospitals and social integration of patients with psychiatric disorders: a prospective cohort study in five European countries","Measuring mental health burden in humanitarian settings: a critical review of assessment tools","Quelques enseignements sur les impacts sociaux et économiques de la stratégie de réponse à la pandémie du coronavirus en Belgique","How to overcome political and legal barriers to the implementation of a drug consumption room: an application of the policy agenda framework to the Belgian situation","Predictors of personal continuity of care of patients with severe mental illness: A comparison across five European countries"],["Petri-Romão P., Stoffers-Winterling J., Doerschner C., Smith P., … Lieb K.","Pinucci I., Tedeschi F., Serra R., Smith P., et al.","Van Goethem N., Van der Heyden J., Smith P., Van Hoof W., De Schutter H., Van Bossuyt M., De Ridder K., Van Den Bulcke M., Cauët E.","Atarodi V., Mittendorfer-Rutz E., Morillo-Cuadrado D., Smith P., et al.","Van Droogenbroeck F., Spruyt B., Gérain P., Van den Borre L., Smith P., De Pauw R., Dury S.","Monistrol-Mula A., Giné-Vázquez I., Caggiu G., Conflitti C., Gemes K., Hecker I., Mediavilla R., Compagnoni M., Pinucci I., Winterling J., Smith P., et al.","Muysewinkel E., Vesentini L., Van Deynse H., Gisle L., Smith P., Bruggeman H., Bilsen J., Van Overmeire R.","D’Hondt S., Gisle L., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., De Ridder K., Charafeddine R., Smith P.","Holte Stea T., Bonsaksen T., Smith P., Steigen A.M., Løvheim Kleppang A., Leonhardt M., Lien L., Vettore M.","Nguyen Thi Khanh H., De Troeyer K., Smith P., Demoury C., Casas L.","Nayani S., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.","Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., Devleesschauwer G., De Ridder K., Charafeddine R.","Nguyen Thi Khanh H., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.","Wyper G., McDonald S., Haagsma J., Devleesschauwer B., Charalampous P., Maini R., Smith P., Pires S.","Devleesschauwer B., Willem L., Jurčević J., Smith P., Scohy A., Wyper G., Monteiro Pires S., Van Goethem N., Beutels P., Franco N., Abrams S., Van Cauteren D., Speybroeck N., Hens N., De Pauw R.","Duveau C., Smith P., Lorant V.","Lorant V., Smith P., Duveau C., Seeber K., Bryant R.A., Mittendorfer-Rutz E., Melchior M., Haró J.M., Monzio Compagnoni M., Corrao G., Ayuso-Mateos J.L., Sijbrandij M., Nicaise P.","Baudewyns V., Bruyneel A., Smith P., Servotte J.C., Dancot J.","Hecker I., El-Aarbaoui T., Vallez S., Andersen A., Ayuso-Mateos J., Bryant R., Corrao G., McDaid D., Mediavilla R., Mittendorfer-Rutz E., Compagnoni M., Park A., Riepenhausen A., Rigotti T., Seeber K., Sijbrandij M., Smith P., Tüscher O., Walter H., Witteveen A., Mary-Krause M., Melchior M.","Al Jabouri O., Pierre L., Smith P.","Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., De Ridder K., Charafeddine R.","Bruggeman H., Smith P., Berete F., Demarest S., Hermans L., Braekman E., Charafeddine E., Drieskens S., De Ridder K., Gisle L.","Smith P., Nicaise P., Lorant V.","Khan Y., Bruyneel A., Smith P.","Riepenhausen A., Veer I., Wackerhagen C., Reppmann Z., Köber G., Ayuso-Mateos J., Bögeman S., Corrao G., Felez-Nobrega M., Haro Abad J., Hermans E., van Leeuwen J., Lieb K., Lorant V., Mary-Krause M., Mediavilla R., Melchior M., Mittendorfer-Rutz E., Monzio Compagnoni M., Pan K., Puhlmann L., Roelofs K., Sijbrandij M., Smith P., Tüscher O., Witteveen A., Zerban M., Kalisch R., Kröger, Walter H.","Haegdorens F., Franck E., Smith P., Bruyneel A., Monsieurs K.G., Van Bogaert P.","Nicaise P., Garin H., Smith P., d’Oreye de Lantremange S., Leleux L., Wyngaerden F., Lorant V.","Butera S., Brasseur N., Filion N., Bruyneel A., Smith P.","Saidi I., Schils G., Smith P.","Grard A., Nicaise P., Smith P., Lorant V.","Lorant V., Smith P., Van den Broeck K., Nicaise P.","Smith P., Nicaise P., Thunus S., Neyens I., Walker C., Lorant V.","Bruyneel A., Smith P.","Bruyneel A., Smith P., Tack J., Pirson M.","Rens E., Smith P., Nicaise P., Lorant V., Van den Broeck K.","Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V.","Moore A., van Loenhout J., Moitinho de Almeida M., Smith P., Guha-Sapir D.","Banse E., Bigot A., De Valkeneer C., Lorant V., Luminet O., Nicaise P., Smith P., Tubeuf S., Wuillaume A.","Smith P., Favril L., Delhauteur D., Vander Laenen F., Nicaise P.","Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V."],[2025,2025,2025,2025,2025,2025,2024,2024,2024,2023,2023,2023,2023,2023,2023,2023,2023,2022,2022,2022,2022,2022,2022,2022,2022,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2020,2020,2020,2019,2019],["European Journal of Psychotraumatology","Social Psychiatry and Psychiatric Epidemiology","Archives of Public Health","BMC Public Health","BMC Public Health","Psychiatry Research","European Journal of Investigation in Health, Psychology and Education","Social Psychiatry and Psychiatric Epidemiology","BMC Psychiatry","Environmental Research","BMJ Open","BMC Public Health","BMC Infectious Diseases","Archives of Public Health","BMC Public Health","Archives of Public Health","Current Psychology","Nursing Open","SSM - Population Health","Revue Francophone Internationale de Recherche Infirmière","Archives of Public Health","Behavioral Sciences","Social Psychiatry and Psychiatric Epidemiology","Journal of Nursing Management","Psychological Medicine","International Journal of Nursing Studies","International Journal of Social Psychiatry","Journal of Emergency Nursing","Revue Francophone Internationale de Recherche Infirmière","International Journal of Social Psychiatry","BMC Psychiatry","Administration and Policy in Mental Health and Mental Health Services Research","Intensive and Critical Care Nursing","Intensive & Critical Care Nursing","Frontiers in Public Health","Social Psychiatry and Psychiatric Epidemiology","Global Health Action","Louvain Medical","Addiction Science & Clinical Practice","European Psychiatry"],["Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique","Publication scientifique"],["<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC12344710/\" target=\"_blank\">Lien vers la publication<\/a>","<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10596639/\" target=\"_blank\">Lien vers la publication<\/a>","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],["santé mentale, COVID-19, harmonisation des données","santé mentale, résilience, COVID-19","génomique, données de population, Belgique","santé mentale, migrants, COVID-19","aidants proches, santé mentale, Belgique","COVID-19, troubles mentaux, sexe/genre","trauma, soutien social, Belgique","COVID long, anxiété, dépression, Belgique","santé mentale, harcèlement, soutien social","environnement, COVID long, Belgique","COVID long, symptômes, Belgique","COVID long, qualité de vie, Belgique","COVID long, variants, Belgique","COVID long, fatigue, burden of disease","burden of disease, COVID-19, Belgique","migration, santé mentale","e-mental health, équité, COVID-19","burnout, étudiants, COVID-19","santé au travail, COVID-19, France","stigmatisation, santé mentale","COVID long, protocole, Belgique","anxiété, dépression, Belgique, COVID-19","intégration sociale, santé mentale, Belgique","burnout, infirmiers, Belgique, COVID-19","résilience, santé mentale, COVID-19","EPI, personnel soignant, COVID-19","réseaux de soutien, santé mentale, pratique clinique","burnout, soins intensifs, Belgique, COVID-19","psychiatrie, sexualité, revue de portée","intégration sociale, services sociaux, Belgique","détresse psychologique, Belgique, COVID-19","politiques de santé mentale, Belgique","burnout, infirmiers, Belgique, COVID-19","burnout, soins intensifs, Belgique, COVID-19","jeunes, détresse psychologique, Belgique, COVID-19","hôpitaux psychiatriques, intégration sociale, Europe","humanitaire, mesure du fardeau, outils","impacts sociaux, économie, Belgique, COVID-19","salles de consommation, politiques publiques, Belgique","continuité des soins, troubles mentaux sévères, Europe"],["Santé mentale, Méthodes de valorisation des données de santé","Santé mentale, Déterminants de la santé","Méthodes de valorisation des données de santé, Déterminants de la santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Déterminants de la santé","Santé mentale, Déterminants de la santé","Santé mentale, Déterminants de la santé","Santé mentale, Déterminants de la santé","Santé mentale, Déterminants de la santé","Déterminants de la santé","Méthodes de valorisation des données de santé, Santé mentale","Déterminants de la santé, Santé mentale","Méthodes de valorisation des données de santé, Déterminants de la santé","Méthodes de valorisation des données de santé","Méthodes de valorisation des données de santé","Santé mentale, Déterminants de la santé","Santé mentale, Politiques de santé","Santé mentale, Déterminants de la santé","Déterminants de la santé","Santé mentale, Déterminants de la santé","Méthodes de valorisation des données de santé, Santé mentale","Santé mentale, Déterminants de la santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Déterminants de la santé","Santé mentale, Déterminants de la santé","Déterminants de la santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Politiques de santé","Politiques de santé, Évaluation des systèmes et services de santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Évaluation des systèmes et services de santé","Santé mentale, Déterminants de la santé","Santé mentale, Évaluation des systèmes et services de santé","Méthodes de valorisation des données de santé, Santé mentale","Politiques de santé, Déterminants de la santé","Politiques de santé","Santé mentale, Évaluation des systèmes et services de santé"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Titre<\/th>\n      <th>Auteurs<\/th>\n      <th>Année<\/th>\n      <th>Revue<\/th>\n      <th>Type<\/th>\n      <th>Lien vers la publication<\/th>\n      <th>Mots-clés<\/th>\n      <th>topcat<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"tip","order":[[2,"desc"],[0,"asc"]],"columnDefs":[{"visible":false,"targets":7},{"className":"dt-right","targets":2},{"name":"title","targets":0},{"name":"authors","targets":1},{"name":"year","targets":2},{"name":"venue","targets":3},{"name":"type","targets":4},{"name":"Lien vers la publication","targets":5},{"name":"categories","targets":6},{"name":"topcat","targets":7}],"language":{"url":"https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json"},"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":{"render":[{"code":"\n  function(el, x) {\n    var api = this.api();\n    var selectedCat = null;\n\n    var bar = $(\"<div class=\\\"psm-toolbar\\\" style=\\\"margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;\\\"><\/div>\");\n    var buttons = [\n      {id:\"btnAll\", label:\"Voir toutes les publications\", primary:true},\n      {id:\"btnSM\",  label:\"Santé mentale\"},\n      {id:\"btnDS\",  label:\"Déterminants de la santé\"},\n      {id:\"btnPS\",  label:\"Politiques de santé\"},\n      {id:\"btnEV\",  label:\"Évaluation des systèmes et services de santé\"},\n      {id:\"btnMV\",  label:\"Méthodes de valorisation des données de santé\"}\n    ];\n    buttons.forEach(function(b){\n      var cls = \"btn btn-sm \" + (b.primary ? \"btn-primary\" : \"btn-outline-secondary\");\n      bar.append(\"<button id=\\\"\" + b.id + \"\\\"\" + \" class=\\\"\" + cls + \"\\\">\" + b.label + \"<\/button>\");\n    });\n    $(el).closest(\".datatables\").prepend(bar);\n\n    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {\n      if (selectedCat === null) return true;\n      var txt = $(\"<div>\").html(api.cell(dataIndex, 7).data()).text().trim();\n      var arr = txt.length ? txt.split(/,\\s*/) : [];\n      return arr.includes(selectedCat);\n    });\n\n    function setActive(btnId) {\n      $(\".psm-toolbar button\").removeClass(\"btn-primary\").addClass(\"btn-outline-secondary\");\n      $(\"#\"+btnId).removeClass(\"btn-outline-secondary\").addClass(\"btn-primary\");\n    }\n\n    $(\"#btnAll\").on(\"click\", function(){ selectedCat = null; setActive(\"btnAll\"); api.draw(); });\n    $(\"#btnSM\").on(\"click\",  function(){ selectedCat = \"Santé mentale\"; setActive(\"btnSM\"); api.draw(); });\n    $(\"#btnDS\").on(\"click\",  function(){ selectedCat = \"Déterminants de la santé\"; setActive(\"btnDS\"); api.draw(); });\n    $(\"#btnPS\").on(\"click\",  function(){ selectedCat = \"Politiques de santé\"; setActive(\"btnPS\"); api.draw(); });\n    $(\"#btnEV\").on(\"click\",  function(){ selectedCat = \"Évaluation des systèmes et services de santé\"; setActive(\"btnEV\"); api.draw(); });\n    $(\"#btnMV\").on(\"click\",  function(){ selectedCat = \"Méthodes de valorisation des données de santé\"; setActive(\"btnMV\"); api.draw(); });\n\n    setActive(\"btnAll\");\n  }\n  ","data":null}]}}</script>
+<p>Cette page présente mes principales publications scientifiques.</p>
+<!-- Barre d'action : filtre UNIQUEMENT par topcat -->
+<div class="listing-actions" style="margin:10px 0 14px;">
+<p><label for="selTopcat" style="margin-right:8px;">Catégorie :</label> <select id="selTopcat"><option value="">— Toutes —</option></select> <button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;">Réinitialiser</button></p>
+</div>
+<style>
+/* Lisibilité des titres et style des tags */
+.quarto-listing .listing .card .card-title,
+.quarto-listing .listing-title { font-size: 1.0rem; line-height: 1.25; }
+.badge { background:#f0f4f7; border-radius:8px; padding:3px 8px; font-size:.85em; color:#2c3e50; }
+</style>
+<script>
+// Remplit le menu à partir des topcat présents puis filtre les cartes
+window.addEventListener('DOMContentLoaded', function() {
+  const select = document.getElementById('selTopcat');
+  const reset  = document.getElementById('resetFilters');
+
+  // Récupère le texte caché des topcat (fourni par pub-template.html)
+  function getTopcatsFromCard(card) {
+    const raw = (card.querySelector('.pub-topcat')?.textContent || '').trim();
+    return raw.split('||').map(s => s.trim()).filter(Boolean);
+  }
+
+  // 1) Collecte des topcat uniques puis population du <select>
+  const set = new Set();
+  document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+    getTopcatsFromCard(card).forEach(v => set.add(v));
+  });
+  [...set].sort().forEach(v => {
+    const opt = document.createElement('option'); opt.value = v; opt.textContent = v;
+    select.appendChild(opt);
+  });
+
+  // 2) Filtrage
+  function applyFilter() {
+    const wanted = (select?.value || '').trim();
+    document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+      const show = !wanted || getTopcatsFromCard(card).includes(wanted);
+      card.style.display = show ? '' : 'none';
+    });
+  }
+  if (select) select.addEventListener('change', applyFilter);
+  if (reset)  reset.addEventListener('click', () => { if (select) select.value = ''; applyFilter(); });
+
+  // État initial : tout
+  applyFilter();
+});
+</script>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
+<div class="pub-card">
+<!-- Titre --> {{#title}}
+<div class="pub-title">
+{{title}}
+</div>
+<p>{{/title}}</p>
+<!-- Auteurs --> {{#authors}}
+<div class="pub-authors">
+{{authors}}
+</div>
+<p>{{/authors}}</p>
+<!-- Revue / Année / Type -->
+<div class="pub-venue">
+<pre><code>{{#venue}}&lt;em&gt;{{venue}}&lt;/em&gt;{{/venue}}
+{{#year}}, {{year}}{{/year}}
+{{#type}} — &lt;span class="pub-type"&gt;{{type}}&lt;/span&gt;{{/type}}</code></pre>
+</div>
+<!-- Lien --> {{#url}}
+<div class="pub-link">
+<pre><code>&lt;a href="{{.}}" target="_blank" rel="noopener"&gt;Lien vers la publication&lt;/a&gt;</code></pre>
+</div>
+<p>{{/url}}</p>
+<!-- Mots-clés (categories) --> {{#categories}}
+<div class="pub-tags">
+<pre><code>{{#.}}&lt;span class="badge"&gt;{{.}}&lt;/span&gt;{{/.}}</code></pre>
+</div>
+<p>{{/categories}}</p>
+<!-- Topcat caché pour le filtrage JS (séparateur ||) -->
+<div class="pub-topcat" style="display:none;">
+{{#topcat}}{{.}}||{{/topcat}}
 </div>
 </div>
-
-
-
-</main> <!-- /main -->
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
