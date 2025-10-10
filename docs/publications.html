@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Publications – Pierre Smith — Recherches</title>
+<title>publications – Pierre Smith — Recherches</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,66 +67,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-authors','listing-year','listing-venue','listing-url','listing-categories','listing-topcat','listing-type',{ data: ['index'] },{ data: ['categories'] }],
-      page: 25,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-authors","listing-year","listing-venue","listing-url","listing-categories","listing-topcat","listing-type"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -184,117 +123,327 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Publications</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
+<div class="cell">
+<div class="cell-output-display no-overflow-x">
+<div class="listing-actions"><label for="selTopcat" style="margin-right:8px;">Catégorie :</label><select id="selTopcat"><option value="">— Toutes —</option><option value="Déterminants de la santé">Déterminants de la santé</option><option value="Évaluation des systèmes et services de santé">Évaluation des systèmes et services de santé</option><option value="Méthodes de valorisation des données de santé">Méthodes de valorisation des données de santé</option><option value="Politiques de santé">Politiques de santé</option><option value="Santé mentale">Santé mentale</option></select><button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;">Réinitialiser</button></div> <div id="pub-list">
+  <div class="pub-card" data-topcat="Santé mentale||Méthodes de valorisation des données de santé">
+    <div class="pub-title">Co-RESPOND: a federated network of cohorts on mental health and adversity during the COVID-19 pandemic. Challenges, solutions and recommendations for retrospective data harmonization</div>
+    <div class="pub-authors">Petri-Romão P., Stoffers-Winterling J., Doerschner C., Smith P., … Lieb K.</div>
+    <div class="pub-venue"><em>European Journal of Psychotraumatology</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
+    <div class="pub-link"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12344710/" target="_blank" rel="noopener">Lien vers la publication</a></div>
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Resilient outcomes in people with a history of mental disorder during the COVID-19 pandemic: an international 2-years longitudinal prospective study</div>
+    <div class="pub-authors">Pinucci I., Tedeschi F., Serra R., Smith P., et al.</div>
+    <div class="pub-venue"><em>Social Psychiatry and Psychiatric Epidemiology</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
+    <div class="pub-link"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10596639/" target="_blank" rel="noopener">Lien vers la publication</a></div>
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé||Déterminants de la santé">
+    <div class="pub-title">From concept to approval: human genomic data integration with population observational data – insights from a Belgian pilot study</div>
+    <div class="pub-authors">Van Goethem N., Van der Heyden J., Smith P., Van Hoof W., De Schutter H., Van Bossuyt M., De Ridder K., Van Den Bulcke M., Cauët E.</div>
+    <div class="pub-venue"><em>Archives of Public Health</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
     
   </div>
-  
 
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Specialized mental healthcare use for common mental disorders and prescription of antidepressants before and during the COVID-19 pandemic among working-age refugees and Swedish-born individuals – a nationwide register-based study</div>
+    <div class="pub-authors">Atarodi V., Mittendorfer-Rutz E., Morillo-Cuadrado D., Smith P., et al.</div>
+    <div class="pub-venue"><em>BMC Public Health</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
 
-</header>
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Informal caregiving and mental health: results from the Belgian health interview survey 2013 and 2018</div>
+    <div class="pub-authors">Van Droogenbroeck F., Spruyt B., Gérain P., Van den Borre L., Smith P., De Pauw R., Dury S.</div>
+    <div class="pub-venue"><em>BMC Public Health</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
 
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">SARS-CoV-2 infection and COVID-19 outcomes across mental disorders and the role of sex: A register-based study from Catalonia</div>
+    <div class="pub-authors">Monistrol-Mula A., Giné-Vázquez I., Caggiu G., Conflitti C., Gemes K., Hecker I., Mediavilla R., Compagnoni M., Pinucci I., Winterling J., Smith P., et al.</div>
+    <div class="pub-venue"><em>Psychiatry Research</em>, 2025 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
 
-<p>Cette page présente mes principales publications scientifiques.</p>
-<!-- Barre d'action : filtre UNIQUEMENT par topcat -->
-<div class="listing-actions" style="margin:10px 0 14px;">
-<p><label for="selTopcat" style="margin-right:8px;">Catégorie :</label> <select id="selTopcat"><option value="">— Toutes —</option></select> <button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;">Réinitialiser</button></p>
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Trauma Exposure, Social Support and Mental Health in the General Population in Belgium</div>
+    <div class="pub-authors">Muysewinkel E., Vesentini L., Van Deynse H., Gisle L., Smith P., Bruggeman H., Bilsen J., Van Overmeire R.</div>
+    <div class="pub-venue"><em>European Journal of Investigation in Health, Psychology and Education</em>, 2024 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Anxiety and depression in people with post-COVID condition: a Belgian population-based cohort study three months after SARS-CoV-2 infection</div>
+    <div class="pub-authors">D’Hondt S., Gisle L., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., De Ridder K., Charafeddine R., Smith P.</div>
+    <div class="pub-venue"><em>Social Psychiatry and Psychiatric Epidemiology</em>, 2024 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Does pressure, bullying and low social support predict depressive symptoms, self-harm and self-directed violence?</div>
+    <div class="pub-authors">Holte Stea T., Bonsaksen T., Smith P., Steigen A.M., Løvheim Kleppang A., Leonhardt M., Lien L., Vettore M.</div>
+    <div class="pub-venue"><em>BMC Psychiatry</em>, 2024 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Déterminants de la santé">
+    <div class="pub-title">The impact of ambient temperature and air pollution on SARS-CoV2 infection and Post COVID-19 condition in Belgium (2021–2022)</div>
+    <div class="pub-authors">Nguyen Thi Khanh H., De Troeyer K., Smith P., Demoury C., Casas L.</div>
+    <div class="pub-venue"><em>Environmental Research</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé||Santé mentale">
+    <div class="pub-title">Classification of symptoms and associated factors of post COVID-19 condition: a longitudinal study in the Belgian population</div>
+    <div class="pub-authors">Nayani S., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.</div>
+    <div class="pub-venue"><em>BMJ Open</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Déterminants de la santé||Santé mentale">
+    <div class="pub-title">Post COVID-19 condition and health-related quality of life: a longitudinal cohort study in the Belgian adult population</div>
+    <div class="pub-authors">Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., Devleesschauwer G., De Ridder K., Charafeddine R.</div>
+    <div class="pub-venue"><em>BMC Public Health</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé||Déterminants de la santé">
+    <div class="pub-title">Association between SARS-CoV-2 variants and post COVID-19 condition: findings from a longitudinal cohort study in the Belgian adult population</div>
+    <div class="pub-authors">Nguyen Thi Khanh H., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P.</div>
+    <div class="pub-venue"><em>BMC Infectious Diseases</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé">
+    <div class="pub-title">A proposal for further developing fatigue-related post COVID-19 health states for burden of disease studies</div>
+    <div class="pub-authors">Wyper G., McDonald S., Haagsma J., Devleesschauwer B., Charalampous P., Maini R., Smith P., Pires S.</div>
+    <div class="pub-venue"><em>Archives of Public Health</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé">
+    <div class="pub-title">The direct disease burden of COVID-19 in Belgium in 2020 and 2021</div>
+    <div class="pub-authors">Devleesschauwer B., Willem L., Jurčević J., Smith P., Scohy A., Wyper G., Monteiro Pires S., Van Goethem N., Beutels P., Franco N., Abrams S., Van Cauteren D., Speybroeck N., Hens N., De Pauw R.</div>
+    <div class="pub-venue"><em>BMC Public Health</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Migration and mental health over the past 20 years: how has the situation evolved?</div>
+    <div class="pub-authors">Duveau C., Smith P., Lorant V.</div>
+    <div class="pub-venue"><em>Archives of Public Health</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Politiques de santé">
+    <div class="pub-title">Psychological distress and online advice-seeking in times of COVID-19: vertical and horizontal equity of an e-mental health strategy</div>
+    <div class="pub-authors">Lorant V., Smith P., Duveau C., Seeber K., Bryant R.A., Mittendorfer-Rutz E., Melchior M., Haró J.M., Monzio Compagnoni M., Corrao G., Ayuso-Mateos J.L., Sijbrandij M., Nicaise P.</div>
+    <div class="pub-venue"><em>Current Psychology</em>, 2023 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Prevalence and factors associated with academic burnout risk among nursing and midwifery students during the COVID-19 pandemic: A cross-sectional study</div>
+    <div class="pub-authors">Baudewyns V., Bruyneel A., Smith P., Servotte J.C., Dancot J.</div>
+    <div class="pub-venue"><em>Nursing Open</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Déterminants de la santé">
+    <div class="pub-title">Impact of work arrangements during the COVID-19 pandemic on mental health in France</div>
+    <div class="pub-authors">Hecker I., El-Aarbaoui T., Vallez S., Andersen A., Ayuso-Mateos J., Bryant R., Corrao G., McDaid D., Mediavilla R., Mittendorfer-Rutz E., Compagnoni M., Park A., Riepenhausen A., Rigotti T., Seeber K., Sijbrandij M., Smith P., Tüscher O., Walter H., Witteveen A., Mary-Krause M., Melchior M.</div>
+    <div class="pub-venue"><em>SSM - Population Health</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">The stigma of people with mental health problems and the role of health care professionals: An international scoping review</div>
+    <div class="pub-authors">Al Jabouri O., Pierre L., Smith P.</div>
+    <div class="pub-venue"><em>Revue Francophone Internationale de Recherche Infirmière</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé||Santé mentale">
+    <div class="pub-title">Post COVID-19 condition and its physical, mental and social implications: protocol of a 2-year longitudinal cohort study in the Belgian adult population</div>
+    <div class="pub-authors">Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., De Ridder K., Charafeddine R.</div>
+    <div class="pub-venue"><em>Archives of Public Health</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Anxiety and Depression in Belgium during the First 15 Months of the COVID-19 Pandemic: A Longitudinal Study</div>
+    <div class="pub-authors">Bruggeman H., Smith P., Berete F., Demarest S., Hermans L., Braekman E., Charafeddine E., Drieskens S., De Ridder K., Gisle L.</div>
+    <div class="pub-venue"><em>Behavioral Sciences</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Social integration of people with non-psychotic mental illness over the last two decades: The widening gap in the adult population in Belgium</div>
+    <div class="pub-authors">Smith P., Nicaise P., Lorant V.</div>
+    <div class="pub-venue"><em>Social Psychiatry and Psychiatric Epidemiology</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Determinants of the risk of burnout among nurses during the first wave of the COVID-19 pandemic in Belgium: A cross-sectional study</div>
+    <div class="pub-authors">Khan Y., Bruyneel A., Smith P.</div>
+    <div class="pub-venue"><em>Journal of Nursing Management</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Coping with COVID: Risk and resilience factors for mental health in a German representative panel study</div>
+    <div class="pub-authors">Riepenhausen A., Veer I., Wackerhagen C., Reppmann Z., Köber G., Ayuso-Mateos J., Bögeman S., Corrao G., Felez-Nobrega M., Haro Abad J., Hermans E., van Leeuwen J., Lieb K., Lorant V., Mary-Krause M., Mediavilla R., Melchior M., Mittendorfer-Rutz E., Monzio Compagnoni M., Pan K., Puhlmann L., Roelofs K., Sijbrandij M., Smith P., Tüscher O., Witteveen A., Zerban M., Kalisch R., Kröger, Walter H.</div>
+    <div class="pub-venue"><em>Psychological Medicine</em>, 2022 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Déterminants de la santé">
+    <div class="pub-title">Sufficient personal protective equipment training can reduce COVID-19 related symptoms in healthcare workers: a prospective cohort study</div>
+    <div class="pub-authors">Haegdorens F., Franck E., Smith P., Bruyneel A., Monsieurs K.G., Van Bogaert P.</div>
+    <div class="pub-venue"><em>International Journal of Nursing Studies</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Implementation of a computer-assisted face-to-face intervention for mapping the social support networks of patients with severe mental illness in routine clinical practice: Analysis of the appropriateness and acceptability of the intervention</div>
+    <div class="pub-authors">Nicaise P., Garin H., Smith P., d’Oreye de Lantremange S., Leleux L., Wyngaerden F., Lorant V.</div>
+    <div class="pub-venue"><em>International Journal of Social Psychiatry</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Prevalence and Associated Factors of Burnout Risk Among Intensive Care and Emergency Nurses Before and During the Coronavirus Disease 2019 Pandemic: A Cross-Sectional Study in Belgium</div>
+    <div class="pub-authors">Butera S., Brasseur N., Filion N., Bruyneel A., Smith P.</div>
+    <div class="pub-venue"><em>Journal of Emergency Nursing</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">La sexualité des personnes hospitalisées en services psychiatriques hospitaliers et le rôle des professionnels de la santé : une scoping review internationale</div>
+    <div class="pub-authors">Saidi I., Schils G., Smith P.</div>
+    <div class="pub-venue"><em>Revue Francophone Internationale de Recherche Infirmière</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Use of generic social services and social integration of patients with a severe mental illness in Belgium: Individual and services network determinants</div>
+    <div class="pub-authors">Grard A., Nicaise P., Smith P., Lorant V.</div>
+    <div class="pub-venue"><em>International Journal of Social Psychiatry</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Politiques de santé">
+    <div class="pub-title">Psychological distress associated with the COVID-19 pandemic and suppression measures during the first wave in Belgium</div>
+    <div class="pub-authors">Lorant V., Smith P., Van den Broeck K., Nicaise P.</div>
+    <div class="pub-venue"><em>BMC Psychiatry</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Politiques de santé||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Stakeholder coalitions and priorities around the policy goals of a nation-wide mental health care reform</div>
+    <div class="pub-authors">Smith P., Nicaise P., Thunus S., Neyens I., Walker C., Lorant V.</div>
+    <div class="pub-venue"><em>Administration and Policy in Mental Health and Mental Health Services Research</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Comparison of the prevalence of burnout risk between ICU and non-ICU nurses during the COVID-19 outbreak in French-speaking Belgium</div>
+    <div class="pub-authors">Bruyneel A., Smith P.</div>
+    <div class="pub-venue"><em>Intensive and Critical Care Nursing</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Prevalence of burnout risk and factors associated with burnout risk among ICU nurses during the COVID-19 outbreak in French speaking Belgium</div>
+    <div class="pub-authors">Bruyneel A., Smith P., Tack J., Pirson M.</div>
+    <div class="pub-venue"><em>Intensive &amp; Critical Care Nursing</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Déterminants de la santé">
+    <div class="pub-title">Explaining factors of mental distress among Belgian 16 to 25 year olds during the COVID-19 pandemic</div>
+    <div class="pub-authors">Rens E., Smith P., Nicaise P., Lorant V., Van den Broeck K.</div>
+    <div class="pub-venue"><em>Frontiers in Public Health</em>, 2021 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Use of psychiatric hospitals and social integration of patients with psychiatric disorders: a prospective cohort study in five European countries</div>
+    <div class="pub-authors">Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V.</div>
+    <div class="pub-venue"><em>Social Psychiatry and Psychiatric Epidemiology</em>, 2020 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Méthodes de valorisation des données de santé||Santé mentale">
+    <div class="pub-title">Measuring mental health burden in humanitarian settings: a critical review of assessment tools</div>
+    <div class="pub-authors">Moore A., van Loenhout J., Moitinho de Almeida M., Smith P., Guha-Sapir D.</div>
+    <div class="pub-venue"><em>Global Health Action</em>, 2020 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Politiques de santé||Déterminants de la santé">
+    <div class="pub-title">Quelques enseignements sur les impacts sociaux et économiques de la stratégie de réponse à la pandémie du coronavirus en Belgique</div>
+    <div class="pub-authors">Banse E., Bigot A., De Valkeneer C., Lorant V., Luminet O., Nicaise P., Smith P., Tubeuf S., Wuillaume A.</div>
+    <div class="pub-venue"><em>Louvain Medical</em>, 2020 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Politiques de santé">
+    <div class="pub-title">How to overcome political and legal barriers to the implementation of a drug consumption room: an application of the policy agenda framework to the Belgian situation</div>
+    <div class="pub-authors">Smith P., Favril L., Delhauteur D., Vander Laenen F., Nicaise P.</div>
+    <div class="pub-venue"><em>Addiction Science &amp; Clinical Practice</em>, 2019 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div>
+
+  <div class="pub-card" data-topcat="Santé mentale||Évaluation des systèmes et services de santé">
+    <div class="pub-title">Predictors of personal continuity of care of patients with severe mental illness: A comparison across five European countries</div>
+    <div class="pub-authors">Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V.</div>
+    <div class="pub-venue"><em>European Psychiatry</em>, 2019 — <span class="pub-type">Publication scientifique</span></div>
+    
+  </div></div>
+</div>
 </div>
 <style>
-/* Lisibilité des titres et style des tags */
-.quarto-listing .listing .card .card-title,
-.quarto-listing .listing-title { font-size: 1.0rem; line-height: 1.25; }
-.badge { background:#f0f4f7; border-radius:8px; padding:3px 8px; font-size:.85em; color:#2c3e50; }
+.pub-card { padding: 12px 14px; border: 1px solid #eaeaea; border-radius: 10px; background: #fff; margin-bottom: 12px; }
+.pub-title { font-size: 1.0rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
+.pub-authors { color: #4a4a4a; margin-bottom: 2px; }
+.pub-venue { color: #2f3b4a; margin-bottom: 6px; }
+.pub-type { font-style: italic; color: #5a6a7a; }
+.pub-link a { text-decoration: none; }
+.listing-actions { margin: 10px 0 14px; }
 </style>
 <script>
-// Remplit le menu à partir des topcat présents puis filtre les cartes
 window.addEventListener('DOMContentLoaded', function() {
   const select = document.getElementById('selTopcat');
   const reset  = document.getElementById('resetFilters');
-
-  // Récupère le texte caché des topcat (fourni par pub-template.html)
-  function getTopcatsFromCard(card) {
-    const raw = (card.querySelector('.pub-topcat')?.textContent || '').trim();
+  function getCats(card) {
+    const raw = card.getAttribute('data-topcat') || '';
     return raw.split('||').map(s => s.trim()).filter(Boolean);
   }
-
-  // 1) Collecte des topcat uniques puis population du <select>
-  const set = new Set();
-  document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
-    getTopcatsFromCard(card).forEach(v => set.add(v));
-  });
-  [...set].sort().forEach(v => {
-    const opt = document.createElement('option'); opt.value = v; opt.textContent = v;
-    select.appendChild(opt);
-  });
-
-  // 2) Filtrage
   function applyFilter() {
     const wanted = (select?.value || '').trim();
-    document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
-      const show = !wanted || getTopcatsFromCard(card).includes(wanted);
+    document.querySelectorAll('#pub-list .pub-card').forEach(card => {
+      const show = !wanted || getCats(card).includes(wanted);
       card.style.display = show ? '' : 'none';
     });
   }
   if (select) select.addEventListener('change', applyFilter);
-  if (reset)  reset.addEventListener('click', () => { if (select) select.value = ''; applyFilter(); });
-
-  // État initial : tout
-  applyFilter();
+  if (reset)  reset.addEventListener('click', () => { select.value=''; applyFilter(); });
 });
 </script>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="pub-card">
-<!-- Titre --> {{#title}}
-<div class="pub-title">
-{{title}}
-</div>
-<p>{{/title}}</p>
-<!-- Auteurs --> {{#authors}}
-<div class="pub-authors">
-{{authors}}
-</div>
-<p>{{/authors}}</p>
-<!-- Revue / Année / Type -->
-<div class="pub-venue">
-<pre><code>{{#venue}}&lt;em&gt;{{venue}}&lt;/em&gt;{{/venue}}
-{{#year}}, {{year}}{{/year}}
-{{#type}} — &lt;span class="pub-type"&gt;{{type}}&lt;/span&gt;{{/type}}</code></pre>
-</div>
-<!-- Lien --> {{#url}}
-<div class="pub-link">
-<pre><code>&lt;a href="{{.}}" target="_blank" rel="noopener"&gt;Lien vers la publication&lt;/a&gt;</code></pre>
-</div>
-<p>{{/url}}</p>
-<!-- Mots-clés (categories) --> {{#categories}}
-<div class="pub-tags">
-<pre><code>{{#.}}&lt;span class="badge"&gt;{{.}}&lt;/span&gt;{{/.}}</code></pre>
-</div>
-<p>{{/categories}}</p>
-<!-- Topcat caché pour le filtrage JS -->
-<div class="pub-topcat" style="display:none;">
-{{#topcat}}{{.}}||{{/topcat}}
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
-  <ul class="pagination"></ul>
-</nav>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

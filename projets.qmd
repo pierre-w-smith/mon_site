@@ -8,12 +8,8 @@ editor: visual
 
 Voici quelques démonstrations et visualisations interactives.
 
-## Exemple 1 : Application Shiny
+## Dashboard sur des indicateurs de santé mentale de la population, développé en application Shiny
 
 <iframe src="https://pierre-smith.shinyapps.io/sante_mentale_wallonie/" width="100%" height="500" frameborder="0">
 
 </iframe>
-
-## Exemple 2 : Graphique interactif
-
-\`\`\`{r} library(plotly) plot_ly(x = \~rnorm(100), type = "histogram")
