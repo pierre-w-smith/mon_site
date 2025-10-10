@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Pierre Smith — Recherche"
+  title: "Pierre Smith — Recherches"
   navbar:
     left:
       - text: "Accueil"

@@ -1,0 +1,13 @@
+<div class="pub-card">
+  <div class="pub-title">{{title}}</div>
+  <div class="pub-authors">{{authors}}</div>
+  <div class="pub-venue"><em>{{venue}}</em>{{#year}}, {{year}}{{/year}} — <span class="pub-type">{{type}}</span></div>
+  {{#url}}<div class="pub-link"><a href="{{.}}" target="_blank">Lien vers la publication</a></div>{{/url}}
+  {{#categories}}
+  <div class="pub-tags">
+    {{#.}}<span class="badge">{{.}}</span>{{/.}}
+  </div>
+  {{/categories}}
+  <!-- topcat rendu en texte caché, séparé par || -->
+  <div class="pub-topcat" style="display:none;">{{#topcat}}{{.}}||{{/topcat}}</div>
+</div>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Publications – Pierre Smith — Recherche</title>
+<title>Publications – Pierre Smith — Recherches</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -67,6 +69,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-authors','listing-year','listing-venue','listing-url','listing-categories','listing-topcat','listing-type',{ data: ['index'] },{ data: ['categories'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-authors","listing-year","listing-venue","listing-url","listing-categories","listing-topcat","listing-type"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -108,7 +140,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Pierre Smith — Recherche</span>
+    <span class="navbar-title">Pierre Smith — Recherches</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -173,54 +205,92 @@ window.Quarto = {
 </header>
 
 
-<p>```{r} #| message: false #| warning: false #| echo: false</p>
-<section id="packages--" class="level1">
-<h1>—- Packages —-</h1>
-<p>library(yaml) library(dplyr) library(DT) library(htmlwidgets)</p>
-</section>
-<section id="charger-le-yaml--" class="level1">
-<h1>—- Charger le YAML —-</h1>
-<p>pubs &lt;- yaml::read_yaml(“file/publications.yml”) |&gt; bind_rows()</p>
-</section>
-<section id="colonnes-attendues-valeurs-par-défaut--" class="level1">
-<h1>—- Colonnes attendues + valeurs par défaut —-</h1>
-<p>if (is.null(pubs<span class="math inline">\(type))        pubs\)</span>type &lt;- “Publication scientifique” if (is.null(pubs<span class="math inline">\(url))         pubs\)</span>url &lt;- “” if (is.null(pubs<span class="math inline">\(categories))  pubs\)</span>categories &lt;- list(character())</p>
-</section>
-<section id="gérer-plusieurs-topcat-liste-yaml---chaîne-a-b-c--" class="level1">
-<h1>—- Gérer plusieurs topcat : liste YAML -&gt; chaîne “A, B, C” —-</h1>
-<p>if (is.null(pubs<span class="math inline">\(topcat)) {
-  pubs\)</span>topcat &lt;- “Autre” } else { pubs<span class="math inline">\(topcat &lt;- sapply(pubs\)</span>topcat, function(x) { if (is.null(x)) return(“Autre”) if (is.list(x) || is.vector(x)) paste(unlist(x), collapse = “,”) else as.character(x) }) }</p>
-</section>
-<section id="colonne-lien-cliquable-texte-fixe--" class="level1">
-<h1>—- Colonne lien cliquable (texte fixe) —-</h1>
-<p>pubs &lt;- pubs |&gt; mutate( <code>Lien vers la publication</code> = ifelse(nzchar(url), paste0(‘<a href="', url, '" target="_blank">Lien vers la publication</a>’), ““) )</p>
-</section>
-<section id="tableau-datatables-sans-filtres-colonnes-ni-recherche-globale--" class="level1">
-<h1>—- Tableau DataTables (sans filtres colonnes ni recherche globale) —-</h1>
-<p>dt &lt;- datatable( pubs |&gt; select(title, authors, year, venue, type, <code>Lien vers la publication</code>, categories, topcat), colnames = c(“Titre”,“Auteurs”,“Année”,“Revue”,“Type”,“Lien vers la publication”,“Mots-clés”,“topcat”), escape = FALSE, filter = “none”, # pas de filtres interactifs par colonne options = list( pageLength = 50, dom = “tip”, # pas de barre de recherche globale order = list(list(2, “desc”), list(0, “asc”)), # année desc, titre asc columnDefs = list(list(visible = FALSE, targets = 7)), # cache topcat (index 7) language = list(url = “<a href="https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json%22">https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json”)</a>) ), rownames = FALSE )</p>
-</section>
-<section id="barre-de-boutons-filtre-uniquement-via-topcat--" class="level1">
-<h1>—- Barre de boutons (filtre uniquement via topcat) —-</h1>
-<p>all_buttons &lt;- list( list(id=“btnAll”, label=“Voir toutes les publications”), list(id=“btnSM”, label=“Santé mentale”), list(id=“btnDS”, label=“Déterminants de la santé”), list(id=“btnPS”, label=“Politiques de santé”), list(id=“btnEV”, label=“Évaluation des systèmes et services de santé”), list(id=“btnMV”, label=“Méthodes de valorisation des données de santé”) )</p>
-<p>onRender( dt, sprintf( ’function(el, x) { var api = this.api(); var selectedCat = null; // null =&gt; tout</p>
-<p>// 1) Barre de boutons var bar = $(’</p>
-<div class="psm-toolbar" style="margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;">
-
+<!-- Barre d'actions (le menu sera rempli automatiquement) -->
+<div class="listing-actions">
+<p><label for="selTopcat" style="margin-right:8px;">Catégorie :</label> <select id="selTopcat"> <option value="">— Toutes —</option> </select> <button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;"> Réinitialiser </button></p>
 </div>
-<p>’); %s $(el).closest(“.datatables”).prepend(bar);</p>
-<p>// 2) Filtre custom sur la colonne cachée “topcat” (index 7) $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) { if (selectedCat === null) return true; var catCell = api.cell(dataIndex, 7).data(); var txt = $(”</p>
-<div>
-<p>“).html(catCell).text().trim(); // ex:”Santé mentale, Évaluation …” var arr = txt.length ? txt.split(/,\s*/) : []; return arr.includes(selectedCat); });</p>
-<p>// 3) Gestion des clics + style actif function setActive(btnId) { $(“.psm-toolbar button”).removeClass(“btn-primary”).addClass(“btn-outline-secondary”); $(“#”+btnId).removeClass(“btn-outline-secondary”).addClass(“btn-primary”); }</p>
-<p>$(“#btnAll”).on(“click”, function(){ selectedCat = null; setActive(“btnAll”); api.draw(); }); $(“#btnSM”).on(“click”, function(){ selectedCat = “Santé mentale”; setActive(“btnSM”); api.draw(); }); $(“#btnDS”).on(“click”, function(){ selectedCat = “Déterminants de la santé”; setActive(“btnDS”); api.draw(); }); $(“#btnPS”).on(“click”, function(){ selectedCat = “Politiques de santé”; setActive(“btnPS”); api.draw(); }); $(“#btnEV”).on(“click”, function(){ selectedCat = “Évaluation des systèmes et services de santé”; setActive(“btnEV”); api.draw(); }); $(“#btnMV”).on(“click”, function(){ selectedCat = “Méthodes de valorisation des données de santé”; setActive(“btnMV”); api.draw(); });</p>
-<p>// État initial : tout setActive(“btnAll”); }‘, paste0( sapply(all_buttons, function(b) { sprintf( ’bar.append(’<button id="%s" class="btn btn-sm %s">%s</button>‘);’, b<span class="math inline">\(id,
-          ifelse(b\)</span>id == “btnAll”, “btn-primary”, “btn-outline-secondary”), b$label ) }), collapse = “” ) ) )</p>
+<style>
+.pub-card { padding: 12px 14px; border: 1px solid #eaeaea; border-radius: 10px; background: #fff; }
+.pub-title { font-size: 1.0rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
+.pub-authors { color: #4a4a4a; margin-bottom: 2px; }
+.pub-venue { color: #2f3b4a; margin-bottom: 6px; }
+.pub-type { font-style: italic; color: #5a6a7a; }
+.pub-link a { text-decoration: none; }
+.pub-tags { margin-top: 6px; }
+.badge { display:inline-block; padding: 2px 8px; border-radius: 999px; background:#eef2f7; color:#2f3b4a; font-size:.75rem; margin-right:6px; margin-bottom:4px; }
+.listing-actions { margin: 10px 0 14px; }
+</style>
+<script>
+// Auto-remplit le menu Catégorie à partir des cartes, puis applique le filtre
+window.addEventListener('DOMContentLoaded', function() {
+  const select = document.getElementById('selTopcat');
+  const reset  = document.getElementById('resetFilters');
+
+  // lit le bloc caché .pub-topcat (dans ton template) et split sur "||"
+  function getTopcatsFromCard(card) {
+    const raw = (card.querySelector('.pub-topcat')?.textContent || '').trim();
+    return raw.split('||').map(s => s.trim()).filter(Boolean);
+  }
+
+  // collecte toutes les topcat uniques présentes dans la page
+  const set = new Set();
+  document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+    getTopcatsFromCard(card).forEach(v => set.add(v));
+  });
+  [...set].sort().forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v; opt.textContent = v;
+    select.appendChild(opt);
+  });
+
+  function applyFilter() {
+    const wanted = (select?.value || '').trim();
+    document.querySelectorAll('.quarto-listing .pub-card').forEach(card => {
+      const show = !wanted || getTopcatsFromCard(card).includes(wanted);
+      card.style.display = show ? '' : 'none';
+    });
+  }
+
+  if (select) select.addEventListener('change', applyFilter);
+  if (reset)  reset.addEventListener('click', () => { if (select) select.value = ''; applyFilter(); });
+
+  // première application : tout afficher
+  applyFilter();
+});
+</script>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
+<div class="pub-card">
+<div class="pub-title">
+{{title}}
 </div>
-
-
-</section>
-
-</main> <!-- /main -->
+<div class="pub-authors">
+{{authors}}
+</div>
+<div class="pub-venue">
+<em>{{venue}}</em>{{#year}}, {{year}}{{/year}} — <span class="pub-type">{{type}}</span>
+</div>
+{{#url}}
+<div class="pub-link">
+<a href="{{.}}" target="_blank">Lien vers la publication</a>
+</div>
+{{/url}} {{#categories}}
+<div class="pub-tags">
+<pre><code>{{#.}}&lt;span class="badge"&gt;{{.}}&lt;/span&gt;{{/.}}</code></pre>
+</div>
+{{/categories}} <!-- topcat rendu en texte caché, séparé par || -->
+<div class="pub-topcat" style="display:none;">
+{{#topcat}}{{.}}||{{/topcat}}
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
