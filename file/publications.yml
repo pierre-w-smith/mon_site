@@ -4,6 +4,8 @@
   venue: "European Journal of Psychotraumatology"
   url: ""
   categories: ["santé mentale", "COVID-19", "harmonisation des données"]
+  topcat: ["Santé mentale", "Méthodes de valorisation des données de santé"]
+  type: "Publication scientifique"
 
 - title: "Resilient outcomes in people with a history of mental disorder during the COVID-19 pandemic: an international 2-years longitudinal prospective study"
   authors: "Pinucci I., Tedeschi F., Serra R., Smith P., et al."
@@ -11,6 +13,8 @@
   venue: "Social Psychiatry and Psychiatric Epidemiology"
   url: ""
   categories: ["santé mentale", "résilience", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "From concept to approval: human genomic data integration with population observational data – insights from a Belgian pilot study"
   authors: "Van Goethem N., Van der Heyden J., Smith P., Van Hoof W., De Schutter H., Van Bossuyt M., De Ridder K., Van Den Bulcke M., Cauët E."
@@ -18,6 +22,8 @@
   venue: "Archives of Public Health"
   url: ""
   categories: ["génomique", "données de population", "Belgique"]
+  topcat: ["Méthodes de valorisation des données de santé", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Specialized mental healthcare use for common mental disorders and prescription of antidepressants before and during the COVID-19 pandemic among working-age refugees and Swedish-born individuals – a nationwide register-based study"
   authors: "Atarodi V., Mittendorfer-Rutz E., Morillo-Cuadrado D., Smith P., et al."
@@ -25,6 +31,8 @@
   venue: "BMC Public Health"
   url: ""
   categories: ["santé mentale", "migrants", "COVID-19"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Informal caregiving and mental health: results from the Belgian health interview survey 2013 and 2018"
   authors: "Van Droogenbroeck F., Spruyt B., Gérain P., Van den Borre L., Smith P., De Pauw R., Dury S."
@@ -32,6 +40,8 @@
   venue: "BMC Public Health"
   url: ""
   categories: ["aidants proches", "santé mentale", "Belgique"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "SARS-CoV-2 infection and COVID-19 outcomes across mental disorders and the role of sex: A register-based study from Catalonia"
   authors: "Monistrol-Mula A., Giné-Vázquez I., Caggiu G., Conflitti C., Gemes K., Hecker I., Mediavilla R., Compagnoni M., Pinucci I., Winterling J., Smith P., et al."
@@ -39,6 +49,8 @@
   venue: "Psychiatry Research"
   url: ""
   categories: ["COVID-19", "troubles mentaux", "sexe/genre"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Trauma Exposure, Social Support and Mental Health in the General Population in Belgium"
   authors: "Muysewinkel E., Vesentini L., Van Deynse H., Gisle L., Smith P., Bruggeman H., Bilsen J., Van Overmeire R."
@@ -46,6 +58,8 @@
   venue: "European Journal of Investigation in Health, Psychology and Education"
   url: ""
   categories: ["trauma", "soutien social", "Belgique"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Anxiety and depression in people with post-COVID condition: a Belgian population-based cohort study three months after SARS-CoV-2 infection"
   authors: "D’Hondt S., Gisle L., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., De Ridder K., Charafeddine R., Smith P."
@@ -53,6 +67,8 @@
   venue: "Social Psychiatry and Psychiatric Epidemiology"
   url: ""
   categories: ["COVID long", "anxiété", "dépression", "Belgique"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Does pressure, bullying and low social support predict depressive symptoms, self-harm and self-directed violence?"
   authors: "Holte Stea T., Bonsaksen T., Smith P., Steigen A.M., Løvheim Kleppang A., Leonhardt M., Lien L., Vettore M."
@@ -60,6 +76,8 @@
   venue: "BMC Psychiatry"
   url: ""
   categories: ["santé mentale", "harcèlement", "soutien social"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "The impact of ambient temperature and air pollution on SARS-CoV2 infection and Post COVID-19 condition in Belgium (2021–2022)"
   authors: "Nguyen Thi Khanh H., De Troeyer K., Smith P., Demoury C., Casas L."
@@ -67,6 +85,8 @@
   venue: "Environmental Research"
   url: ""
   categories: ["environnement", "COVID long", "Belgique"]
+  topcat: ["Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Classification of symptoms and associated factors of post COVID-19 condition: a longitudinal study in the Belgian population"
   authors: "Nayani S., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P."
@@ -74,6 +94,8 @@
   venue: "BMJ Open"
   url: ""
   categories: ["COVID long", "symptômes", "Belgique"]
+  topcat: ["Méthodes de valorisation des données de santé", "Santé mentale"]
+  type: "Publication scientifique"
 
 - title: "Post COVID-19 condition and health-related quality of life: a longitudinal cohort study in the Belgian adult population"
   authors: "Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., Devleesschauwer G., De Ridder K., Charafeddine R."
@@ -81,6 +103,8 @@
   venue: "BMC Public Health"
   url: ""
   categories: ["COVID long", "qualité de vie", "Belgique"]
+  topcat: ["Déterminants de la santé", "Santé mentale"]
+  type: "Publication scientifique"
 
 - title: "Association between SARS-CoV-2 variants and post COVID-19 condition: findings from a longitudinal cohort study in the Belgian adult population"
   authors: "Nguyen Thi Khanh H., Castanares-Zapatero D., De Pauw R., Van Cauteren D., Demarest S., Drieskens S., Cornelissen L., Devleesschauwer B., De Ridder K., Charafeddine R., Smith P."
@@ -88,6 +112,8 @@
   venue: "BMC Infectious Diseases"
   url: ""
   categories: ["COVID long", "variants", "Belgique"]
+  topcat: ["Méthodes de valorisation des données de santé", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "A proposal for further developing fatigue-related post COVID-19 health states for burden of disease studies"
   authors: "Wyper G., McDonald S., Haagsma J., Devleesschauwer B., Charalampous P., Maini R., Smith P., Pires S."
@@ -95,6 +121,8 @@
   venue: "Archives of Public Health"
   url: ""
   categories: ["COVID long", "fatigue", "burden of disease"]
+  topcat: ["Méthodes de valorisation des données de santé"]
+  type: "Publication scientifique"
 
 - title: "The direct disease burden of COVID-19 in Belgium in 2020 and 2021"
   authors: "Devleesschauwer B., Willem L., Jurčević J., Smith P., Scohy A., Wyper G., Monteiro Pires S., Van Goethem N., Beutels P., Franco N., Abrams S., Van Cauteren D., Speybroeck N., Hens N., De Pauw R."
@@ -102,6 +130,8 @@
   venue: "BMC Public Health"
   url: ""
   categories: ["burden of disease", "COVID-19", "Belgique"]
+  topcat: ["Méthodes de valorisation des données de santé"]
+  type: "Publication scientifique"
 
 - title: "Migration and mental health over the past 20 years: how has the situation evolved?"
   authors: "Duveau C., Smith P., Lorant V."
@@ -109,6 +139,8 @@
   venue: "Archives of Public Health"
   url: ""
   categories: ["migration", "santé mentale"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Psychological distress and online advice-seeking in times of COVID-19: vertical and horizontal equity of an e-mental health strategy"
   authors: "Lorant V., Smith P., Duveau C., Seeber K., Bryant R.A., Mittendorfer-Rutz E., Melchior M., Haró J.M., Monzio Compagnoni M., Corrao G., Ayuso-Mateos J.L., Sijbrandij M., Nicaise P."
@@ -116,6 +148,8 @@
   venue: "Current Psychology"
   url: ""
   categories: ["e-mental health", "équité", "COVID-19"]
+  topcat: ["Santé mentale", "Politiques de santé"]
+  type: "Publication scientifique"
 
 - title: "Prevalence and factors associated with academic burnout risk among nursing and midwifery students during the COVID-19 pandemic: A cross-sectional study"
   authors: "Baudewyns V., Bruyneel A., Smith P., Servotte J.C., Dancot J."
@@ -123,6 +157,8 @@
   venue: "Nursing Open"
   url: ""
   categories: ["burnout", "étudiants", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Impact of work arrangements during the COVID-19 pandemic on mental health in France"
   authors: "Hecker I., El-Aarbaoui T., Vallez S., Andersen A., Ayuso-Mateos J., Bryant R., Corrao G., McDaid D., Mediavilla R., Mittendorfer-Rutz E., Compagnoni M., Park A., Riepenhausen A., Rigotti T., Seeber K., Sijbrandij M., Smith P., Tüscher O., Walter H., Witteveen A., Mary-Krause M., Melchior M."
@@ -130,6 +166,8 @@
   venue: "SSM - Population Health"
   url: ""
   categories: ["santé au travail", "COVID-19", "France"]
+  topcat: ["Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "The stigma of people with mental health problems and the role of health care professionals: An international scoping review"
   authors: "Al Jabouri O., Pierre L., Smith P."
@@ -137,6 +175,8 @@
   venue: "Revue Francophone Internationale de Recherche Infirmière"
   url: ""
   categories: ["stigmatisation", "santé mentale"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Post COVID-19 condition and its physical, mental and social implications: protocol of a 2-year longitudinal cohort study in the Belgian adult population"
   authors: "Smith P., Kristiaan P., Van Cauteren D., Demarest S., Drieskens S., De Pauw R., Cornelissen L., De Ridder K., Charafeddine R."
@@ -144,6 +184,8 @@
   venue: "Archives of Public Health"
   url: ""
   categories: ["COVID long", "protocole", "Belgique"]
+  topcat: ["Méthodes de valorisation des données de santé", "Santé mentale"]
+  type: "Publication scientifique"
 
 - title: "Anxiety and Depression in Belgium during the First 15 Months of the COVID-19 Pandemic: A Longitudinal Study"
   authors: "Bruggeman H., Smith P., Berete F., Demarest S., Hermans L., Braekman E., Charafeddine E., Drieskens S., De Ridder K., Gisle L."
@@ -151,6 +193,8 @@
   venue: "Behavioral Sciences"
   url: ""
   categories: ["anxiété", "dépression", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Social integration of people with non-psychotic mental illness over the last two decades: The widening gap in the adult population in Belgium"
   authors: "Smith P., Nicaise P., Lorant V."
@@ -158,6 +202,8 @@
   venue: "Social Psychiatry and Psychiatric Epidemiology"
   url: ""
   categories: ["intégration sociale", "santé mentale", "Belgique"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Determinants of the risk of burnout among nurses during the first wave of the COVID-19 pandemic in Belgium: A cross-sectional study"
   authors: "Khan Y., Bruyneel A., Smith P."
@@ -165,6 +211,8 @@
   venue: "Journal of Nursing Management"
   url: ""
   categories: ["burnout", "infirmiers", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Coping with COVID: Risk and resilience factors for mental health in a German representative panel study"
   authors: "Riepenhausen A., Veer I., Wackerhagen C., Reppmann Z., Köber G., Ayuso-Mateos J., Bögeman S., Corrao G., Felez-Nobrega M., Haro Abad J., Hermans E., van Leeuwen J., Lieb K., Lorant V., Mary-Krause M., Mediavilla R., Melchior M., Mittendorfer-Rutz E., Monzio Compagnoni M., Pan K., Puhlmann L., Roelofs K., Sijbrandij M., Smith P., Tüscher O., Witteveen A., Zerban M., Kalisch R., Kröger, Walter H."
@@ -172,6 +220,8 @@
   venue: "Psychological Medicine"
   url: ""
   categories: ["résilience", "santé mentale", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Sufficient personal protective equipment training can reduce COVID-19 related symptoms in healthcare workers: a prospective cohort study"
   authors: "Haegdorens F., Franck E., Smith P., Bruyneel A., Monsieurs K.G., Van Bogaert P."
@@ -179,6 +229,8 @@
   venue: "International Journal of Nursing Studies"
   url: ""
   categories: ["EPI", "personnel soignant", "COVID-19"]
+  topcat: ["Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Implementation of a computer-assisted face-to-face intervention for mapping the social support networks of patients with severe mental illness in routine clinical practice: Analysis of the appropriateness and acceptability of the intervention"
   authors: "Nicaise P., Garin H., Smith P., d’Oreye de Lantremange S., Leleux L., Wyngaerden F., Lorant V."
@@ -186,6 +238,8 @@
   venue: "International Journal of Social Psychiatry"
   url: ""
   categories: ["réseaux de soutien", "santé mentale", "pratique clinique"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Prevalence and Associated Factors of Burnout Risk Among Intensive Care and Emergency Nurses Before and During the Coronavirus Disease 2019 Pandemic: A Cross-Sectional Study in Belgium"
   authors: "Butera S., Brasseur N., Filion N., Bruyneel A., Smith P."
@@ -193,6 +247,8 @@
   venue: "Journal of Emergency Nursing"
   url: ""
   categories: ["burnout", "soins intensifs", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "La sexualité des personnes hospitalisées en services psychiatriques hospitaliers et le rôle des professionnels de la santé : une scoping review internationale"
   authors: "Saidi I., Schils G., Smith P."
@@ -200,6 +256,8 @@
   venue: "Revue Francophone Internationale de Recherche Infirmière"
   url: ""
   categories: ["psychiatrie", "sexualité", "revue de portée"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Use of generic social services and social integration of patients with a severe mental illness in Belgium: Individual and services network determinants"
   authors: "Grard A., Nicaise P., Smith P., Lorant V."
@@ -207,6 +265,8 @@
   venue: "International Journal of Social Psychiatry"
   url: ""
   categories: ["intégration sociale", "services sociaux", "Belgique"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Psychological distress associated with the COVID-19 pandemic and suppression measures during the first wave in Belgium"
   authors: "Lorant V., Smith P., Van den Broeck K., Nicaise P."
@@ -214,6 +274,8 @@
   venue: "BMC Psychiatry"
   url: ""
   categories: ["détresse psychologique", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Politiques de santé"]
+  type: "Publication scientifique"
 
 - title: "Stakeholder coalitions and priorities around the policy goals of a nation-wide mental health care reform"
   authors: "Smith P., Nicaise P., Thunus S., Neyens I., Walker C., Lorant V."
@@ -221,6 +283,8 @@
   venue: "Administration and Policy in Mental Health and Mental Health Services Research"
   url: ""
   categories: ["politiques de santé mentale", "Belgique"]
+  topcat: ["Politiques de santé", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Comparison of the prevalence of burnout risk between ICU and non-ICU nurses during the COVID-19 outbreak in French-speaking Belgium"
   authors: "Bruyneel A., Smith P."
@@ -228,6 +292,8 @@
   venue: "Intensive and Critical Care Nursing"
   url: ""
   categories: ["burnout", "infirmiers", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Prevalence of burnout risk and factors associated with burnout risk among ICU nurses during the COVID-19 outbreak in French speaking Belgium"
   authors: "Bruyneel A., Smith P., Tack J., Pirson M."
@@ -235,6 +301,8 @@
   venue: "Intensive & Critical Care Nursing"
   url: ""
   categories: ["burnout", "soins intensifs", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Explaining factors of mental distress among Belgian 16 to 25 year olds during the COVID-19 pandemic"
   authors: "Rens E., Smith P., Nicaise P., Lorant V., Van den Broeck K."
@@ -242,6 +310,8 @@
   venue: "Frontiers in Public Health"
   url: ""
   categories: ["jeunes", "détresse psychologique", "Belgique", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "Use of psychiatric hospitals and social integration of patients with psychiatric disorders: a prospective cohort study in five European countries"
   authors: "Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V."
@@ -249,6 +319,8 @@
   venue: "Social Psychiatry and Psychiatric Epidemiology"
   url: ""
   categories: ["hôpitaux psychiatriques", "intégration sociale", "Europe"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"
 
 - title: "Measuring mental health burden in humanitarian settings: a critical review of assessment tools"
   authors: "Moore A., van Loenhout J., Moitinho de Almeida M., Smith P., Guha-Sapir D."
@@ -256,6 +328,8 @@
   venue: "Global Health Action"
   url: ""
   categories: ["humanitaire", "mesure du fardeau", "outils"]
+  topcat: ["Méthodes de valorisation des données de santé", "Santé mentale"]
+  type: "Publication scientifique"
 
 - title: "Quelques enseignements sur les impacts sociaux et économiques de la stratégie de réponse à la pandémie du coronavirus en Belgique"
   authors: "Banse E., Bigot A., De Valkeneer C., Lorant V., Luminet O., Nicaise P., Smith P., Tubeuf S., Wuillaume A."
@@ -263,6 +337,8 @@
   venue: "Louvain Medical"
   url: ""
   categories: ["impacts sociaux", "économie", "Belgique", "COVID-19"]
+  topcat: ["Politiques de santé", "Déterminants de la santé"]
+  type: "Publication scientifique"
 
 - title: "How to overcome political and legal barriers to the implementation of a drug consumption room: an application of the policy agenda framework to the Belgian situation"
   authors: "Smith P., Favril L., Delhauteur D., Vander Laenen F., Nicaise P."
@@ -270,6 +346,8 @@
   venue: "Addiction Science & Clinical Practice"
   url: ""
   categories: ["salles de consommation", "politiques publiques", "Belgique"]
+  topcat: ["Politiques de santé"]
+  type: "Publication scientifique"
 
 - title: "Predictors of personal continuity of care of patients with severe mental illness: A comparison across five European countries"
   authors: "Smith P., Nicaise P., Giacco D., Bird V.J., Soltman B., Miglietta E., Welbel M., Pfennig A., Lasalvia A., Moskalewicz J., Priebe S., Lorant V."
@@ -277,3 +355,5 @@
   venue: "European Psychiatry"
   url: ""
   categories: ["continuité des soins", "troubles mentaux sévères", "Europe"]
+  topcat: ["Santé mentale", "Évaluation des systèmes et services de santé"]
+  type: "Publication scientifique"

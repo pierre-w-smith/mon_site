@@ -1,100 +1,77 @@
 ---
 title: "Publications"
-listing:
-  contents: file/publications.yml
-  type: default
-  sort: ["year: desc", "title: asc"]
-  filter-ui: false     # on désactive l’UI par défaut pour mettre notre menu
-  fields: [title, authors, year, venue, url, categories]
-  field-display-names:
-    title: Titre
-    authors: Auteurs
-    year: Année
-    venue: Revue
-    url: Lien
-    categories: Mots-clés
 ---
 
-Cette page présente mes principales publications scientifiques.\
-Utilisez le menu déroulant pour filtrer par **mots-clés**. Cliquez sur **Voir toutes les publications** pour réinitialiser.
+\`\`\`{r} #\| message: false #\| warning: false #\| echo: false
 
-::: {#filters style="display:flex; gap:10px; align-items:center; margin: 0 0 14px 0;"}
-<label for="kwSelect" style="margin:0;">Mots-clés :</label> <select id="kwSelect" multiple size="1" style="min-width:260px;"></select> <button id="resetBtn" class="btn btn-outline-secondary">Voir toutes les publications</button>
-:::
+# ---- Packages ----
 
-```{=html}
-<style>
-/* 1) Réduire la taille des titres des cartes */
-[data-listing] .listing-title { 
-  font-size: 1.05rem; 
-  line-height: 1.25; 
-  margin-bottom: 0.25rem;
+library(yaml) library(dplyr) library(DT) library(htmlwidgets)
+
+# ---- Charger le YAML ----
+
+pubs \<- yaml::read_yaml("file/publications.yml") \|\> bind_rows()
+
+# ---- Colonnes attendues + valeurs par défaut ----
+
+if (is.null(pubs$type))   pubs$type \<- "Publication scientifique" if (is.null(pubs$url))    pubs$url \<- "" if (is.null(pubs$categories)) pubs$categories \<- list(character())
+
+# ---- Gérer plusieurs topcat : liste YAML -\> chaîne "A, B, C"
+
+if (is.null(pubs$topcat)) {
+  pubs$topcat \<- "Autre" } else { pubs$topcat <- sapply(pubs$topcat, function(x) { if (is.null(x)) return("Autre") if (is.list(x) \|\| is.vector(x)) paste(unlist(x), collapse = ", ") else as.character(x) }) }
+
+# ---- Colonne lien cliquable (texte fixe) ----
+
+pubs \<- pubs \|\> mutate( `Lien vers la publication` = ifelse(nzchar(url), paste0('<a href="', url, '" target="_blank">Lien vers la publication</a>'), "") )
+
+# ---- Table DT (sans filtres colonnes ni recherche globale) ----
+
+dt \<- datatable( pubs \|\> select(title, authors, year, venue, type, `Lien vers la publication`, categories, topcat), colnames = c("Titre","Auteurs","Année","Revue","Type","Lien vers la publication","Mots-clés","topcat"), escape = FALSE, filter = "none", \# pas de filtres de colonnes options = list( pageLength = 50, dom = "tip", \# pas de barre de recherche globale order = list(list(2, 'desc'), list(0, 'asc')), \# Année (col 2, 0-based) desc puis Titre asc columnDefs = list(list(visible = FALSE, targets = 7)), \# cache 'topcat' (index 7) language = list(url = "[https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")](https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")) ), rownames = FALSE )
+
+# ---- Barre de boutons (filtre uniquement via topcat) ----
+
+all_buttons \<- c( list(id="btnAll", label="Voir toutes les publications", value=NA), list(id="btnSM", label="Santé mentale", value="Santé mentale"), list(id="btnDS", label="Déterminants de la santé", value="Déterminants de la santé"), list(id="btnPS", label="Politiques de santé", value="Politiques de santé"), list(id="btnEV", label="Évaluation des systèmes et services de santé", value="Évaluation des systèmes et services de santé"), list(id="btnMV", label="Méthodes de valorisation des données de santé", value="Méthodes de valorisation des données de santé") )
+
+onRender( dt, sprintf(" function(el, x) { var api = this.api(); var selectedCat = null; // null =\> tout
+
+```         
+  // 1) Barre de boutons
+  var bar = $('<div class=\\"psm-toolbar\\" style=\\"margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;\\"></div>');
+  %s
+  $(el).closest('.datatables').prepend(bar);
+
+  // 2) Filtre custom sur la colonne cachée 'topcat' (index 7)
+  $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+    if (selectedCat === null) return true;
+    var catCell = api.cell(dataIndex, 7).data();
+    var txt = $('<div>').html(catCell).text().trim();   // ex: 'Santé mentale, Évaluation ...'
+    var arr = txt.length ? txt.split(/,\\s*/) : [];
+    return arr.includes(selectedCat);
+  });
+
+  // 3) Gestion des clics + style actif
+  function setActive(btnId) {
+    $('.psm-toolbar button').removeClass('btn-primary').addClass('btn-outline-secondary');
+    $('#'+btnId).removeClass('btn-outline-secondary').addClass('btn-primary');
+  }
+
+  $('#btnAll').on('click', function(){
+    selectedCat = null;
+    setActive('btnAll');
+    api.draw();
+  });
+
+  $('#btnSM').on('click', function(){ selectedCat = 'Santé mentale'; setActive('btnSM'); api.draw(); });
+  $('#btnDS').on('click', function(){ selectedCat = 'Déterminants de la santé'; setActive('btnDS'); api.draw(); });
+  $('#btnPS').on('click', function(){ selectedCat = 'Politiques de santé'; setActive('btnPS'); api.draw(); });
+  $('#btnEV').on('click', function(){ selectedCat = 'Évaluation des systèmes et services de santé'; setActive('btnEV'); api.draw(); });
+  $('#btnMV').on('click', function(){ selectedCat = 'Méthodes de valorisation des données de santé'; setActive('btnMV'); api.draw(); });
+
+  // état initial : tout
+  setActive('btnAll');
 }
-/* 2) Style doux pour les tags */
-.quarto-listing-category {
-  background-color: #f0f4f7;
-  border-radius: 8px;
-  padding: 3px 8px;
-  font-size: 0.85em;
-  color: #2c3e50;
-}
-/* 3) Ajuster l’espace au-dessus des cartes (après le bloc de filtres) */
-#filters + div { margin-top: 0.5rem; }
-</style>
 ```
 
-```{=html}
-<script>
-// --- Construire la liste des mots-clés depuis les cartes ---
-function getAllKeywords() {
-  const set = new Set();
-  document.querySelectorAll('.quarto-listing-category').forEach(el => {
-    const txt = el.textContent.trim();
-    if (txt) set.add(txt);
-  });
-  return Array.from(set).sort((a,b)=> a.localeCompare(b, 'fr'));
-}
-
-function cardKeywords(card) {
-  // récupère les tags d'une carte
-  const tags = Array.from(card.querySelectorAll('.quarto-listing-category'))
-                    .map(el => el.textContent.trim());
-  return tags;
-}
-
-function applyFilter(selected) {
-  const cards = document.querySelectorAll('[data-listing] [data-listing-item]');
-  cards.forEach(card => {
-    const tags = cardKeywords(card);
-    // si aucune sélection -> on montre tout
-    const show = (selected.length === 0) || selected.some(s => tags.includes(s));
-    card.style.display = show ? '' : 'none';
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  const select = document.getElementById('kwSelect');
-  const resetBtn = document.getElementById('resetBtn');
-
-  // peupler le select avec tous les mots-clés trouvés
-  getAllKeywords().forEach(k => {
-    const opt = document.createElement('option');
-    opt.value = k; opt.textContent = k;
-    select.appendChild(opt);
-  });
-
-  // transformer en "menu déroulant" simple : single par défaut,
-  // ou garde 'multiple' si tu veux sélection multiple. Ici on garde multiple.
-  select.addEventListener('change', function(){
-    const selected = Array.from(this.selectedOptions).map(o => o.value);
-    applyFilter(selected);
-  });
-
-  resetBtn.addEventListener('click', function(){
-    // clear sélection
-    Array.from(select.options).forEach(o => o.selected = false);
-    applyFilter([]);
-  });
-});
-</script>
-```
+", paste0( sapply(all_buttons, function(b) { sprintf('bar.append('\<button id="%s" class="btn btn-sm %s"\>%s</button>');', b$id,
+              (ifelse(b$id == "btnAll", "btn-primary", "btn-outline-secondary")), b\$label) }), collapse = "\\n ") ) )

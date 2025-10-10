@@ -6,7 +6,7 @@ editor: visual
 
 Bienvenue sur ce site dédié à mes activités de **recherche en santé publique**.
 
-Son objectif est de **partager les résultats des travaux menés avec mes collègues**, en les rendant plus accessibles à un public large — chercheurs, décideurs, professionnels de la santé ou toute personne intéressée par les enjeux de santé et de politiques publiques.
+Son objectif est de **partager les résultats des travaux menés avec mes collègues**, en les rendant plus accessibles à un public large.
 
 Vous trouverez ici : - mes publications scientifiques et rapports de recherche ; - une présentation de projets en cours ou récemment achevés ; - et quelques informations à propos de mon parcours et de mes collaborations.
 
@@ -17,7 +17,11 @@ Vous trouverez ici : - mes publications scientifiques et rapports de recherche ;
 Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :
 
 ::: {style="margin-top:10px;"}
-<button id="showEmail" class="btn btn-outline-primary">Afficher mon adresse e-mail</button>
+<button id="showEmail" class="btn btn-outline-primary">
+
+Afficher mon adresse e-mail
+
+</button>
 
 <p id="emailField" style="margin-top:10px; display:none; font-weight:bold;">
 
