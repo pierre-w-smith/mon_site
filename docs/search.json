@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Catégorie :  — Toutes —   Réinitialiser \n\n\n\n\n\n\n\n\n\n\n{{title}}\n\n\n{{authors}}\n\n\n{{venue}}{{#year}}, {{year}}{{/year}} — {{type}}\n\n{{#url}}\n\nLien vers la publication\n\n{{/url}} {{#categories}}\n\n{{#.}}&lt;span class=\"badge\"&gt;{{.}}&lt;/span&gt;{{/.}}\n\n{{/categories}} \n\n{{#topcat}}{{.}}||{{/topcat}}\n\n\nNo matching items"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Acceuil",
