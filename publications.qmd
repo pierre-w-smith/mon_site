@@ -14,9 +14,9 @@ pubs \<- yaml::read_yaml("file/publications.yml") \|\> bind_rows()
 
 # ---- Colonnes attendues + valeurs par défaut ----
 
-if (is.null(pubs$type))   pubs$type \<- "Publication scientifique" if (is.null(pubs$url))    pubs$url \<- "" if (is.null(pubs$categories)) pubs$categories \<- list(character())
+if (is.null(pubs$type))        pubs$type \<- "Publication scientifique" if (is.null(pubs$url))         pubs$url \<- "" if (is.null(pubs$categories))  pubs$categories \<- list(character())
 
-# ---- Gérer plusieurs topcat : liste YAML -\> chaîne "A, B, C"
+# ---- Gérer plusieurs topcat : liste YAML -\> chaîne "A, B, C" ----
 
 if (is.null(pubs$topcat)) {
   pubs$topcat \<- "Autre" } else { pubs$topcat <- sapply(pubs$topcat, function(x) { if (is.null(x)) return("Autre") if (is.list(x) \|\| is.vector(x)) paste(unlist(x), collapse = ", ") else as.character(x) }) }
@@ -25,53 +25,34 @@ if (is.null(pubs$topcat)) {
 
 pubs \<- pubs \|\> mutate( `Lien vers la publication` = ifelse(nzchar(url), paste0('<a href="', url, '" target="_blank">Lien vers la publication</a>'), "") )
 
-# ---- Table DT (sans filtres colonnes ni recherche globale) ----
+# ---- Tableau DataTables (sans filtres colonnes ni recherche globale) ----
 
-dt \<- datatable( pubs \|\> select(title, authors, year, venue, type, `Lien vers la publication`, categories, topcat), colnames = c("Titre","Auteurs","Année","Revue","Type","Lien vers la publication","Mots-clés","topcat"), escape = FALSE, filter = "none", \# pas de filtres de colonnes options = list( pageLength = 50, dom = "tip", \# pas de barre de recherche globale order = list(list(2, 'desc'), list(0, 'asc')), \# Année (col 2, 0-based) desc puis Titre asc columnDefs = list(list(visible = FALSE, targets = 7)), \# cache 'topcat' (index 7) language = list(url = "[https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")](https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")) ), rownames = FALSE )
+dt \<- datatable( pubs \|\> select(title, authors, year, venue, type, `Lien vers la publication`, categories, topcat), colnames = c("Titre","Auteurs","Année","Revue","Type","Lien vers la publication","Mots-clés","topcat"), escape = FALSE, filter = "none", \# pas de filtres interactifs par colonne options = list( pageLength = 50, dom = "tip", \# pas de barre de recherche globale order = list(list(2, "desc"), list(0, "asc")), \# année desc, titre asc columnDefs = list(list(visible = FALSE, targets = 7)), \# cache topcat (index 7) language = list(url = "[https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")](https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json")) ), rownames = FALSE )
 
 # ---- Barre de boutons (filtre uniquement via topcat) ----
 
-all_buttons \<- c( list(id="btnAll", label="Voir toutes les publications", value=NA), list(id="btnSM", label="Santé mentale", value="Santé mentale"), list(id="btnDS", label="Déterminants de la santé", value="Déterminants de la santé"), list(id="btnPS", label="Politiques de santé", value="Politiques de santé"), list(id="btnEV", label="Évaluation des systèmes et services de santé", value="Évaluation des systèmes et services de santé"), list(id="btnMV", label="Méthodes de valorisation des données de santé", value="Méthodes de valorisation des données de santé") )
+all_buttons \<- list( list(id="btnAll", label="Voir toutes les publications"), list(id="btnSM", label="Santé mentale"), list(id="btnDS", label="Déterminants de la santé"), list(id="btnPS", label="Politiques de santé"), list(id="btnEV", label="Évaluation des systèmes et services de santé"), list(id="btnMV", label="Méthodes de valorisation des données de santé") )
 
-onRender( dt, sprintf(" function(el, x) { var api = this.api(); var selectedCat = null; // null =\> tout
+onRender( dt, sprintf( 'function(el, x) { var api = this.api(); var selectedCat = null; // null =\> tout
 
-```         
-  // 1) Barre de boutons
-  var bar = $('<div class=\\"psm-toolbar\\" style=\\"margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;\\"></div>');
-  %s
-  $(el).closest('.datatables').prepend(bar);
+// 1) Barre de boutons var bar = \$('
 
-  // 2) Filtre custom sur la colonne cachée 'topcat' (index 7)
-  $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-    if (selectedCat === null) return true;
-    var catCell = api.cell(dataIndex, 7).data();
-    var txt = $('<div>').html(catCell).text().trim();   // ex: 'Santé mentale, Évaluation ...'
-    var arr = txt.length ? txt.split(/,\\s*/) : [];
-    return arr.includes(selectedCat);
-  });
+::: {.psm-toolbar style="margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;"}
+:::
 
-  // 3) Gestion des clics + style actif
-  function setActive(btnId) {
-    $('.psm-toolbar button').removeClass('btn-primary').addClass('btn-outline-secondary');
-    $('#'+btnId).removeClass('btn-outline-secondary').addClass('btn-primary');
-  }
+'); %s \$(el).closest(".datatables").prepend(bar);
 
-  $('#btnAll').on('click', function(){
-    selectedCat = null;
-    setActive('btnAll');
-    api.draw();
-  });
+// 2) Filtre custom sur la colonne cachée "topcat" (index 7) \$.fn.dataTable.ext.search.push(function(settings, data, dataIndex) { if (selectedCat === null) return true; var catCell = api.cell(dataIndex, 7).data(); var txt = \$("
 
-  $('#btnSM').on('click', function(){ selectedCat = 'Santé mentale'; setActive('btnSM'); api.draw(); });
-  $('#btnDS').on('click', function(){ selectedCat = 'Déterminants de la santé'; setActive('btnDS'); api.draw(); });
-  $('#btnPS').on('click', function(){ selectedCat = 'Politiques de santé'; setActive('btnPS'); api.draw(); });
-  $('#btnEV').on('click', function(){ selectedCat = 'Évaluation des systèmes et services de santé'; setActive('btnEV'); api.draw(); });
-  $('#btnMV').on('click', function(){ selectedCat = 'Méthodes de valorisation des données de santé'; setActive('btnMV'); api.draw(); });
+<div>
 
-  // état initial : tout
-  setActive('btnAll');
-}
-```
+").html(catCell).text().trim(); // ex: "Santé mentale, Évaluation ..." var arr = txt.length ? txt.split(/,\\s\*/) : \[\]; return arr.includes(selectedCat); });
 
-", paste0( sapply(all_buttons, function(b) { sprintf('bar.append('\<button id="%s" class="btn btn-sm %s"\>%s</button>');', b$id,
-              (ifelse(b$id == "btnAll", "btn-primary", "btn-outline-secondary")), b\$label) }), collapse = "\\n ") ) )
+// 3) Gestion des clics + style actif function setActive(btnId) { \$(".psm-toolbar button").removeClass("btn-primary").addClass("btn-outline-secondary"); \$("\#"+btnId).removeClass("btn-outline-secondary").addClass("btn-primary"); }
+
+\$("#btnAll").on("click", function(){ selectedCat = null; setActive("btnAll"); api.draw(); }); \$("#btnSM").on("click", function(){ selectedCat = "Santé mentale"; setActive("btnSM"); api.draw(); }); \$("#btnDS").on("click", function(){ selectedCat = "Déterminants de la santé"; setActive("btnDS"); api.draw(); }); \$("#btnPS").on("click", function(){ selectedCat = "Politiques de santé"; setActive("btnPS"); api.draw(); }); \$("#btnEV").on("click", function(){ selectedCat = "Évaluation des systèmes et services de santé"; setActive("btnEV"); api.draw(); }); \$("#btnMV").on("click", function(){ selectedCat = "Méthodes de valorisation des données de santé"; setActive("btnMV"); api.draw(); });
+
+// État initial : tout setActive("btnAll"); }', paste0( sapply(all_buttons, function(b) { sprintf( 'bar.append('<button id="%s" class="btn btn-sm %s">%s</button>');', b$id,
+          ifelse(b$id == "btnAll", "btn-primary", "btn-outline-secondary"), b\$label ) }), collapse = "\n " ) ) )
+
+</div>

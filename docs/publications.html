@@ -184,10 +184,10 @@ window.Quarto = {
 </section>
 <section id="colonnes-attendues-valeurs-par-défaut--" class="level1">
 <h1>—- Colonnes attendues + valeurs par défaut —-</h1>
-<p>if (is.null(pubs<span class="math inline">\(type))   pubs\)</span>type &lt;- “Publication scientifique” if (is.null(pubs<span class="math inline">\(url))    pubs\)</span>url &lt;- “” if (is.null(pubs<span class="math inline">\(categories)) pubs\)</span>categories &lt;- list(character())</p>
+<p>if (is.null(pubs<span class="math inline">\(type))        pubs\)</span>type &lt;- “Publication scientifique” if (is.null(pubs<span class="math inline">\(url))         pubs\)</span>url &lt;- “” if (is.null(pubs<span class="math inline">\(categories))  pubs\)</span>categories &lt;- list(character())</p>
 </section>
-<section id="gérer-plusieurs-topcat-liste-yaml---chaîne-a-b-c" class="level1">
-<h1>—- Gérer plusieurs topcat : liste YAML -&gt; chaîne “A, B, C”</h1>
+<section id="gérer-plusieurs-topcat-liste-yaml---chaîne-a-b-c--" class="level1">
+<h1>—- Gérer plusieurs topcat : liste YAML -&gt; chaîne “A, B, C” —-</h1>
 <p>if (is.null(pubs<span class="math inline">\(topcat)) {
   pubs\)</span>topcat &lt;- “Autre” } else { pubs<span class="math inline">\(topcat &lt;- sapply(pubs\)</span>topcat, function(x) { if (is.null(x)) return(“Autre”) if (is.list(x) || is.vector(x)) paste(unlist(x), collapse = “,”) else as.character(x) }) }</p>
 </section>
@@ -195,51 +195,27 @@ window.Quarto = {
 <h1>—- Colonne lien cliquable (texte fixe) —-</h1>
 <p>pubs &lt;- pubs |&gt; mutate( <code>Lien vers la publication</code> = ifelse(nzchar(url), paste0(‘<a href="', url, '" target="_blank">Lien vers la publication</a>’), ““) )</p>
 </section>
-<section id="table-dt-sans-filtres-colonnes-ni-recherche-globale--" class="level1">
-<h1>—- Table DT (sans filtres colonnes ni recherche globale) —-</h1>
-<p>dt &lt;- datatable( pubs |&gt; select(title, authors, year, venue, type, <code>Lien vers la publication</code>, categories, topcat), colnames = c(“Titre”,“Auteurs”,“Année”,“Revue”,“Type”,“Lien vers la publication”,“Mots-clés”,“topcat”), escape = FALSE, filter = “none”, # pas de filtres de colonnes options = list( pageLength = 50, dom = “tip”, # pas de barre de recherche globale order = list(list(2, ‘desc’), list(0, ‘asc’)), # Année (col 2, 0-based) desc puis Titre asc columnDefs = list(list(visible = FALSE, targets = 7)), # cache ‘topcat’ (index 7) language = list(url = “<a href="https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json%22">https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json”)</a>) ), rownames = FALSE )</p>
+<section id="tableau-datatables-sans-filtres-colonnes-ni-recherche-globale--" class="level1">
+<h1>—- Tableau DataTables (sans filtres colonnes ni recherche globale) —-</h1>
+<p>dt &lt;- datatable( pubs |&gt; select(title, authors, year, venue, type, <code>Lien vers la publication</code>, categories, topcat), colnames = c(“Titre”,“Auteurs”,“Année”,“Revue”,“Type”,“Lien vers la publication”,“Mots-clés”,“topcat”), escape = FALSE, filter = “none”, # pas de filtres interactifs par colonne options = list( pageLength = 50, dom = “tip”, # pas de barre de recherche globale order = list(list(2, “desc”), list(0, “asc”)), # année desc, titre asc columnDefs = list(list(visible = FALSE, targets = 7)), # cache topcat (index 7) language = list(url = “<a href="https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json%22">https://cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json”)</a>) ), rownames = FALSE )</p>
 </section>
 <section id="barre-de-boutons-filtre-uniquement-via-topcat--" class="level1">
 <h1>—- Barre de boutons (filtre uniquement via topcat) —-</h1>
-<p>all_buttons &lt;- c( list(id=“btnAll”, label=“Voir toutes les publications”, value=NA), list(id=“btnSM”, label=“Santé mentale”, value=“Santé mentale”), list(id=“btnDS”, label=“Déterminants de la santé”, value=“Déterminants de la santé”), list(id=“btnPS”, label=“Politiques de santé”, value=“Politiques de santé”), list(id=“btnEV”, label=“Évaluation des systèmes et services de santé”, value=“Évaluation des systèmes et services de santé”), list(id=“btnMV”, label=“Méthodes de valorisation des données de santé”, value=“Méthodes de valorisation des données de santé”) )</p>
-<p>onRender( dt, sprintf(” function(el, x) { var api = this.api(); var selectedCat = null; // null =&gt; tout</p>
-<pre><code>  // 1) Barre de boutons
-  var bar = $('&lt;div class=\\"psm-toolbar\\" style=\\"margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;\\"&gt;&lt;/div&gt;');
-  %s
-  $(el).closest('.datatables').prepend(bar);
+<p>all_buttons &lt;- list( list(id=“btnAll”, label=“Voir toutes les publications”), list(id=“btnSM”, label=“Santé mentale”), list(id=“btnDS”, label=“Déterminants de la santé”), list(id=“btnPS”, label=“Politiques de santé”), list(id=“btnEV”, label=“Évaluation des systèmes et services de santé”), list(id=“btnMV”, label=“Méthodes de valorisation des données de santé”) )</p>
+<p>onRender( dt, sprintf( ’function(el, x) { var api = this.api(); var selectedCat = null; // null =&gt; tout</p>
+<p>// 1) Barre de boutons var bar = $(’</p>
+<div class="psm-toolbar" style="margin:10px 0 12px; display:flex; gap:8px; flex-wrap:wrap;">
 
-  // 2) Filtre custom sur la colonne cachée 'topcat' (index 7)
-  $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-    if (selectedCat === null) return true;
-    var catCell = api.cell(dataIndex, 7).data();
-    var txt = $('&lt;div&gt;').html(catCell).text().trim();   // ex: 'Santé mentale, Évaluation ...'
-    var arr = txt.length ? txt.split(/,\\s*/) : [];
-    return arr.includes(selectedCat);
-  });
-
-  // 3) Gestion des clics + style actif
-  function setActive(btnId) {
-    $('.psm-toolbar button').removeClass('btn-primary').addClass('btn-outline-secondary');
-    $('#'+btnId).removeClass('btn-outline-secondary').addClass('btn-primary');
-  }
-
-  $('#btnAll').on('click', function(){
-    selectedCat = null;
-    setActive('btnAll');
-    api.draw();
-  });
-
-  $('#btnSM').on('click', function(){ selectedCat = 'Santé mentale'; setActive('btnSM'); api.draw(); });
-  $('#btnDS').on('click', function(){ selectedCat = 'Déterminants de la santé'; setActive('btnDS'); api.draw(); });
-  $('#btnPS').on('click', function(){ selectedCat = 'Politiques de santé'; setActive('btnPS'); api.draw(); });
-  $('#btnEV').on('click', function(){ selectedCat = 'Évaluation des systèmes et services de santé'; setActive('btnEV'); api.draw(); });
-  $('#btnMV').on('click', function(){ selectedCat = 'Méthodes de valorisation des données de santé'; setActive('btnMV'); api.draw(); });
-
-  // état initial : tout
-  setActive('btnAll');
-}</code></pre>
-<p>“, paste0( sapply(all_buttons, function(b) { sprintf(‘bar.append(’&lt;button id=”%s” class=“btn btn-sm %s”&gt;%s‘);’, b<span class="math inline">\(id,
-              (ifelse(b\)</span>id == “btnAll”, “btn-primary”, “btn-outline-secondary”)), b$label) }), collapse = “\n”) ) )</p>
+</div>
+<p>’); %s $(el).closest(“.datatables”).prepend(bar);</p>
+<p>// 2) Filtre custom sur la colonne cachée “topcat” (index 7) $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) { if (selectedCat === null) return true; var catCell = api.cell(dataIndex, 7).data(); var txt = $(”</p>
+<div>
+<p>“).html(catCell).text().trim(); // ex:”Santé mentale, Évaluation …” var arr = txt.length ? txt.split(/,\s*/) : []; return arr.includes(selectedCat); });</p>
+<p>// 3) Gestion des clics + style actif function setActive(btnId) { $(“.psm-toolbar button”).removeClass(“btn-primary”).addClass(“btn-outline-secondary”); $(“#”+btnId).removeClass(“btn-outline-secondary”).addClass(“btn-primary”); }</p>
+<p>$(“#btnAll”).on(“click”, function(){ selectedCat = null; setActive(“btnAll”); api.draw(); }); $(“#btnSM”).on(“click”, function(){ selectedCat = “Santé mentale”; setActive(“btnSM”); api.draw(); }); $(“#btnDS”).on(“click”, function(){ selectedCat = “Déterminants de la santé”; setActive(“btnDS”); api.draw(); }); $(“#btnPS”).on(“click”, function(){ selectedCat = “Politiques de santé”; setActive(“btnPS”); api.draw(); }); $(“#btnEV”).on(“click”, function(){ selectedCat = “Évaluation des systèmes et services de santé”; setActive(“btnEV”); api.draw(); }); $(“#btnMV”).on(“click”, function(){ selectedCat = “Méthodes de valorisation des données de santé”; setActive(“btnMV”); api.draw(); });</p>
+<p>// État initial : tout setActive(“btnAll”); }‘, paste0( sapply(all_buttons, function(b) { sprintf( ’bar.append(’<button id="%s" class="btn btn-sm %s">%s</button>‘);’, b<span class="math inline">\(id,
+          ifelse(b\)</span>id == “btnAll”, “btn-primary”, “btn-outline-secondary”), b$label ) }), collapse = “” ) ) )</p>
+</div>
 
 
 </section>
