@@ -12,97 +12,60 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ## Projets de recherche {#projets}
 
-:::::::::::::: proj-grid
-<!-- 1 -->
-
-::: proj-card
-```         
-<div class="proj-title">Wellbeing and social determinants in Belgium — European Joint Action on Non-Communicable Diseases</div> <div class="proj-meta">2023–2026</div> <div class="proj-venue">European Joint Action on NCDs</div> <div class="proj-actions">   <!-- Remplacer l’URL si dispo -->   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 2 -->
-
-::: proj-card
-```         
-<div class="proj-title">BELCOHORT+ — Bringing together existing health data into a Belgian population cohort to assess the interaction between health, environment and society</div> <div class="proj-meta">2023–2026</div> <div class="proj-venue">BELSPO</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 3 -->
-
-::: proj-card
-```         
-<div class="proj-title">Characterizing long COVID and its physical, mental and social implications (COVIMPACT)</div> <div class="proj-meta">2021</div> <div class="proj-venue">Sciensano</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 4 -->
-
-::: proj-card
-```         
-<div class="proj-title">Improving the Preparedness of Health Systems to Reduce Mental Health and Psychosocial Concerns resulting from the COVID-19 Pandemic (RESPOND)</div> <div class="proj-meta">2020–2023</div> <div class="proj-venue">H2020 — Union européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 5 -->
-
-::: proj-card
-```         
-<div class="proj-title">Impact of the COVID-19 epidemic and confinement and the social and mental health of the general population (Covid and I)</div> <div class="proj-meta">2020</div> <div class="proj-venue">UCLouvain</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 6 -->
-
-::: proj-card
-```         
-<div class="proj-title">Promoting social support network mapping with severe mentally ill patients (EGONET)</div> <div class="proj-meta">2018–2021</div> <div class="proj-venue">INNOVIRIS</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 7 -->
-
-::: proj-card
-```         
-<div class="proj-title">Mapping and Assessment for nurse responsible for general care (Directive 2005/36/EC)</div> <div class="proj-meta">2019</div> <div class="proj-venue">Commission européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 8 -->
-
-::: proj-card
-```         
-<div class="proj-title">Organisation of mental health care for adults in Belgium (KCE-HSR-52)</div> <div class="proj-meta">2017–2018</div> <div class="proj-venue">KCE — Belgian Health Care Knowledge Centre</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 9 -->
-
-::: proj-card
-```         
-<div class="proj-title">COFI — Comparing policy framework, structure, effectiveness and cost-effectiveness of mental health care systems</div> <div class="proj-meta">2014–2018</div> <div class="proj-venue">7e PCRD — Union européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 10 -->
-
-::: proj-card
-```         
-<div class="proj-title">Feasibility study of Drug Consumption Rooms in Belgium (DRUGROOM)</div> <div class="proj-meta">2017</div> <div class="proj-venue">BELSPO</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-
-<!-- 11 -->
-
-::: proj-card
-```         
-<div class="proj-title">Continuity of care for precarious people in the Brussels-Capital Region (CAPP)</div> <div class="proj-meta">2014–2017</div> <div class="proj-venue">INNOVIRIS</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
-```
-:::
-::::::::::::::
+**JA PreventNCD – European Joint Action on Non-Communicable Diseases**\
+*2023–2026 — European Joint Action on NCDs*\
+[Lien](https://preventncd.eu/)
 
 ------------------------------------------------------------------------
+
+**BELCOHORT – Bringing together existing health data into a Belgian population cohort to assess the interaction between health, environment and society**\
+*2023–2026 — BELSPO*\
+[Lien](https://www.sciensano.be/fr/projets/rassembler-les-donnees-de-sante-existantes-et-nouvelles-dans-une-cohorte-epidemiologique-belge-afin)
+
+------------------------------------------------------------------------
+
+**Characterizing long COVID and its physical, mental and social implications (COVIMPACT)**\
+*2021 — Sciensano*\
+[Lien](https://www.sciensano.be/fr/projets/covid-long-et-ses-implications-physiques-mentales-et-sociales)
+
+------------------------------------------------------------------------
+
+**Improving the Preparedness of Health Systems to Reduce Mental Health and Psychosocial Concerns resulting from the COVID-19 Pandemic (RESPOND)**\
+*2020–2023 — Union européenne (H2020)*\
+[Lien](https://respond-project.eu/)
+
+------------------------------------------------------------------------
+
+**Impact of the COVID-19 epidemic and confinement and the social and mental health of the general population (Covid and I)**\
+*2020 — UCLouvain*
+
+------------------------------------------------------------------------
+
+**Mapping and Assessment of Developments for one of the sectoral professions under Directive 2005/36/EC – nurse responsible for general care**\
+*2019 — Commission européenne*
+
+------------------------------------------------------------------------
+
+**Organization of mental health care for adults in Belgium: benefits, barriers, gaps and overlaps in the current offer of mental health care (KCE-HSR-52)**\
+*2017–2018 — KCE (Belgian Health Care Knowledge Centre)*\
+[Lien](https://kce.fgov.be/en/publications/all-reports/organisation-of-mental-health-care-for-adults-in-belgium)
+
+------------------------------------------------------------------------
+
+**Comparing policy framework, structure, effectiveness and cost-effectiveness of functional and integrated systems of mental health care (COFI)**\
+*2014–2018 — Union européenne (7e programme-cadre)*\
+[Lien](https://cordis.europa.eu/project/id/602645)
+
+------------------------------------------------------------------------
+
+**Feasibility study of Drug Consumption Rooms in Belgium (DRUGROOM)**\
+*2017 — BELSPO (Belgian Federal Science Policy Office)*\
+[Lien](https://www.belspo.be/belspo/fedra/DR/DR78_DRUGROOM_summary2018_en.pdf)
+
+------------------------------------------------------------------------
+
+**Continuity of care for precarious people in the Brussels-Capital Region (CAPP)**\
+*2014–2017 — INNOVIRIS*\
 
 ## Tableaux de bord {#dashboard}
 
