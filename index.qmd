@@ -8,19 +8,49 @@ Bienvenue sur ce site dédié à mes activités de **recherche en santé publiqu
 
 Son objectif est de **partager les résultats des travaux menés avec mes collègues**, en les rendant plus accessibles à un public large.
 
-Vous trouverez ici : - mes publications scientifiques et rapports de recherche ; - une présentation de projets en cours ou récemment achevés ; - et quelques informations à propos de mon parcours et de mes collaborations.
+Mes travaux portent sur les statistiques en santé, l’épidémiologie, les déterminants sociaux de la santé et l’approche « Health in All Policies », ainsi que sur l’évaluation des politiques et des systèmes de santé, avec une expertise particulière en santé mentale. J’ai également un intérêt pour la gestion de la santé de la population (*Population Health Management*), qui vise à mieux comprendre comment les données de santé peuvent être mobilisées pour orienter la planification, la prévention et la réduction des inégalités.
 
 > Ce site se veut un espace de diffusion, de transparence et de dialogue autour de nos recherches en santé publique en Belgique et au-delà.
 
 ------------------------------------------------------------------------
 
-## En savoir plus
+### En savoir plus
 
-::: quick-links
-<a class="btn btn-primary btn-lg" href="publications.html">📚 Mes publications</a> <a class="btn btn-outline-primary btn-lg" href="projets.html">🧪 Projets de recherche</a> <a class="btn btn-outline-primary btn-lg" href="apropos.html">👤 À propos de moi</a>
+::: {.quick-links style="margin-top: 1em; margin-bottom: 1.5em;"}
+<a class="btn btn-outline-primary btn-lg" href="publications.html">📚 Mes publications</a> <a class="btn btn-outline-primary btn-lg" href="projets.html">🧪 Projets de recherche</a> <a class="btn btn-outline-primary btn-lg" href="apropos.html">👤 À propos de moi</a>
 :::
 
-------------------------------------------------------------------------
+```{=html}
+<style>
+.quick-links .btn {
+  background: transparent;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+  transition: all 0.2s ease-in-out;
+}
+.quick-links .btn:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+.quick-links .btn:focus,
+.quick-links .btn:active,
+.quick-links .btn:visited {
+  background: transparent !important;
+  color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+  box-shadow: none !important;
+}
+</style>
+```
+
+```{=html}
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.quick-links .btn')
+    .forEach(b => b.classList.remove('active','btn-primary'));
+});
+</script>
+```
 
 ### 📬 Me contacter
 

@@ -146,17 +146,43 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Bienvenue sur ce site dédié à mes activités de <strong>recherche en santé publique</strong>.</p>
 <p>Son objectif est de <strong>partager les résultats des travaux menés avec mes collègues</strong>, en les rendant plus accessibles à un public large.</p>
-<p>Vous trouverez ici : - mes publications scientifiques et rapports de recherche ; - une présentation de projets en cours ou récemment achevés ; - et quelques informations à propos de mon parcours et de mes collaborations.</p>
+<p>Mes travaux portent sur les statistiques en santé, l’épidémiologie, les déterminants sociaux de la santé et l’approche « Health in All Policies », ainsi que sur l’évaluation des politiques et des systèmes de santé, avec une expertise particulière en santé mentale. J’ai également un intérêt pour la gestion de la santé de la population (<em>Population Health Management</em>), qui vise à mieux comprendre comment les données de santé peuvent être mobilisées pour orienter la planification, la prévention et la réduction des inégalités.</p>
 <blockquote class="blockquote">
 <p>Ce site se veut un espace de diffusion, de transparence et de dialogue autour de nos recherches en santé publique en Belgique et au-delà.</p>
 </blockquote>
 <hr>
-<section id="en-savoir-plus" class="level2">
-<h2 class="anchored" data-anchor-id="en-savoir-plus">En savoir plus</h2>
-<div class="quick-links">
-<p><a class="btn btn-primary btn-lg" href="publications.html">📚 Mes publications</a> <a class="btn btn-outline-primary btn-lg" href="projets.html">🧪 Projets de recherche</a> <a class="btn btn-outline-primary btn-lg" href="apropos.html">👤 À propos de moi</a></p>
+<section id="en-savoir-plus" class="level3">
+<h3 class="anchored" data-anchor-id="en-savoir-plus">En savoir plus</h3>
+<div class="quick-links" style="margin-top: 1em; margin-bottom: 1.5em;">
+<p><a class="btn btn-outline-primary btn-lg" href="publications.html">📚 Mes publications</a> <a class="btn btn-outline-primary btn-lg" href="projets.html">🧪 Projets de recherche</a> <a class="btn btn-outline-primary btn-lg" href="apropos.html">👤 À propos de moi</a></p>
 </div>
-<hr>
+<style>
+.quick-links .btn {
+  background: transparent;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+  transition: all 0.2s ease-in-out;
+}
+.quick-links .btn:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+.quick-links .btn:focus,
+.quick-links .btn:active,
+.quick-links .btn:visited {
+  background: transparent !important;
+  color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+  box-shadow: none !important;
+}
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.quick-links .btn')
+    .forEach(b => b.classList.remove('active','btn-primary'));
+});
+</script>
+</section>
 <section id="me-contacter" class="level3">
 <h3 class="anchored" data-anchor-id="me-contacter">📬 Me contacter</h3>
 <p>Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :</p>
@@ -181,7 +207,6 @@ document.getElementById("showEmail").addEventListener("click", function() {
 </script>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
