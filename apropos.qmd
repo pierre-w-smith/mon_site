@@ -6,7 +6,7 @@ format: html
 ![](file/portrait.jpg){width="150" style="border-radius:50%; float:left; margin-right:18px;"}
 
 Je suis docteur en sciences de la santé publique de l’Université catholique de Louvain (UCLouvain).  
-J’ai travaillé plusieurs années comme chercheur senior à Sciensano, l’Institut belge de santé publique, avant de rejoindre en 2025 l’Institut wallon de l’évaluation, de la prospective et de la statistique (IWEPS), où je contribue à l’analyse et à l’évaluation des politiques et des systèmes de santé.
+J’ai travaillé plusieurs années comme chercheur senior à Sciensano, l’Institut belge de santé publique, avant de rejoindre en 2025 l’Institut wallon de l’évaluation, de la prospective et de la statistique (IWEPS).
 
 Parallèlement, je suis collaborateur scientifique à l’UCLouvain (Institut de recherche Santé et Société) et chargé de cours invité à la VUB et à la Haute École Vinci.
 

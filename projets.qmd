@@ -69,9 +69,9 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ## Tableaux de bord {#dashboard}
 
-#### Santé mentale de la population en Wallonie, développé en R Shiny: 
+#### Santé mentale de la population en Wallonie, développé en R Shiny:
 
-[🔗 ](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/sante_mentale_wallonie/){target="_blank"}
+[🔗](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/sante_mentale_wallonie/){target="_blank"}
 
 Aperçu:
 
