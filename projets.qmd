@@ -17,13 +17,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Wellbeing and social determinants in Belgium — European Joint Action on Non-Communicable Diseases</div>
-<div class="proj-meta">2023–2026</div>
-<div class="proj-venue">European Joint Action on NCDs</div>
-<div class="proj-actions">
-  <!-- Remplacer l’URL si dispo -->
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Wellbeing and social determinants in Belgium — European Joint Action on Non-Communicable Diseases</div> <div class="proj-meta">2023–2026</div> <div class="proj-venue">European Joint Action on NCDs</div> <div class="proj-actions">   <!-- Remplacer l’URL si dispo -->   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -31,12 +25,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">BELCOHORT+ — Bringing together existing health data into a Belgian population cohort to assess the interaction between health, environment and society</div>
-<div class="proj-meta">2023–2026</div>
-<div class="proj-venue">BELSPO</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">BELCOHORT+ — Bringing together existing health data into a Belgian population cohort to assess the interaction between health, environment and society</div> <div class="proj-meta">2023–2026</div> <div class="proj-venue">BELSPO</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -44,12 +33,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Characterizing long COVID and its physical, mental and social implications (COVIMPACT)</div>
-<div class="proj-meta">2021</div>
-<div class="proj-venue">Sciensano</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Characterizing long COVID and its physical, mental and social implications (COVIMPACT)</div> <div class="proj-meta">2021</div> <div class="proj-venue">Sciensano</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -57,12 +41,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Improving the Preparedness of Health Systems to Reduce Mental Health and Psychosocial Concerns resulting from the COVID-19 Pandemic (RESPOND)</div>
-<div class="proj-meta">2020–2023</div>
-<div class="proj-venue">H2020 — Union européenne</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Improving the Preparedness of Health Systems to Reduce Mental Health and Psychosocial Concerns resulting from the COVID-19 Pandemic (RESPOND)</div> <div class="proj-meta">2020–2023</div> <div class="proj-venue">H2020 — Union européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -70,12 +49,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Impact of the COVID-19 epidemic and confinement and the social and mental health of the general population (Covid and I)</div>
-<div class="proj-meta">2020</div>
-<div class="proj-venue">UCLouvain</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Impact of the COVID-19 epidemic and confinement and the social and mental health of the general population (Covid and I)</div> <div class="proj-meta">2020</div> <div class="proj-venue">UCLouvain</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -83,12 +57,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Promoting social support network mapping with severe mentally ill patients (EGONET)</div>
-<div class="proj-meta">2018–2021</div>
-<div class="proj-venue">INNOVIRIS</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Promoting social support network mapping with severe mentally ill patients (EGONET)</div> <div class="proj-meta">2018–2021</div> <div class="proj-venue">INNOVIRIS</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -96,12 +65,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Mapping and Assessment for nurse responsible for general care (Directive 2005/36/EC)</div>
-<div class="proj-meta">2019</div>
-<div class="proj-venue">Commission européenne</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Mapping and Assessment for nurse responsible for general care (Directive 2005/36/EC)</div> <div class="proj-meta">2019</div> <div class="proj-venue">Commission européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -109,12 +73,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Organisation of mental health care for adults in Belgium (KCE-HSR-52)</div>
-<div class="proj-meta">2017–2018</div>
-<div class="proj-venue">KCE — Belgian Health Care Knowledge Centre</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Organisation of mental health care for adults in Belgium (KCE-HSR-52)</div> <div class="proj-meta">2017–2018</div> <div class="proj-venue">KCE — Belgian Health Care Knowledge Centre</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -122,12 +81,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">COFI — Comparing policy framework, structure, effectiveness and cost-effectiveness of mental health care systems</div>
-<div class="proj-meta">2014–2018</div>
-<div class="proj-venue">7e PCRD — Union européenne</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">COFI — Comparing policy framework, structure, effectiveness and cost-effectiveness of mental health care systems</div> <div class="proj-meta">2014–2018</div> <div class="proj-venue">7e PCRD — Union européenne</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -135,12 +89,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Feasibility study of Drug Consumption Rooms in Belgium (DRUGROOM)</div>
-<div class="proj-meta">2017</div>
-<div class="proj-venue">BELSPO</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Feasibility study of Drug Consumption Rooms in Belgium (DRUGROOM)</div> <div class="proj-meta">2017</div> <div class="proj-venue">BELSPO</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 
@@ -148,12 +97,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ::: proj-card
 ```         
-<div class="proj-title">Continuity of care for precarious people in the Brussels-Capital Region (CAPP)</div>
-<div class="proj-meta">2014–2017</div>
-<div class="proj-venue">INNOVIRIS</div>
-<div class="proj-actions">
-  <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a>
-</div>
+<div class="proj-title">Continuity of care for precarious people in the Brussels-Capital Region (CAPP)</div> <div class="proj-meta">2014–2017</div> <div class="proj-venue">INNOVIRIS</div> <div class="proj-actions">   <a class="btn btn-outline-primary btn-sm disabled" aria-disabled="true">Lien à venir</a> </div>
 ```
 :::
 ::::::::::::::
@@ -162,7 +106,7 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 
 ## Tableaux de bord {#dashboard}
 
-#### Santé mentale de la population en Wallonie, développé en application Shiny
+#### Santé mentale de la population en Wallonie, développé en R Shiny: 
 
 [🔗 ](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/sante_mentale_wallonie/){target="_blank"}
 
