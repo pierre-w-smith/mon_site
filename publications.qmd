@@ -1,3 +1,7 @@
+---
+title: "Publications"
+---
+
 ```{r}
 #| message: false
 #| warning: false
@@ -6,43 +10,51 @@
 library(yaml)
 library(htmltools)
 
-# ---- Lire le YAML ----
+# ---- Lire le YAML (liste de publications) ----
 pubs <- yaml::read_yaml("file/publications.yml")
+if (!is.list(pubs)) stop("Le fichier YAML doit être une liste d'entrées commençant par '-'.")
 
-# ---- Sécurité : s’assurer que c’est une liste ----
-if (!is.list(pubs)) stop("Le fichier YAML doit être une liste de publications (avec des - au début).")
+# ---- Helpers ----
+`%||%` <- function(a,b) if (is.null(a)) b else a
 
-# ---- Extraire tous les topcat ----
 get_topcats <- function(x) {
   t <- x$topcat
   if (is.null(t)) return(character())
   if (is.list(t)) return(unlist(t))
-  return(as.character(t))
+  as.character(t)
 }
+
+# ---- Valeurs disponibles pour les filtres ----
 all_topcats <- sort(unique(unlist(lapply(pubs, get_topcats))))
 if (length(all_topcats) == 0) all_topcats <- c("Sans catégorie")
 
-# ---- Générer le menu ----
+all_types <- sort(unique(vapply(pubs, function(p) p$type %||% "Publication", character(1))))
+
+# ---- Générer la barre d'actions (2 menus + reset) ----
+esc <- htmlEscape
 menu_html <- paste0(
   '<div class="listing-actions">',
-  '<label for="selTopcat" style="margin-right:8px;">Filtrer par catégorie :</label>',
+  '<label for="selTopcat" style="margin-right:6px;">Thématique :</label>',
   '<select id="selTopcat"><option value="">— Toutes —</option>',
-  paste(sprintf('<option value="%s">%s</option>', all_topcats, all_topcats), collapse = ""),
+  paste(sprintf('<option value="%s">%s</option>', esc(all_topcats), esc(all_topcats)), collapse = ""),
   '</select>',
-  '<button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:8px;">Réinitialiser</button>',
+  '<label for="selType" style="margin:0 6px 0 16px;">Type :</label>',
+  '<select id="selType"><option value="">— Tous —</option>',
+  paste(sprintf('<option value="%s">%s</option>', esc(all_types), esc(all_types)), collapse = ""),
+  '</select>',
+  '<button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:10px;">Réinitialiser</button>',
   '</div>'
 )
 
-# ---- Fonction pour générer une carte ----
-esc <- htmlEscape
+# ---- Gabarit HTML d'une carte ----
 ref_html <- function(p) {
-  title <- esc(p$title %||% "")
+  title   <- esc(p$title   %||% "")
   authors <- esc(p$authors %||% "")
-  venue <- esc(p$venue %||% "")
-  year <- esc(as.character(p$year %||% ""))
-  type <- esc(p$type %||% "")
-  url <- p$url %||% ""
-  topcat <- get_topcats(p)
+  venue   <- esc(p$venue   %||% "")
+  year    <- esc(as.character(p$year %||% ""))
+  type    <- p$type %||% "Publication"
+  url     <- p$url  %||% ""
+  topcat  <- get_topcats(p)
   cats_attr <- paste(topcat, collapse = "||")
 
   link_html <- if (!is.na(url) && nzchar(url)) {
@@ -50,23 +62,26 @@ ref_html <- function(p) {
   } else ""
 
   sprintf('
-  <div class="pub-card" data-topcat="%s">
+  <div class="pub-card" data-topcat="%s" data-type="%s">
     <div class="pub-title">%s</div>
-    <div class="pub-authors">%s</div>
-    <div class="pub-venue"><em>%s</em>%s — <span class="pub-type">%s</span></div>
+    %s
+    <div class="pub-venue">%s%s — <span class="pub-type">%s</span></div>
     %s
   </div>',
-  esc(cats_attr), title, authors, venue,
-  if (nzchar(year)) paste0(", ", year) else "",
-  type, link_html)
+    esc(cats_attr),
+    esc(type),
+    title,
+    if (nzchar(authors)) sprintf('<div class="pub-authors">%s</div>', authors) else "",
+    if (nzchar(venue)) sprintf('<em>%s</em>', venue) else "",
+    if (nzchar(year)) paste0(", ", year) else "",
+    esc(type),
+    link_html
+  )
 }
-
-`%||%` <- function(a,b) if (is.null(a)) b else a
 
 # ---- Rendre toutes les cartes ----
 cards <- vapply(pubs, ref_html, character(1))
-
-htmltools::HTML(menu_html, sprintf('<div id="pub-list">%s</div>', paste(cards, collapse="\n")))
+htmltools::HTML(menu_html, sprintf('<div id="pub-list">%s</div>', paste(cards, collapse = "\n")))
 ```
 
 ```{=html}
@@ -77,28 +92,186 @@ htmltools::HTML(menu_html, sprintf('<div id="pub-list">%s</div>', paste(cards, c
 .pub-venue { color: #2f3b4a; margin-bottom: 6px; }
 .pub-type { font-style: italic; color: #5a6a7a; }
 .pub-link a { text-decoration: none; }
-.listing-actions { margin: 10px 0 14px; }
+.listing-actions { margin: 10px 0 14px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.listing-actions select { min-width: 220px; }
 </style>
 ```
 
 ```{=html}
 <script>
+// Filtre combiné : topcat ET type
 window.addEventListener('DOMContentLoaded', function() {
-  const select = document.getElementById('selTopcat');
-  const reset  = document.getElementById('resetFilters');
+  const selCat  = document.getElementById('selTopcat');
+  const selType = document.getElementById('selType');
+  const reset   = document.getElementById('resetFilters');
+
   function getCats(card) {
     const raw = card.getAttribute('data-topcat') || '';
     return raw.split('||').map(s => s.trim()).filter(Boolean);
   }
+  function getType(card) {
+    return (card.getAttribute('data-type') || '').trim();
+  }
   function applyFilter() {
-    const wanted = (select?.value || '').trim();
+    const wantedCat  = (selCat?.value || '').trim();
+    const wantedType = (selType?.value || '').trim();
     document.querySelectorAll('#pub-list .pub-card').forEach(card => {
-      const show = !wanted || getCats(card).includes(wanted);
-      card.style.display = show ? '' : 'none';
+      const okCat  = !wantedCat  || getCats(card).includes(wantedCat);
+      const okType = !wantedType || getType(card) === wantedType;
+      card.style.display = (okCat && okType) ? '' : 'none';
     });
   }
-  if (select) select.addEventListener('change', applyFilter);
-  if (reset)  reset.addEventListener('click', () => { select.value=''; applyFilter(); });
+
+  if (selCat)  selCat.addEventListener('change', applyFilter);
+  if (selType) selType.addEventListener('change', applyFilter);
+  if (reset)   reset.addEventListener('click', () => {
+    if (selCat)  selCat.value  = '';
+    if (selType) selType.value = '';
+    applyFilter();
+  });
+
+  // 1er rendu
+  applyFilter();
+});
+</script>
+```
+
+---
+title: "Publications"
+---
+
+Cette page présente mes principales publications. Utilisez les menus **Catégorie** et **Type** pour filtrer.
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(yaml)
+library(htmltools)
+
+# ---- Lire le YAML (liste de publications) ----
+pubs <- yaml::read_yaml("file/publications.yml")
+if (!is.list(pubs)) stop("Le fichier YAML doit être une liste d'entrées commençant par '-'.")
+
+# ---- Helpers ----
+`%||%` <- function(a,b) if (is.null(a)) b else a
+
+get_topcats <- function(x) {
+  t <- x$topcat
+  if (is.null(t)) return(character())
+  if (is.list(t)) return(unlist(t))
+  as.character(t)
+}
+
+# ---- Valeurs disponibles pour les filtres ----
+all_topcats <- sort(unique(unlist(lapply(pubs, get_topcats))))
+if (length(all_topcats) == 0) all_topcats <- c("Sans catégorie")
+
+all_types <- sort(unique(vapply(pubs, function(p) p$type %||% "Publication", character(1))))
+
+# ---- Générer la barre d'actions (2 menus + reset) ----
+esc <- htmlEscape
+menu_html <- paste0(
+  '<div class="listing-actions">',
+  '<label for="selTopcat" style="margin-right:6px;">Catégorie :</label>',
+  '<select id="selTopcat"><option value="">— Toutes —</option>',
+  paste(sprintf('<option value="%s">%s</option>', esc(all_topcats), esc(all_topcats)), collapse = ""),
+  '</select>',
+  '<label for="selType" style="margin:0 6px 0 16px;">Type :</label>',
+  '<select id="selType"><option value="">— Tous —</option>',
+  paste(sprintf('<option value="%s">%s</option>', esc(all_types), esc(all_types)), collapse = ""),
+  '</select>',
+  '<button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:10px;">Réinitialiser</button>',
+  '</div>'
+)
+
+# ---- Gabarit HTML d'une carte ----
+ref_html <- function(p) {
+  title   <- esc(p$title   %||% "")
+  authors <- esc(p$authors %||% "")
+  venue   <- esc(p$venue   %||% "")
+  year    <- esc(as.character(p$year %||% ""))
+  type    <- p$type %||% "Publication"
+  url     <- p$url  %||% ""
+  topcat  <- get_topcats(p)
+  cats_attr <- paste(topcat, collapse = "||")
+
+  link_html <- if (!is.na(url) && nzchar(url)) {
+    sprintf('<div class="pub-link"><a href="%s" target="_blank" rel="noopener">Lien vers la publication</a></div>', esc(url))
+  } else ""
+
+  sprintf('
+  <div class="pub-card" data-topcat="%s" data-type="%s">
+    <div class="pub-title">%s</div>
+    %s
+    <div class="pub-venue">%s%s — <span class="pub-type">%s</span></div>
+    %s
+  </div>',
+    esc(cats_attr),
+    esc(type),
+    title,
+    if (nzchar(authors)) sprintf('<div class="pub-authors">%s</div>', authors) else "",
+    if (nzchar(venue)) sprintf('<em>%s</em>', venue) else "",
+    if (nzchar(year)) paste0(", ", year) else "",
+    esc(type),
+    link_html
+  )
+}
+
+# ---- Rendre toutes les cartes ----
+cards <- vapply(pubs, ref_html, character(1))
+htmltools::HTML(menu_html, sprintf('<div id="pub-list">%s</div>', paste(cards, collapse = "\n")))
+```
+
+```{=html}
+<style>
+.pub-card { padding: 12px 14px; border: 1px solid #eaeaea; border-radius: 10px; background: #fff; margin-bottom: 12px; }
+.pub-title { font-size: 1.0rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
+.pub-authors { color: #4a4a4a; margin-bottom: 2px; }
+.pub-venue { color: #2f3b4a; margin-bottom: 6px; }
+.pub-type { font-style: italic; color: #5a6a7a; }
+.pub-link a { text-decoration: none; }
+.listing-actions { margin: 10px 0 14px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.listing-actions select { min-width: 220px; }
+</style>
+```
+
+```{=html}
+<script>
+// Filtre combiné : topcat ET type
+window.addEventListener('DOMContentLoaded', function() {
+  const selCat  = document.getElementById('selTopcat');
+  const selType = document.getElementById('selType');
+  const reset   = document.getElementById('resetFilters');
+
+  function getCats(card) {
+    const raw = card.getAttribute('data-topcat') || '';
+    return raw.split('||').map(s => s.trim()).filter(Boolean);
+  }
+  function getType(card) {
+    return (card.getAttribute('data-type') || '').trim();
+  }
+  function applyFilter() {
+    const wantedCat  = (selCat?.value || '').trim();
+    const wantedType = (selType?.value || '').trim();
+    document.querySelectorAll('#pub-list .pub-card').forEach(card => {
+      const okCat  = !wantedCat  || getCats(card).includes(wantedCat);
+      const okType = !wantedType || getType(card) === wantedType;
+      card.style.display = (okCat && okType) ? '' : 'none';
+    });
+  }
+
+  if (selCat)  selCat.addEventListener('change', applyFilter);
+  if (selType) selType.addEventListener('change', applyFilter);
+  if (reset)   reset.addEventListener('click', () => {
+    if (selCat)  selCat.value  = '';
+    if (selType) selType.value = '';
+    applyFilter();
+  });
+
+  // 1er rendu
+  applyFilter();
 });
 </script>
 ```
