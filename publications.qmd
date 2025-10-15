@@ -25,7 +25,7 @@ if (length(all_topcats) == 0) all_topcats <- c("Sans catégorie")
 # ---- Générer le menu ----
 menu_html <- paste0(
   '<div class="listing-actions">',
-  '<label for="selTopcat" style="margin-right:8px;">Catégorie :</label>',
+  '<label for="selTopcat" style="margin-right:8px;">Filtrer par catégorie :</label>',
   '<select id="selTopcat"><option value="">— Toutes —</option>',
   paste(sprintf('<option value="%s">%s</option>', all_topcats, all_topcats), collapse = ""),
   '</select>',

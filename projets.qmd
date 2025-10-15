@@ -4,11 +4,9 @@ format: html
 editor: visual
 ---
 
-# Projets interactifs
-
 Voici quelques démonstrations et visualisations interactives.
 
-## Dashboard sur des indicateurs de santé mentale de la population, développé en application Shiny
+### Dashboard sur des indicateurs de santé mentale de la population, développé en application Shiny
 
 <iframe src="https://pierre-smith.shinyapps.io/sante_mentale_wallonie/" width="100%" height="500" frameborder="0">
 

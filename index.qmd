@@ -12,6 +12,16 @@ Vous trouverez ici : - mes publications scientifiques et rapports de recherche ;
 
 > Ce site se veut un espace de diffusion, de transparence et de dialogue autour de nos recherches en santé publique en Belgique et au-delà.
 
+------------------------------------------------------------------------
+
+## En savoir plus
+
+::: quick-links
+<a class="btn btn-primary btn-lg" href="publications.html">📚 Mes publications</a> <a class="btn btn-outline-primary btn-lg" href="projets.html">🧪 Projets de recherche</a> <a class="btn btn-outline-primary btn-lg" href="apropos.html">👤 À propos de moi</a>
+:::
+
+------------------------------------------------------------------------
+
 ### 📬 Me contacter
 
 Cliquez sur le bouton ci-dessous pour afficher mon adresse e-mail :
