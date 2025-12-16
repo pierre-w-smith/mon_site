@@ -8,14 +8,15 @@
 # 5. Méthodes de valorisation des données de santé
 # ============================================================
 
-- title: "Ligne directrice multidisciplinaire “Soins somatiques pour les personnes atteintes de troubles psychiatriques sévères en première ligne”"
-  authors: "Martens N., Van Puyenbroeck K., Hennissen V., Nascimento A., Van Royen P., Van Durme T., Smith P., Kris Van den Broeck K."
+- title: "Positive appraisal style predicts long-term stress resilience and mediates the effect of a pro-resilience intervention"
+  authors: "Petri-Romão P., Mediavilla R., Restrepo-Henao A., …., Smith P, …Kalisch R."
   year: 2025
-  venue: "Belgian Centre for Evidence-Based Medicine (CEBAM)"
-  url: "https://ebpnet.be/fr/ebsources/11063"
-  topcat: ["Santé mentale", "Politiques de santé", "Évaluation des systèmes et services de santé"]
-  type: "Rapport de recherche"
-
+  venue: "Nature Communication"
+  url: "https://pubmed.ncbi.nlm.nih.gov/41271713/"
+  categories: ["santé mentale", "résilience", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
+  
 - title: "Co-RESPOND: a federated network of cohorts on mental health and adversity during the COVID-19 pandemic. Challenges, solutions and recommendations for retrospective data harmonization"
   authors: "Petri-Romão P., Stoffers-Winterling J., Doerschner C., Smith P., … Lieb K."
   year: 2025
@@ -386,6 +387,14 @@
   venue: "Regards Statistiques N°18, Institut wallon de l’évaluation, de la prospective et de la statistique (IWEPS)"
   url: "https://www.iweps.be/publication/sante-mentale-en-wallonie-2025-analyse-des-inegalites-territoriales-et-individuelles/"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé", "Évaluation des systèmes et services de santé"]
+  type: "Rapport de recherche"
+
+- title: "Ligne directrice multidisciplinaire “Soins somatiques pour les personnes atteintes de troubles psychiatriques sévères en première ligne”"
+  authors: "Martens N., Van Puyenbroeck K., Hennissen V., Nascimento A., Van Royen P., Van Durme T., Smith P., Kris Van den Broeck K."
+  year: 2025
+  venue: "Belgian Centre for Evidence-Based Medicine (CEBAM)"
+  url: "https://ebpnet.be/fr/ebsources/11063"
+  topcat: ["Santé mentale", "Politiques de santé", "Évaluation des systèmes et services de santé"]
   type: "Rapport de recherche"
 
 - title: "Cohorte belge Santé mentale et Bien-être (BELHEALTH) : évolution de la santé mentale de la population belge en 2023"
