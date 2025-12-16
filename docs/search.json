@@ -25,7 +25,7 @@
     "href": "projets.html",
     "title": "Projets",
     "section": "",
-    "text": "Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. tableaux de bord)."
+    "text": "Vous trouverez ci-dessous nos projets de recherche et certains outils que nous développons (ex. tableaux de bord)."
   },
   {
     "objectID": "projets.html#projets",
@@ -39,6 +39,6 @@
     "href": "projets.html#dashboard",
     "title": "Projets",
     "section": "Tableaux de bord intéractifs",
-    "text": "Tableaux de bord intéractifs\n\n1. Santé mentale en Wallonie, développé en R Shiny:\n🔗Accéder au dashboard\nAperçu:\n\n\n\n\n2. Outil de diagnostic des besoins de santé à l’échelle locale, développé en R Shiny:\n🔗Accéder au dashboard\nAperçu:"
+    "text": "Tableaux de bord intéractifs\n\n1. Santé mentale en Wallonie - tableau de bord:\n\n\n🔗Accéder au dashboard\n\n\n2. Outil de diagnostic des besoins de santé à l’échelle locale:\n\n\n🔗Accéder au dashboard"
   }
 ]
