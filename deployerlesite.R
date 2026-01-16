@@ -1,8 +1,3 @@
-# =====================================================
-# Objet  : Générer, dater, commit et pousser ton site Quarto
-# Auteur : Pierre Smith
-# =====================================================
-
 message("🚀 Construction du site Quarto...")
 
 # 0) S'assurer que _quarto.yml rend vers docs/
@@ -22,7 +17,7 @@ fix_output_dir <- function(yml = "_quarto.yml") {
 
 fix_output_dir()
 
-# 1) Ajouter/mettre à jour la date dans le pied de page (page-footer)
+# 1) Mettre à jour la date (optionnel)
 add_update_date <- function(yml = "_quarto.yml") {
   y <- readLines(yml, warn = FALSE)
   today <- format(Sys.Date(), "%d/%m/%Y")
@@ -30,41 +25,19 @@ add_update_date <- function(yml = "_quarto.yml") {
   
   has_website    <- any(grepl("^\\s*website\\s*:", y))
   has_pagefooter <- any(grepl("^\\s*page-footer\\s*:", y))
-  has_footer     <- any(grepl("^\\s*footer\\s*:", y)) # au cas où, on va le migrer
   
   if (!has_website) {
-    # Crée un bloc website + page-footer minimal si absent
-    y <- c(
-      y,
-      "",
-      "website:",
-      "  page-footer:",
-      right_line
-    )
+    y <- c(y, "", "website:", "  page-footer:", right_line)
+  } else if (!has_pagefooter) {
+    i <- which(grepl("^\\s*website\\s*:", y))[1]
+    y <- append(y, c("  page-footer:", right_line), after = i)
   } else {
-    # On a website: ; s'il existe un ancien 'footer:', on le remplace par 'page-footer:'
-    if (has_footer && !has_pagefooter) {
-      y <- sub("^\\s*footer\\s*:", "  page-footer:", y)
-      has_pagefooter <- TRUE
-    }
-    if (!has_pagefooter) {
-      # insère 'page-footer:' juste avant 'format:' (ou en fin si pas trouvé)
-      i <- which(grepl("^\\s*format\\s*:", y))[1]
-      if (length(i) == 0 || is.na(i)) i <- length(y)
-      insert_block <- c("  page-footer:", right_line)
-      y <- append(y, insert_block, after = i - 1)
+    pf_idx <- which(grepl("^\\s*page-footer\\s*:", y))[1]
+    right_rel <- which(grepl("^\\s*right\\s*:", y[(pf_idx+1):length(y)]))
+    if (length(right_rel) > 0) {
+      y[pf_idx + right_rel[1]] <- right_line
     } else {
-      # Met à jour la ligne 'right:' dans le bloc page-footer
-      # (remplace toute ligne 'right:' existante sous page-footer)
-      # Si aucune 'right:' n'existe, on l'ajoute juste après page-footer:
-      pf_idx <- which(grepl("^\\s*page-footer\\s*:", y))[1]
-      # Cherche une ligne right: après pf_idx
-      right_idx <- pf_idx + which(grepl("^\\s*right\\s*:", y[(pf_idx+1):length(y)]))[1]
-      if (is.finite(right_idx)) {
-        y[right_idx] <- right_line
-      } else {
-        y <- append(y, right_line, after = pf_idx)
-      }
+      y <- append(y, right_line, after = pf_idx)
     }
   }
   
@@ -73,25 +46,36 @@ add_update_date <- function(yml = "_quarto.yml") {
 
 add_update_date()
 
-# 2) Nettoyer les anciens dossiers
-unlink("_site", recursive = TRUE, force = TRUE)
-unlink("docs",  recursive = TRUE, force = TRUE)
-
-# 3) Rendre le site (au premier plan)
+# 2) Rendre le site
 if (!requireNamespace("quarto", quietly = TRUE)) install.packages("quarto")
 quarto::quarto_render(as_job = FALSE)
 
-# 4) Vérifier la génération
-if (!file.exists("docs/index.html")) {
-  stop("❌ Le rendu a échoué : pas de docs/index.html (vérifie _quarto.yml et les logs Quarto)")
-}
-
+if (!file.exists("docs/index.html")) stop("❌ Rendu échoué : docs/index.html introuvable")
 message("✅ Rendu OK → docs/index.html trouvé.")
 
-# 5) Commit & push
-system("git add .")
-system(paste0('git commit -m "Mise à jour du site Quarto (', format(Sys.Date(), "%d/%m/%Y"), ')"'))
-system("git push")
+# 3) Commit & push (robuste)
+message("📦 Ajout des fichiers générés...")
 
-message("🌍 Poussé sur GitHub.")
+# Toujours se mettre à la racine git (évite les soucis de working dir)
+root <- system("git rev-parse --show-toplevel", intern = TRUE)
+setwd(root)
+
+# Forcer l'ajout de docs/ (utile si .gitignore gêne)
+system("git add -A _quarto.yml file")
+system("git add -f docs")
+
+# Montrer ce qui est prêt à être commité
+message("🧾 Fichiers stagés :")
+print(system("git diff --cached --name-only", intern = TRUE))
+
+st <- system("git status --porcelain", intern = TRUE)
+
+if (length(st) > 0) {
+  system(paste0('git commit -m "Mise a jour du site Quarto (', format(Sys.Date(), "%d/%m/%Y"), ')"'))
+  system("git push")
+  message("🌍 Poussé sur GitHub.")
+} else {
+  message("ℹ️ Aucun changement à commit, donc rien à pousser.")
+}
+
 message("🔗 Vérifie sur : https://pierre-w-smith.github.io/mon_site/")

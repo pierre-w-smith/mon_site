@@ -8,7 +8,7 @@ format:
     toc-location: left
 ---
 
-Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. tableaux de bord).
+Vous trouverez ci-dessous nos projets de recherche et certains outils que nous développons (ex. tableaux de bord).
 
 ## Projets de recherche {#projets}
 
@@ -67,16 +67,20 @@ Vous trouverez ci-dessous nos projets de recherche et certains livrables (ex. ta
 **Continuity of care for precarious people in the Brussels-Capital Region (CAPP)**\
 *2014–2017 — INNOVIRIS*\
 
-## Tableaux de bord {#dashboard}
+## Tableaux de bord intéractifs {#dashboard}
 
-#### Santé mentale de la population en Wallonie, développé en R Shiny:
-
-[🔗](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/sante_mentale_wallonie/){target="_blank"}
-
-Aperçu:
+#### 1. Santé mentale en Wallonie - tableau de bord:
 
 <iframe src="https://pierre-smith.shinyapps.io/sante_mentale_wallonie/" width="100%" height="500" frameborder="0">
 
 </iframe>
 
-### 
+[🔗](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/sante_mentale_wallonie/){target="_blank"}
+
+#### 2. Outil de diagnostic des besoins de santé à l'échelle locale: 
+
+<iframe src="https://pierre-smith.shinyapps.io/phm-dashboard/" width="100%" height="500" frameborder="0">
+
+</iframe>
+
+[🔗](https://www.linkedin.com/in/pierre-smith-48855aa9/){target="_blank"}[Accéder au dashboard](https://pierre-smith.shinyapps.io/phm-dashboard/){target="_blank"}
