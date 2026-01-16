@@ -381,6 +381,14 @@
 # Liste des rapports de recherche
 # ============================================================
 
+- title: "Report on follow-up Long COVID survey among General Practitioners (GPs) in Belgium"
+  authors: "Moreels S., Smith P., Rouvez F., Bensemmane, S."
+  year: 2026
+  venue: "Sciensano, Bruxelles, Belgique. Janvier 2026"
+  url: "https://www.sciensano.be/en/biblio/report-follow-long-covid-survey-among-general-practitioners-gps-belgium"
+  topcat: ["Déterminants de la santé"]
+  type: "Rapport de recherche"
+
 - title: "Santé mentale en Wallonie (2025) : Analyse des inégalités territoriales et individuelles"
   authors: "Smith P."
   year: 2025
@@ -457,6 +465,22 @@
 # ============================================================
 # Liste des articles de presse
 # ============================================================
+
+- title: "Soigner la santé mentale, c’est d’abord créer un climat propice au bien-être"
+  authors: "Références"
+  year: 2026
+  venue: "Références, 15 janvier 2026"
+  url: "https://www.references.be/article/enjeux-societaux/soigner-la-sante-mentale-cest-dabord-creer-un-climat-propice-au-bien-etre/722558"
+  topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
+  type: "Article de presse"
+
+- title: "La santé mentale, première cause d’incapacité de travail en Wallonie"
+  authors: "Références"
+  year: 2026
+  venue: "Références, 13 janvier 2026"
+  url: "https://www.references.be/article/enjeux-societaux/la-sante-mentale-premiere-cause-dincapacite-de-travail-en-wallonie/722112"
+  topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
+  type: "Article de presse"
 
 - title: "Santé mentale en Wallonie : des inégalités territoriales et individuelles"
   authors: "MediQuality"
