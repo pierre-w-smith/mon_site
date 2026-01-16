@@ -4,6 +4,13 @@ project:
 
 website:
   title: "Pierre Smith — Recherches"
+
+  # 1) IMPORTANT pour Google + sitemap + partage
+  site-url: "https://pierre-w-smith.github.io/mon_site/"
+
+  # 2) Meta description (apparaît souvent dans Google)
+  description: "Site personnel de Pierre Smith : recherches, projets, publications et CV."
+
   navbar:
     left:
       - text: "Accueil"
@@ -25,3 +32,14 @@ website:
 format:
   html:
     theme: cosmo
+
+    # 3) Accessibilité + SEO “technique”
+    lang: fr
+
+    # 4) Améliore l’aperçu lors du partage (LinkedIn, WhatsApp, etc.)
+    open-graph: true
+    twitter-card: true
+
+    # 5) Petit plus accessibilité (navigation clavier)
+    # (si tu as une favicon, ajoute-la ici)
+    # favicon: "images/favicon.png"
