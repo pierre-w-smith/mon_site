@@ -9,7 +9,7 @@ website:
   site-url: "https://pierre-w-smith.github.io/mon_site/"
 
   # 2) Meta description (apparaît souvent dans Google)
-  description: "Site personnel de Pierre Smith : recherches, projets, publications et CV."
+  description: "Site personnel de Pierre Smith : recherches en santé publique, projets, publications et CV."
 
   navbar:
     left:
@@ -19,6 +19,8 @@ website:
         href: publications.qmd
       - text: "Projets"
         href: projets.qmd
+      - text: "Tableaux de bord"
+        href: tableaubord.qmd
       - text: "À propos de moi"
         href: apropos.qmd
     right:
@@ -27,7 +29,7 @@ website:
         target: _blank
 
   page-footer:
-    right: "Dernière mise à jour : 16/01/2026"
+    right: "Dernière mise à jour : 23/01/2026"
 
 format:
   html:
