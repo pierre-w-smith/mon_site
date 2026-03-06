@@ -8,6 +8,24 @@
 # 5. Méthodes de valorisation des données de santé
 # ============================================================
 
+- title: "Dynamics of psychological distress: understanding the impact of intraindividual and interindividual factors in the Belgian population during the COVID-19 pandemic—a multilevel prospective cohort study"
+  authors: "Duveau C., Nicaise P., Smith P., Seeber K., Bryant R., …, Lorant V."
+  year: 2026
+  venue: "Frontiers in Psychiatry"
+  url: "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1716253/full?utm_source=F-NTF&utm_medium=EMLX&utm_campaign=PRD_FEOPS_20170000_ARTICLE"
+  categories: ["santé mentale", "population", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
+  
+- title: "The association between alexithymia and risk of burnout among nurses during the COVID-19 pandemic in Belgium: A cross-sectional study"
+  authors: "Bovo, A., Smith, P., Karam, M., & Luminet, O."
+  year: 2026
+  venue: "Journal of Workplace Behavioral Health"
+  url: "https://doi.org/10.1080/15555240.2026.2615422"
+  categories: ["santé mentale", "burnout", "COVID-19"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
+  
 - title: "Positive appraisal style predicts long-term stress resilience and mediates the effect of a pro-resilience intervention"
   authors: "Petri-Romão P., Mediavilla R., Restrepo-Henao A., …., Smith P, …Kalisch R."
   year: 2025
@@ -384,7 +402,7 @@
 - title: "Report on follow-up Long COVID survey among General Practitioners (GPs) in Belgium"
   authors: "Moreels S., Smith P., Rouvez F., Bensemmane, S."
   year: 2026
-  venue: "Sciensano, Bruxelles, Belgique. Janvier 2026"
+  venue: "Sciensano, Bruxelles, Belgique. Janvier"
   url: "https://www.sciensano.be/en/biblio/report-follow-long-covid-survey-among-general-practitioners-gps-belgium"
   topcat: ["Déterminants de la santé"]
   type: "Rapport de recherche"
@@ -469,7 +487,7 @@
 - title: "Soigner la santé mentale, c’est d’abord créer un climat propice au bien-être"
   authors: "Références"
   year: 2026
-  venue: "Références, 15 janvier 2026"
+  venue: "Références, 15 janvier"
   url: "https://www.references.be/article/enjeux-societaux/soigner-la-sante-mentale-cest-dabord-creer-un-climat-propice-au-bien-etre/722558"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -477,7 +495,7 @@
 - title: "La santé mentale, première cause d’incapacité de travail en Wallonie"
   authors: "Références"
   year: 2026
-  venue: "Références, 13 janvier 2026"
+  venue: "Références, 13 janvier"
   url: "https://www.references.be/article/enjeux-societaux/la-sante-mentale-premiere-cause-dincapacite-de-travail-en-wallonie/722112"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -485,7 +503,7 @@
 - title: "Santé mentale en Wallonie : des inégalités territoriales et individuelles"
   authors: "MediQuality"
   year: 2026
-  venue: "MediQuality, 9 janvier 2026"
+  venue: "MediQuality, 9 janvier"
   url: "https://www.mediquality.net/be-fr/news/article/31623036/sante-mentale-en-wallonie-des-inegalites-territoriales-et-individuelles?_gl=1*1rgj272*_up*MQ..*_ga*Mzk5ODk5OTk1LjE3Njc5NTE3MDQ.*_ga_T96YEVNSWS*czE3Njc5NTE3MDQkbzEkZzAkdDE3Njc5NTE3MDQkajYwJGwwJGgw"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -493,7 +511,7 @@
 - title: "Une nouvelle étude montre les inégalités de santé mentale en Wallonie : « Certains territoires sont mieux lotis »"
   authors: "RTBF"
   year: 2025
-  venue: "RTBF, 4 décembre 2025"
+  venue: "RTBF, 4 décembre"
   url: "https://www.rtbf.be/article/une-nouvelle-etude-montre-les-inegalites-de-sante-en-mentale-en-wallonie-certains-territoires-sont-mieux-lotis-11641902"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -501,7 +519,7 @@
 - title: "Qui sont les personnes les plus exposées aux troubles anxieux ?"
   authors: "La Libre"
   year: 2025
-  venue: "La Libre, 3 décembre 2025"
+  venue: "La Libre, 3 décembre"
   url: "https://www.lalibre.be/belgique/2025/12/03/qui-sont-les-personnes-les-plus-exposees-aux-troubles-anxieux-S7ATMANPZZGUTMK4LF75CBYFDE/"
   topcat: ["Santé mentale", "Déterminants de la santé"]
   type: "Article de presse"
@@ -509,7 +527,7 @@
 - title: "Les jeunes adultes et les femmes sont les plus exposés aux troubles anxieux : voici la carte des inégalités wallonnes en soins en santé mentale"
   authors: "L’Avenir"
   year: 2025
-  venue: "L’Avenir, 3 décembre 2025"
+  venue: "L’Avenir, 3 décembre"
   url: "https://www.lavenir.net/actu/belgique/2025/12/03/les-jeunes-adultes-et-les-femmes-sont-les-plus-exposes-aux-troubles-anxieux-voici-la-carte-des-inegalites-wallonnes-en-soins-en-sante-mentale-KA4O2U7H25ABDFO7HDLNRZMWLU/"
   topcat: ["Santé mentale", "Déterminants de la santé", "Évaluation des systèmes et services de santé"]
   type: "Article de presse"
@@ -517,7 +535,7 @@
 - title: "Faire du bien-être et de la santé mentale une priorité : le besoin urgent d’action et de coordination politique"
   authors: "Le Soir"
   year: 2024
-  venue: "Le Soir, 14 juin 2024"
+  venue: "Le Soir, 14 juin"
   url: "https://www.lesoir.be/595041/article/2024-06-14/faire-du-bien-etre-et-de-la-sante-mentale-une-priorite-le-besoin-urgent-daction"
   topcat: ["Santé mentale", "Politiques de santé", "Évaluation des systèmes et services de santé"]
   type: "Article de presse"
@@ -525,7 +543,7 @@
 - title: "Hoe bewaken we onze mentale gezondheid in tijden van polycrisis?"
   authors: "Knack"
   year: 2023
-  venue: "Knack, 9 juin 2023"
+  venue: "Knack, 9 juin"
   url: "https://www.knack.be/nieuws/gezondheid/psychologie/hoe-bewaken-we-onze-mentale-gezondheid-in-tijden-van-polycrisis/"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -533,7 +551,7 @@
 - title: "Crise énergétique, crise climatique… : face à un horizon qui semble bouché, l’importance de soigner la santé mentale"
   authors: "RTBF"
   year: 2023
-  venue: "RTBF, 23 mars 2023"
+  venue: "RTBF, 23 mars"
   url: "https://www.rtbf.be/article/crise-energetique-crise-climatique-face-a-un-horizon-qui-semble-bouche-limportance-de-soigner-la-sante-mentale-11171271"
   topcat: ["Santé mentale", "Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -541,7 +559,7 @@
 - title: "Les troubles de santé mentale touchent 14% des Belges"
   authors: "L'Avenir"
   year: 2022
-  venue: "L'Avenir, 2 mars 2022"
+  venue: "L'Avenir, 2 mars"
   url: "https://www.lavenir.net/actu/2023/03/22/les-troubles-de-sante-mentale-touchent-14-des-belges-CRRJIII5PFC4TIG3WI4IBHIKM4/"
   topcat: ["Santé mentale", "Déterminants de la santé"]
   type: "Article de presse"
@@ -549,7 +567,7 @@
 - title: "Un jeune sur trois souffre d’anxiété ou de dépression"
   authors: "Le Soir"
   year: 2023
-  venue: "Le Soir, 9 février 2023"
+  venue: "Le Soir, 9 février"
   url: "https://www.lesoir.be/494031/article/2023-02-09/un-jeune-sur-trois-souffre-danxiete-ou-de-depression"
   topcat: ["Santé mentale", "Déterminants de la santé"]
   type: "Article de presse"
@@ -557,7 +575,7 @@
 - title: "Le Covid long touche un tiers des Belges infectés: 'Une évolution défavorable de la maladie sur la santé mentale'"
   authors: "La Libre"
   year: 2022
-  venue: "La Libre, 2 juin 2022"
+  venue: "La Libre, 2 juin"
   url: "https://www.lalibre.be/belgique/societe/2022/06/02/le-covid-long-touche-un-tiers-des-belges-infectes-une-evolution-defavorable-de-la-maladie-sur-la-sante-mentale-VJD74OMCHNGJLNJMK3KEDB5GXQ/"
   topcat: ["Santé mentale", "Déterminants de la santé"]
   type: "Article de presse"
@@ -565,7 +583,7 @@
 - title: "Le covid long, premier défi de l’après-pandémie"
   authors: "Le Soir"
   year: 2022
-  venue: "Le Soir, 13 février 2022"
+  venue: "Le Soir, 13 février"
   url: "https://www.lesoir.be/423888/article/2022-02-13/le-covid-long-premier-defi-de-lapres-pandemie"
   topcat: ["Déterminants de la santé", "Politiques de santé"]
   type: "Article de presse"
@@ -573,7 +591,7 @@
 - title: "Coronavirus: quels sont les symptômes du covid long?"
   authors: "Le Soir"
   year: 2022
-  venue: "Le Soir, 8 janvier 2022"
+  venue: "Le Soir, 8 janvier"
   url: "https://www.lesoir.be/416814/article/2022-01-08/coronavirus-quels-sont-les-symptomes-du-covid-long"
   topcat: ["Déterminants de la santé"]
   type: "Article de presse"
@@ -581,7 +599,7 @@
 - title: "Covid de longue durée : pratiquement un Belge sur deux a toujours des symptômes 3 mois après l’infection, selon une étude de Sciensano"
   authors: "RTBF"
   year: 2021
-  venue: "RTBF, 21 décembre 2021"
+  venue: "RTBF, 21 décembre"
   url: "https://www.rtbf.be/article/coronavirus-de-longue-duree-pratiquement-un-belge-sur-deux-a-toujours-des-symptomes-3-mois-apres-linfection-selon-une-etude-de-sciensano-10901570"
   topcat: ["Déterminants de la santé"]
   type: "Article de presse"
@@ -589,7 +607,7 @@
 - title: "Derrière le transfert de patients Covid à Bruxelles, le blues et le burn-out des blouses blanches en soins intensifs"
   authors: "RTBF"
   year: 2021
-  venue: "RTBF, 30 août 2021"
+  venue: "RTBF, 30 août"
   url: "https://www.rtbf.be/article/derriere-le-transfert-de-patients-covid-a-bruxelles-le-blues-et-le-burn-out-des-blouses-blanches-en-soins-intensifs-10832664"
   topcat: ["Santé mentale"]
   type: "Article de presse"
@@ -597,7 +615,7 @@
 - title: "Pandémie COVID-19, plus de six infirmiers sur dix risquent l'épuisement professionnel"
   authors: "La Libre"
   year: 2020
-  venue: "La Libre, 2 mai 2020"
+  venue: "La Libre, 2 mai"
   url: "https://www.lalibre.be/planete/sante/2020/05/02/coronavirus-plus-de-six-infirmiers-sur-dix-risquent-lepuisement-professionnel-selon-une-enquete-ZD3FYC3SQJH33LBUJ6RMZQS5YI/"
   topcat: ["Santé mentale", "Déterminants de la santé"]
   type: "Article de presse"
