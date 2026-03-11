@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Pierre Smith — Recherches"
+  title: "Pierre Smith – Chercheur en santé publique"
 
   # 1) IMPORTANT pour Google + sitemap + partage
   site-url: "https://pierre-w-smith.github.io/mon_site/"
@@ -19,7 +19,7 @@ website:
         href: publications.qmd
       - text: "Projets"
         href: projets.qmd
-      - text: "Tableaux de bord"
+      - text: "Tableaux de bord santé"
         href: tableaubord.qmd
       - text: "À propos de moi"
         href: apropos.qmd
