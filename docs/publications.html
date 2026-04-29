@@ -156,8 +156,46 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="cell">
-<div class="cell-output-display no-overflow-x">
-<div class="listing-actions"><label for="selTopcat" style="margin-right:6px;">Thématique :</label><select id="selTopcat"><option value="">— Toutes —</option><option value="Déterminants de la santé">Déterminants de la santé</option><option value="Évaluation des systèmes et services de santé">Évaluation des systèmes et services de santé</option><option value="Méthodes de valorisation des données de santé">Méthodes de valorisation des données de santé</option><option value="Politiques de santé">Politiques de santé</option><option value="Santé mentale">Santé mentale</option></select><label for="selType" style="margin:0 6px 0 16px;">Type :</label><select id="selType"><option value="">— Tous —</option><option value="Article de presse">Article de presse</option><option value="Publication scientifique">Publication scientifique</option><option value="Rapport de recherche">Rapport de recherche</option></select><button id="resetFilters" class="btn btn-outline-secondary btn-sm" style="margin-left:10px;">Réinitialiser</button></div> <div id="pub-list">
+<div class="cell-output-display">
+<div class="listing-actions"><div class="filter-block"><div class="filter-title">Thématique</div><div class="filter-options">
+          <label class="filter-check" for="topcat_D_terminants_de_la_sant_">
+            <input type="checkbox" id="topcat_D_terminants_de_la_sant_" class="filter-topcat" value="Déterminants de la santé">
+            <span>Déterminants de la santé <span class="filter-count">(49)</span></span>
+          </label>
+
+          <label class="filter-check" for="topcat__valuation_des_syst_mes_et_services_de_sant_">
+            <input type="checkbox" id="topcat__valuation_des_syst_mes_et_services_de_sant_" class="filter-topcat" value="Évaluation des systèmes et services de santé">
+            <span>Évaluation des systèmes et services de santé <span class="filter-count">(18)</span></span>
+          </label>
+
+          <label class="filter-check" for="topcat_M_thodes_de_valorisation_des_donn_es_de_sant_">
+            <input type="checkbox" id="topcat_M_thodes_de_valorisation_des_donn_es_de_sant_" class="filter-topcat" value="Méthodes de valorisation des données de santé">
+            <span>Méthodes de valorisation des données de santé <span class="filter-count">(8)</span></span>
+          </label>
+
+          <label class="filter-check" for="topcat_Politiques_de_sant_">
+            <input type="checkbox" id="topcat_Politiques_de_sant_" class="filter-topcat" value="Politiques de santé">
+            <span>Politiques de santé <span class="filter-count">(19)</span></span>
+          </label>
+
+          <label class="filter-check" for="topcat_Sant_mentale">
+            <input type="checkbox" id="topcat_Sant_mentale" class="filter-topcat" value="Santé mentale">
+            <span>Santé mentale <span class="filter-count">(52)</span></span>
+          </label></div></div><div class="filter-block"><div class="filter-title">Type de publication</div><div class="filter-options">
+          <label class="filter-check" for="type_Article_de_presse">
+            <input type="checkbox" id="type_Article_de_presse" class="filter-type" value="Article de presse">
+            <span>Article de presse <span class="filter-count">(17)</span></span>
+          </label>
+
+          <label class="filter-check" for="type_Publication_scientifique">
+            <input type="checkbox" id="type_Publication_scientifique" class="filter-type" value="Publication scientifique">
+            <span>Publication scientifique <span class="filter-count">(45)</span></span>
+          </label>
+
+          <label class="filter-check" for="type_Rapport_de_recherche">
+            <input type="checkbox" id="type_Rapport_de_recherche" class="filter-type" value="Rapport de recherche">
+            <span>Rapport de recherche <span class="filter-count">(10)</span></span>
+          </label></div></div><button id="resetFilters" class="btn btn-outline-secondary btn-sm">Réinitialiser</button></div> <div id="pub-list">
   <div class="pub-card" data-topcat="Déterminants de la santé" data-type="Publication scientifique">
     <div class="pub-title">Post-acute organ complications within one year following COVID-19 hospitalization and related socioeconomic inequalities</div>
     <div class="pub-authors">Cavillot L., Van den Borre L., Ghattas J. Smith P., et al.</div>
@@ -664,48 +702,153 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <style>
-.pub-card { padding: 12px 14px; border: 1px solid #eaeaea; border-radius: 10px; background: #fff; margin-bottom: 12px; }
-.pub-title { font-size: 1.0rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
-.pub-authors { color: #4a4a4a; margin-bottom: 2px; }
-.pub-venue { color: #2f3b4a; margin-bottom: 6px; }
-.pub-type { font-style: italic; color: #5a6a7a; }
-.pub-link a { text-decoration: none; }
-.listing-actions { margin: 10px 0 14px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
-.listing-actions select { min-width: 220px; }
+.pub-card {
+  padding: 12px 14px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 12px;
+}
+
+.pub-title {
+  font-size: 1.0rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  color: #4a4a4a;
+  margin-bottom: 2px;
+}
+
+.pub-venue {
+  color: #2f3b4a;
+  margin-bottom: 6px;
+}
+
+.pub-type {
+  font-style: italic;
+  color: #5a6a7a;
+}
+
+.pub-link a {
+  text-decoration: none;
+}
+
+.listing-actions {
+  margin: 10px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-title {
+  font-weight: 700;
+  color: #2f3b4a;
+  margin-bottom: 2px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #d9dee6;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.filter-check:hover {
+  background: #f0f4f8;
+}
+
+.filter-check input {
+  margin: 0;
+}
+
+.filter-count {
+  color: #6b7280;
+  font-size: 0.88em;
+}
+
+#resetFilters {
+  align-self: flex-start;
+  margin-top: 2px;
+}
 </style>
 <script>
-// Filtre combiné : topcat ET type
 window.addEventListener('DOMContentLoaded', function() {
-  const selCat  = document.getElementById('selTopcat');
-  const selType = document.getElementById('selType');
-  const reset   = document.getElementById('resetFilters');
+  const reset = document.getElementById('resetFilters');
+
+  function getCheckedValues(selector) {
+    return Array.from(document.querySelectorAll(selector + ':checked'))
+      .map(el => (el.value || '').trim())
+      .filter(Boolean);
+  }
 
   function getCats(card) {
     const raw = card.getAttribute('data-topcat') || '';
     return raw.split('||').map(s => s.trim()).filter(Boolean);
   }
+
   function getType(card) {
     return (card.getAttribute('data-type') || '').trim();
   }
+
   function applyFilter() {
-    const wantedCat  = (selCat?.value || '').trim();
-    const wantedType = (selType?.value || '').trim();
+    const wantedCats  = getCheckedValues('.filter-topcat');
+    const wantedTypes = getCheckedValues('.filter-type');
+
     document.querySelectorAll('#pub-list .pub-card').forEach(card => {
-      const okCat  = !wantedCat  || getCats(card).includes(wantedCat);
-      const okType = !wantedType || getType(card) === wantedType;
+      const cardCats = getCats(card);
+      const cardType = getType(card);
+
+      const okCat =
+        wantedCats.length === 0 ||
+        wantedCats.some(cat => cardCats.includes(cat));
+
+      const okType =
+        wantedTypes.length === 0 ||
+        wantedTypes.includes(cardType);
+
       card.style.display = (okCat && okType) ? '' : 'none';
     });
   }
 
-  if (selCat)  selCat.addEventListener('change', applyFilter);
-  if (selType) selType.addEventListener('change', applyFilter);
-  if (reset)   reset.addEventListener('click', () => {
-    if (selCat)  selCat.value  = '';
-    if (selType) selType.value = '';
-    applyFilter();
+  document.querySelectorAll('.filter-topcat, .filter-type').forEach(input => {
+    input.addEventListener('change', applyFilter);
   });
 
-  // 1er rendu
+  if (reset) {
+    reset.addEventListener('click', () => {
+      document.querySelectorAll('.filter-topcat, .filter-type').forEach(input => {
+        input.checked = false;
+      });
+      applyFilter();
+    });
+  }
+
   applyFilter();
 });
 </script>
@@ -1123,7 +1266,7 @@ window.addEventListener('DOMContentLoaded', function() {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Dernière mise à jour : 28/04/2026</p>
+<p>Dernière mise à jour : 29/04/2026</p>
 </div>
   </div>
 </footer>
