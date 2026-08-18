@@ -503,6 +503,14 @@
 # Liste des articles de presse
 # ============================================================
 
+- title: "La vague de chaleur du mois de juin exceptionnellement meurtrière, surtout en Wallonie"
+  authors: "RTBF"
+  year: 2026
+  venue: "RTBF, 08 juillet"
+  url: "https://www.rtbf.be/article/la-vague-de-chaleur-du-mois-de-juin-exceptionnellement-meurtriere-surtout-en-wallonie-11754917"
+  topcat: ["Déterminants de la santé", "Politiques de santé"]
+  type: "Article de presse"
+  
 - title: "Soigner la santé mentale, c’est d’abord créer un climat propice au bien-être"
   authors: "Références"
   year: 2026
