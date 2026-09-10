@@ -503,6 +503,14 @@
 # Liste des articles de presse
 # ============================================================
 
+- title: "Près de 3000 décès supplémentaires cet été : les chiffres de surmortalité encore revus à la hausse"
+  authors: "RTBF"
+  year: 2026
+  venue: "RTBF, 03 septembre"
+  url: "https://www.rtbf.be/article/pres-de-3000-deces-supplementaires-cet-ete-les-chiffres-de-surmortalite-encore-revus-a-la-hausse-11779180"
+  topcat: ["Déterminants de la santé", "Politiques de santé"]
+  type: "Article de presse"
+  
 - title: "La vague de chaleur du mois de juin exceptionnellement meurtrière, surtout en Wallonie"
   authors: "RTBF"
   year: 2026
