@@ -8,6 +8,24 @@
 # 5. Méthodes de valorisation des données de santé
 # ============================================================
 
+- title: "The longitudinal relationship between mental health and employment: a systematic review of cohort studies"
+  authors: "Héroufosse J., Bruggeman H., Van der Heyden J., Farhat M., Smith P."
+  year: 2026
+  venue: "Archives of Public Health"
+  url: "https://link.springer.com/article/10.1186/s13690-026-02063-2"
+  categories: ["Santé mentale", "emploi", "déterminants sociaux"]
+  topcat: ["Santé mentale", "Déterminants de la santé"]
+  type: "Publication scientifique"
+
+- title: "Investigating care outcomes and experiences of adults with Long COVID through patient-reported indicators (PROMs and PREMs) in Belgium"
+  authors: "Moreels S., Ekelson R., Smith P., Speybroeck N., et al."
+  year: 2026
+  venue: "BMC Health Services Research"
+  url: "https://link.springer.com/article/10.1186/s12913-026-15783-6"
+  categories: ["Long COVID", "PROMs", "PREMs", "soins de santé", "Belgique"]
+  topcat: ["Évaluation des systèmes et services de santé", "Déterminants de la santé"]
+  type: "Publication scientifique"
+
 - title: "Post-acute organ complications within one year following COVID-19 hospitalization and related socioeconomic inequalities"
   authors: "Cavillot L., Van den Borre L., Ghattas J. Smith P., et al."
   year: 2026
